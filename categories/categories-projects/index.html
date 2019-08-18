@@ -223,46 +223,17 @@
 <li>Setup a new Firewall rule, enable request from all address. Set source IP as <code>&#39;0.0.0.0/0&#39;</code>; protocols and ports are set to be <code>tcp:9200,8080</code>.</li>
 <li>Create a new GCE instance, selet Ubuntu 18.04 system as image. Allow HTTP and HTTPS traffic. And don’r forget to set the Networking rule and add the new Firewall-rule-tag we’ve just created.</li>
 <li>Start the Compute Engine instance. Use <code>SSH</code> and open in browser window.</li>
-<li>Update the system and do all necessary configurations… (Installing all necessary packages: install software-properties-common, install golang, install vim, install git…)</li>
-</ul>
-<h3 id="2-Implement-the-Golang-backend-handler"><a href="#2-Implement-the-Golang-backend-handler" class="headerlink" title="2. Implement the Golang backend handler."></a>2. Implement the Golang backend handler.</h3><h4 id="2-1-Create-a-main-go-file-and-define-the-structure-for-Post-and-Location"><a href="#2-1-Create-a-main-go-file-and-define-the-structure-for-Post-and-Location" class="headerlink" title="2.1 Create a main.go file and define the structure for Post and Location."></a>2.1 Create a main.go file and define the structure for Post and Location.</h4><ul>
-<li><p>Import necessary packages: <code>&quot;encoding/json&quot;</code> for now.</p>
-</li>
-<li><p>This backend handler need to handle the 1) Post request form the React frontend and 2) Location-based search request from frontend. Therefore, here we could set the Structure of both. Location:</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Location <span class="keyword">struct</span> &#123;</span><br><span class="line">    Lat <span class="keyword">float64</span> <span class="string">`json:"lat"`</span></span><br><span class="line">    Lon <span class="keyword">float64</span> <span class="string">`json:"lon"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>For Post, according to requests received from fronend, there are five fields we need to handle here, inlcuding : User (the username), Message (the message within this post), Location (the Geo-location where the post was sent), Url (the media file url), Type (whether its an image-post or a video-post), Face (the confidency score of how possible this image including a face, this is provided by the ml script we’ll add later on).</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Post <span class="keyword">struct</span> &#123;</span><br><span class="line">    User <span class="keyword">string</span> <span class="string">`json:"user"`</span></span><br><span class="line">    Message <span class="keyword">string</span> <span class="string">`json:"message"`</span></span><br><span class="line">    Location Location <span class="string">`json:"location"`</span></span><br><span class="line">    Url <span class="keyword">string</span> <span class="string">`json:"url"`</span></span><br><span class="line">    Type <span class="keyword">string</span> <span class="string">`json:"type"`</span></span><br><span class="line">    Face <span class="keyword">float64</span> <span class="string">`json:"face"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="2-2-Add-the-handlerPost-method-to-handle-Post"><a href="#2-2-Add-the-handlerPost-method-to-handle-Post" class="headerlink" title="2.2 Add the handlerPost() method to handle Post."></a>2.2 Add the handlerPost() method to handle Post.</h4><ul>
-<li><p>Within this function, we have two params: w (response writter) and r (the request from frontend). </p>
-</li>
-<li><p>Parse the body from request to get it as an Json object. Create a new <code>Post</code> as <code>p</code> and print it.</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">handlerPost</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">"Received one post request"</span>)</span><br><span class="line">      decoder := json.NewDecoder(r.Body)</span><br><span class="line">      <span class="keyword">var</span> p Post</span><br><span class="line">      <span class="keyword">if</span> err := decoder.Decode(&amp;p); err != <span class="literal">nil</span> &#123;</span><br><span class="line">             <span class="built_in">panic</span>(err)</span><br><span class="line">             <span class="keyword">return</span></span><br><span class="line">      &#125;</span><br><span class="line">      fmt.Fprintf(w, <span class="string">"Post received: %s\n"</span>, p.Message)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>And then call this handler method in <code>func main()</code> </p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">"started-service"</span>)</span><br><span class="line">      http.HandleFunc(<span class="string">"/post"</span>, handlerPost)</span><br><span class="line">      log.Fatal(http.ListenAndServe(<span class="string">":8080"</span>, <span class="literal">nil</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="2-3-Add-the-handlerSearch-method-to-handle-search-request-from-clients-and-return-a-Json-object"><a href="#2-3-Add-the-handlerSearch-method-to-handle-search-request-from-clients-and-return-a-Json-object" class="headerlink" title="2.3 Add the handlerSearch() method to handle search request from clients, and return a Json object."></a>2.3 Add the handlerSearch() method to handle search request from clients, and return a Json object.</h4><ul>
-<li><p>We also have two params (w and r) as the same in handlerPost(). But this time the useful Latitude and Longitude information are sent within the request url instead of body. </p>
-</li>
-<li><p>So we get it by using <code>URL.Query().Get()</code> and convert it to float by Golang format converting package <code>strconv</code>.</p>
-</li>
-<li><p>Set a range of whitin how far we’d like to see others’ post, 200km for example.</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> (</span><br><span class="line">      <span class="string">"fmt"</span></span><br><span class="line">      <span class="string">"net/http"</span></span><br><span class="line">      <span class="string">"encoding/json"</span></span><br><span class="line">      <span class="string">"log"</span></span><br><span class="line">      <span class="string">"strconv"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">      DISTANCE = <span class="string">"200km"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">handlerSearch</span><span class="params">(w http.ResponseWriter, r *http.Request)</span></span> &#123;</span><br><span class="line">      fmt.Println(<span class="string">"Received one request for search"</span>)</span><br><span class="line">      lat, _ := strconv.ParseFloat(r.URL.Query().Get(<span class="string">"lat"</span>), <span class="number">64</span>)</span><br><span class="line">      lon, _ := strconv.ParseFloat(r.URL.Query().Get(<span class="string">"lon"</span>), <span class="number">64</span>)</span><br><span class="line">      ran := DISTANCE </span><br><span class="line">      <span class="keyword">if</span> val := r.URL.Query().Get(<span class="string">"range"</span>); val != <span class="string">""</span> &#123; </span><br><span class="line">         ran = val + <span class="string">"km"</span> </span><br><span class="line">      &#125;</span><br><span class="line">      w.Header().Set(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Call handlerSearch in Main</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http.HandleFunc(<span class="string">"/search"</span>, handlerSearch)</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-
+<li>Update the system and do all necessary configurations… (Installing all necessary packages: install software-properties-common, install golang, install vim, install git…)
         
-    </section>
+        <p class="article-more-link">
+            <a href="/2019/08/17/Golang-based-Around-service-backend-handler/#more">
+                <span class="vm">More...</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </li></ul></section>
 </article>
 
 
