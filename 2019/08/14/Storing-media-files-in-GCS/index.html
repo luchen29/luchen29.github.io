@@ -11,7 +11,7 @@
     <meta name="author" content="Luchen">
     <meta name="version" content="1.0.0">
     <meta name="keywords" content>
-    <meta name="description" content="Storing media files on Google Cloud Storage1. Difference between Object Storage, Database and File SystemObject Storage: Each piece of data is stored as an object with no tree-shape index 无层次结构。所有数据通过unique的地址来进行查找等操作, which ensures a higher eff...">
+    <meta name="description" content="Storing media files on Google Cloud StorageConceptsDifference between Object Storage, Database and File SystemObject Storage: Each piece of data is stored as an object with no tree-shape index. Datas are searched by using unique address/ path, w...">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 
@@ -71,7 +71,7 @@
         
 
         
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Difference-between-Object-Storage-Database-and-File-System"><span class="toc-number">1.</span> <span class="toc-text">1. Difference between Object Storage, Database and File System</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Object-Storage-Service-的优势在哪里"><span class="toc-number">2.</span> <span class="toc-text">2. Object Storage Service 的优势在哪里</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-How-to-setup-GCS-API"><span class="toc-number">3.</span> <span class="toc-text">3. How to setup GCS API</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Extend-Design-YouTube-Netfix-System"><span class="toc-number">4.</span> <span class="toc-text">Extend - Design YouTube/ Netfix System</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Concepts"><span class="toc-number">1.</span> <span class="toc-text">Concepts</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Difference-between-Object-Storage-Database-and-File-System"><span class="toc-number">1.1.</span> <span class="toc-text">Difference between Object Storage, Database and File System</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Advantages-of-using-Object-Storage-Service"><span class="toc-number">1.2.</span> <span class="toc-text">Advantages of using Object Storage Service</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-project-experience"><span class="toc-number">2.</span> <span class="toc-text">My project experience</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Setup-GCS-API"><span class="toc-number">2.1.</span> <span class="toc-text">Setup GCS API</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Connect-Frontend-Server-and-Cloud"><span class="toc-number">3.</span> <span class="toc-text">4. Connect Frontend, Server and Cloud</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Extend-Design-YouTube-Netfix-System"><span class="toc-number">4.</span> <span class="toc-text">Extend - Design YouTube/ Netfix System</span></a></li></ol>
         
     </div>
 </aside>
@@ -107,22 +107,25 @@
     <section class="article-body markdown-body">
         
         <p>Storing media files on Google Cloud Storage</p>
-<h3 id="1-Difference-between-Object-Storage-Database-and-File-System"><a href="#1-Difference-between-Object-Storage-Database-and-File-System" class="headerlink" title="1. Difference between Object Storage, Database and File System"></a>1. Difference between Object Storage, Database and File System</h3><ul>
-<li>Object Storage: Each piece of data is stored as an object with no tree-shape index 无层次结构。所有数据通过unique的地址来进行查找等操作, which ensures a higher efficiency. <a id="more"></a></li>
+<h3 id="Concepts"><a href="#Concepts" class="headerlink" title="Concepts"></a>Concepts</h3><h4 id="Difference-between-Object-Storage-Database-and-File-System"><a href="#Difference-between-Object-Storage-Database-and-File-System" class="headerlink" title="Difference between Object Storage, Database and File System"></a>Difference between Object Storage, Database and File System</h4><ul>
+<li>Object Storage: Each piece of data is stored as an object with no tree-shape index. Datas are searched by using unique address/ path, which ensures a higher efficiency. <a id="more"></a></li>
 <li>File System: Data are stored as a piece of information in folder, to help organize it among all other data. </li>
 </ul>
-<h3 id="2-Object-Storage-Service-的优势在哪里"><a href="#2-Object-Storage-Service-的优势在哪里" class="headerlink" title="2. Object Storage Service 的优势在哪里"></a>2. Object Storage Service 的优势在哪里</h3><ul>
-<li>a. Durable 可靠性很高: Most of the Object Storage Service (e.g. GCS, Amazon S3 + CloudFront) are designed for very high (~99.99999999%) durability. 数据会被redundantly进行多次备份，可以很好的保证 data integrity.</li>
-<li>b. Avaliable 世界范围内使用性强: All storage class offer high avaliablity around the world.</li>
-<li>c. Scalable 可扩展行高: Distributd storage.</li>
-<li>d. Inexpensive 存储服务的价格十分便宜: Nearly free. Good choise to store unstructured media files like images, videos ets.</li>
+<h4 id="Advantages-of-using-Object-Storage-Service"><a href="#Advantages-of-using-Object-Storage-Service" class="headerlink" title="Advantages of using Object Storage Service"></a>Advantages of using Object Storage Service</h4><ul>
+<li>a. Highly Durable: Most of the Object Storage Service (e.g. GCS, Amazon S3 + CloudFront) are designed for a very high (~99.99999999%) durability. Datas are redundantly backed up, which ensures a greate data integrity.</li>
+<li>b. Highly Avaliable: All storage class offer high avaliablity around the world.</li>
+<li>c. Highly Scalable: Distributd storage.</li>
+<li>d. Inexpensive: Nearly free. Good choise to store unstructured media files like images, videos ets.</li>
 </ul>
-<h3 id="3-How-to-setup-GCS-API"><a href="#3-How-to-setup-GCS-API" class="headerlink" title="3. How to setup GCS API"></a>3. How to setup GCS API</h3><ul>
+<h3 id="My-project-experience"><a href="#My-project-experience" class="headerlink" title="My project experience"></a>My project experience</h3><h4 id="Setup-GCS-API"><a href="#Setup-GCS-API" class="headerlink" title="Setup GCS API"></a>Setup GCS API</h4><ul>
 <li>If you’d like to operate though command line, please first instal gsutil. Gsuril enable you to access Cloud Storage from command line. Installing gsutil as part of Google SDK <code>curl https://sdk.cloud.google.com | bash</code>. Restart shell <code>exec -l $SHELL</code> and initiate gcloud environment <code>gcloud init</code>.</li>
 <li>a. Create a new Bucket. You could ether create a new bucket through command line <code>gsutil mb gs://[YOUR-BUCKET-NAME]</code> or directly create though GCS webpage.</li>
 <li>b. Setup <a href="https://cloud.google.com/storage/docs/reference/libraries" target="_blank" rel="noopener">GCS client library</a> follow the instructions.</li>
 <li>c. Create your new service account and download a Json/P12 file to local.</li>
-<li>d. Set google app credentials locally: <code>export GOOGLE_APPLICATION_CREDENTIALS=&quot;YOUR_JSON_FILE_PATH</code>. Double check your setting with <code>$ echo $GOOGLE_APPLICATION_CREDENTIALS</code>.</li>
+<li>d. Set google app credentials locally: <code>export GOOGLE_APPLICATION_CREDENTIALS=&quot;YOUR_JSON_FILE_PATH</code>. Double check your setting with <code>$ echo $GOOGLE_APPLICATION_CREDENTIALS</code> to enable posting.</li>
+</ul>
+<h3 id="4-Connect-Frontend-Server-and-Cloud"><a href="#4-Connect-Frontend-Server-and-Cloud" class="headerlink" title="4. Connect Frontend, Server and Cloud"></a>4. Connect Frontend, Server and Cloud</h3><ul>
+<li>a. Frontend</li>
 </ul>
 <h3 id="Extend-Design-YouTube-Netfix-System"><a href="#Extend-Design-YouTube-Netfix-System" class="headerlink" title="Extend - Design YouTube/ Netfix System"></a>Extend - Design YouTube/ Netfix System</h3><p>…</p>
 
