@@ -71,7 +71,7 @@
         
 
         
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Token-based-authentication"><span class="toc-number">1.</span> <span class="toc-text">1. Token-based authentication</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Session-based-authentication"><span class="toc-number">2.</span> <span class="toc-text">2. Session-based authentication</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Token-based-authentication"><span class="toc-number">1.</span> <span class="toc-text">1. Token-based authentication</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Session-based-authentication"><span class="toc-number">2.</span> <span class="toc-text">2. Session-based authentication</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Advantages-and-Disadvantages-of-usin-token-based-authentication"><span class="toc-number">3.</span> <span class="toc-text">3. Advantages and Disadvantages of usin token-based authentication</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Json-Web-Token"><span class="toc-number">4.</span> <span class="toc-text">4. Json Web Token</span></a></li></ol>
         
     </div>
 </aside>
@@ -121,6 +121,27 @@
 <li>Once the user logout the app, the session is destroyed on the server side.</li>
 </ul>
 <p><img src="https://cdn.auth0.com/blog/cookies-vs-tokens/cookie-token-auth.png" alt="avatar"></p>
+<a id="more"></a>
+
+<h4 id="3-Advantages-and-Disadvantages-of-usin-token-based-authentication"><a href="#3-Advantages-and-Disadvantages-of-usin-token-based-authentication" class="headerlink" title="3. Advantages and Disadvantages of usin token-based authentication"></a>3. Advantages and Disadvantages of usin token-based authentication</h4><ul>
+<li>Stateless: backend no need to keep a record of tokens.</li>
+<li>Self-contained: no need to loop up in Databse, server contains all data it required for checking the validity.</li>
+<li>But the size of token is larger than sessionID.</li>
+</ul>
+<h4 id="4-Json-Web-Token"><a href="#4-Json-Web-Token" class="headerlink" title="4. Json Web Token"></a>4. Json Web Token</h4><p><img src="https://www.wangbase.com/blogimg/asset/201807/bg2018072304.jpg" alt="jwt"></p>
+<ul>
+<li><p>JWT is a long string as shown in the image above. It contains three main parts: 1) the Header 2) the Payload and 3) the Signature <code>Header.Payload.Signature</code>.</p>
+</li>
+<li><p>Inside Header is a JSON object, describing the JWT’s Metadata. Header is converted to the string we see by using Base64URL algorithm.</p>
+</li>
+<li><p>Inside Payload is also a JSON object, storing the real data we would like to send. We could add different params like: “sub”, “name”, “admin” etc. This part will also be converted to string by Base64URL algorithm.</p>
+</li>
+<li><p>The third part is a signature to the prious two parts, to ensure the security of the information. Server will generate a secret (only server knows the secret, it won’t be sent to client), and then generate the Signature by using HMACSHA256 algorithm following this function </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HMACSHA256(</span><br><span class="line">  base64UrlEncode(header) + &quot;.&quot; +</span><br><span class="line">  base64UrlEncode(payload),</span><br><span class="line">  secret)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Then concat the three parts together by using ‘.’ to generate the token sent to users.</p>
+</li>
+</ul>
 
         
     </section>
