@@ -7,7 +7,7 @@
 
     
 
-    <title>Luchen</title>
+    <title>Tag: Authentication | Luchen</title>
     <meta name="author" content="Luchen">
     <meta name="version" content="1.0.0">
     <meta name="keywords" content>
@@ -37,7 +37,7 @@
 
     <nav id="nav-inner" class="nav-inner">
         
-            <a class="nav-item active" href="/">
+            <a class="nav-item" href="/">
                 <span class="nav-text">Home</span>
             </a>
         
@@ -190,259 +190,49 @@
 </header>
 
         <div id="content" class="content">
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/08/18/Authentication/">Authentication</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-18T20:07:59.000Z" itemprop="datePublished">2019-08-18</time>
-</a>
 
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Authentication/">Authentication</a>
+
+<div class="page-hd">
+    Authentication
+    <small>(1)</small>
 </div>
 
 
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h4 id="1-Token-based-authentication"><a href="#1-Token-based-authentication" class="headerlink" title="1. Token-based authentication"></a>1. Token-based authentication</h4><ul>
-<li>Users enter their log credentials (username + password).</li>
-<li>Server varifies the credentials -&gt; if correct -&gt; creates an encrypted and signed token, with a private key.</li>
-<li>On client side, stores the token returned from server.</li>
-<li>On subsequent requests, the token is decoded with the same private key -&gt; if valid, the request processed.</li>
-<li>Once the user logout the app, the token is destroyed on client-side, no interaction with server is necessary.</li>
-</ul>
-<h4 id="2-Session-based-authentication"><a href="#2-Session-based-authentication" class="headerlink" title="2. Session-based authentication"></a>2. Session-based authentication</h4><ul>
-<li>Users enter their log credentials (username + password).</li>
-<li>Server varifies the credentials -&gt; if correct -&gt; creates a session -&gt; return sessionID to user -&gt; store the session to database.</li>
-<li>On client side, stores the sessionID returned from server.</li>
-<li>On subsequent requests, the sessionID will be varified against the one stored in database -&gt; if match, request processed.</li>
-<li>Once the user logout the app, the session is destroyed on the server side.</li>
-</ul>
-<p><img src="https://cdn.auth0.com/blog/cookies-vs-tokens/cookie-token-auth.png" alt="avatar"></p>
 
-        
-    </section>
-</article>
+    
+    
+    
+    
+    
+    <section class="archives-wrap">
+    <div class="archive-year-wrap">
+    <a href="/archives/2019" class="page-hd">
+        2019
+    </a>
+    </div>
+    <ol class="archives">
+    
 
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
+    <li class="archive-section-item">
         
-        <h1 itemprop="name">
-            <a href="/2019/08/17/Golang-based-Around-service-backend-handler/">Golang-based-Around-service-backend-handler</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
+<article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        <header class="archive-article-header">
+            <a class="archive-article-link" href="/2019/08/18/Authentication/">Authentication</a>
+            <span class="archive-article-date">
+                (<a class="article-date" href="/archives/2019/08">
     
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-18T01:52:13.000Z" itemprop="datePublished">2019-08-17</time>
+    <time datetime="2019-08-18T20:07:59.000Z" itemprop="datePublished">8/18</time>
 </a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Around/">Around</a>, <a class="article-tag-link" href="/tags/Backend/">Backend</a>, <a class="article-tag-link" href="/tags/Golang/">Golang</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h3 id="1-Project-will-be-implemented-on-GCP-Setting-up-our-instance-first"><a href="#1-Project-will-be-implemented-on-GCP-Setting-up-our-instance-first" class="headerlink" title="1. Project will be implemented on GCP. Setting up our instance first."></a>1. Project will be implemented on GCP. Setting up our instance first.</h3><ul>
-<li>Create a new project.</li>
-<li>Setup a new Firewall rule, enable request from all address. Set source IP as <code>&#39;0.0.0.0/0&#39;</code>; protocols and ports are set to be <code>tcp:9200,8080</code>.</li>
-<li>Create a new GCE instance, selet Ubuntu 18.04 system as image. Allow HTTP and HTTPS traffic. And don’r forget to set the Networking rule and add the new Firewall-rule-tag we’ve just created.</li>
-<li>Start the Compute Engine instance. Use <code>SSH</code> and open in browser window.</li>
-<li>Update the system and do all necessary configurations… (Installing all necessary packages: install software-properties-common, install golang, install vim, install git…)
-        
-        <p class="article-more-link">
-            <a href="/2019/08/17/Golang-based-Around-service-backend-handler/#more">
-                <span class="vm">More...</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </li></ul></section>
+)
+            </span>
+        </header>
+    </div>
 </article>
+    </li>
 
 
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/08/15/React-High-Order-Component/">React High Order Component</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-16T03:18:26.000Z" itemprop="datePublished">2019-08-15</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/React/">React</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/08/14/Storing-media-files-in-GCS/">Storing media files on Object Storage Services</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-14T16:46:38.000Z" itemprop="datePublished">2019-08-14</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Cloud/">Cloud</a>, <a class="article-tag-link" href="/tags/GCS/">GCS</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <p>Storing media files on Google Cloud Storage</p>
-<h3 id="Concepts"><a href="#Concepts" class="headerlink" title="Concepts"></a>Concepts</h3><h4 id="Difference-between-Object-Storage-Database-and-File-System"><a href="#Difference-between-Object-Storage-Database-and-File-System" class="headerlink" title="Difference between Object Storage, Database and File System"></a>Difference between Object Storage, Database and File System</h4><ul>
-<li>Object Storage: Each piece of data is stored as an object with no tree-shape index. Datas are searched by using unique address/ path, which ensures a higher efficiency.
-        
-        <p class="article-more-link">
-            <a href="/2019/08/14/Storing-media-files-in-GCS/#more">
-                <span class="vm">More...</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </li></ul></section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/08/13/React-Ref/">React Ref</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-13T22:54:40.000Z" itemprop="datePublished">2019-08-13</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/React/">React</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h3 id="1-何时使用-Ref"><a href="#1-何时使用-Ref" class="headerlink" title="1. 何时使用 Ref"></a>1. 何时使用 Ref</h3><p>通常我们可以通过props进行父子Component之间的数据传递，而使用Ref可以独立于Dataflow进行父子Component之间的interaction。</p>
-        
-        <p class="article-more-link">
-            <a href="/2019/08/13/React-Ref/#more">
-                <span class="vm">More...</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/08/13/hello-world/">Hello World</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-13T22:36:16.341Z" itemprop="datePublished">2019-08-13</time>
-</a>
-
-            
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2>
-        
-        <p class="article-more-link">
-            <a href="/2019/08/13/hello-world/#more">
-                <span class="vm">More...</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </section>
-</article>
-
+</ol></section>
 
 
 

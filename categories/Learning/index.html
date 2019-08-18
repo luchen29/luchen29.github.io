@@ -195,6 +195,55 @@
     <header class="article-header">
         
         <h1 itemprop="name">
+            <a href="/2019/08/18/Authentication/">Authentication</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/categories/Learning/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-18T20:07:59.000Z" itemprop="datePublished">2019-08-18</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Authentication/">Authentication</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h4 id="1-Token-based-authentication"><a href="#1-Token-based-authentication" class="headerlink" title="1. Token-based authentication"></a>1. Token-based authentication</h4><ul>
+<li>Users enter their log credentials (username + password).</li>
+<li>Server varifies the credentials -&gt; if correct -&gt; creates an encrypted and signed token, with a private key.</li>
+<li>On client side, stores the token returned from server.</li>
+<li>On subsequent requests, the token is decoded with the same private key -&gt; if valid, the request processed.</li>
+<li>Once the user logout the app, the token is destroyed on client-side, no interaction with server is necessary.</li>
+</ul>
+<h4 id="2-Session-based-authentication"><a href="#2-Session-based-authentication" class="headerlink" title="2. Session-based authentication"></a>2. Session-based authentication</h4><ul>
+<li>Users enter their log credentials (username + password).</li>
+<li>Server varifies the credentials -&gt; if correct -&gt; creates a session -&gt; return sessionID to user -&gt; store the session to database.</li>
+<li>On client side, stores the sessionID returned from server.</li>
+<li>On subsequent requests, the sessionID will be varified against the one stored in database -&gt; if match, request processed.</li>
+<li>Once the user logout the app, the session is destroyed on the server side.</li>
+</ul>
+<p><img src="https://cdn.auth0.com/blog/cookies-vs-tokens/cookie-token-auth.png" alt="avatar"></p>
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
             <a href="/2019/08/15/React-High-Order-Component/">React High Order Component</a>
         </h1>
         
