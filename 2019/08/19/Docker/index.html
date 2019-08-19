@@ -71,7 +71,7 @@
         
 
         
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Issues-we-face-when-developing-softwares"><span class="toc-number">1.</span> <span class="toc-text">Issues we face when developing softwares</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker"><span class="toc-number">2.</span> <span class="toc-text">Docker</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#How-to-setup-Docker"><span class="toc-number">3.</span> <span class="toc-text">How to setup Docker</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Publish-the-Docker-Image"><span class="toc-number">4.</span> <span class="toc-text">Publish the Docker Image</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hypervisor"><span class="toc-number">5.</span> <span class="toc-text">Hypervisor</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Issues-we-face-when-developing-softwares"><span class="toc-number">1.</span> <span class="toc-text">Issues we face when developing softwares</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker"><span class="toc-number">2.</span> <span class="toc-text">Docker</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#How-to-setup-Docker"><span class="toc-number">3.</span> <span class="toc-text">How to setup Docker</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Publish-the-Docker-Image"><span class="toc-number">4.</span> <span class="toc-text">Publish the Docker Image</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hypervisor"><span class="toc-number">5.</span> <span class="toc-text">Hypervisor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kubernetes"><span class="toc-number">6.</span> <span class="toc-text">Kubernetes</span></a></li></ol>
         
     </div>
 </aside>
@@ -129,7 +129,7 @@
 </li>
 <li><p>Save and quit. Then we could build an image by runing <code>$ sudo docker build -t &lt;IMAGE_NAME&gt;.</code></p>
 </li>
-<li><p>To now, the docker image has been created. Then, we could run the image locally by <code>$ sudo docker run -d -p 8080:8080 &lt;IMAGE_NAME&gt;</code>.</p>
+<li><p>To now, the docker image has been created. Then, we could run the image locally by <code>$ sudo docker run -d -p 8080:8080 &lt;IMAGE_NAME&gt;</code>. From port 8080 to port 8080 locally.</p>
 </li>
 <li><p>Check all existing images using <code>sudo docker images</code>.</p>
 </li>
@@ -144,13 +144,14 @@
 </ul>
 <h4 id="Publish-the-Docker-Image"><a href="#Publish-the-Docker-Image" class="headerlink" title="Publish the Docker Image"></a>Publish the Docker Image</h4><ul>
 <li>Only after we publishing the docker image can we use it on GKE.</li>
-<li>To publish it, first we need to Tag it <code>$ sudo docker tag &lt;TAG_NAME&gt; &lt;your_docker_id&gt;/&lt;IMAGE_NAME&gt;</code>.</li>
+<li>To publish it, first we need to Tag it <code>$ sudo docker tag &lt;IMAGE_NAME&gt; &lt;your_docker_id&gt;/&lt;REPO_NAME&gt;:&lt;TAG&gt;&gt;</code>.</li>
 <li>Then we login to our DockerHub accound through cloud terminal <code>$ sudo docker login</code>.</li>
-<li>And then, publish it! <code>$ sudo docker push &lt;your_docker_id&gt;/&lt;IMAGE_NAME&gt;</code></li>
+<li>And then, publish it! <code>$ sudo docker push &lt;your_docker_id&gt;/&lt;REPO_NAME&gt;</code></li>
 </ul>
 <h4 id="Hypervisor"><a href="#Hypervisor" class="headerlink" title="Hypervisor"></a>Hypervisor</h4><ul>
 <li>Hypervisors are softwares that manages virtual machines. e.g. VMWare/ Virtualbox/ Parallel…</li>
 </ul>
+<h4 id="Kubernetes"><a href="#Kubernetes" class="headerlink" title="Kubernetes"></a>Kubernetes</h4><p>…</p>
 
         
     </section>
