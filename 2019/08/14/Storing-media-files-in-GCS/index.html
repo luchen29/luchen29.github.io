@@ -7,11 +7,11 @@
 
     
 
-    <title>Storing media files on Object Storage Services | Luchen</title>
+    <title>Store Media Files On Google Cloud Storage | Luchen</title>
     <meta name="author" content="Luchen">
     <meta name="version" content="1.0.0">
     <meta name="keywords" content>
-    <meta name="description" content="Storing media files on Google Cloud StorageConceptsDifference between Object Storage, Database and File SystemObject Storage: Each piece of data is stored as an object with no tree-shape index. Datas are searched by using unique address/ path, w...">
+    <meta name="description" content="1. Difference between Object Storage, Database and File SystemObject Storage: Each piece of data is stored as an object with no tree-shape index. Datas are searched by using unique address/ path, which ensures a higher efficiency. File System: ...">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 
@@ -71,7 +71,7 @@
         
 
         
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Concepts"><span class="toc-number">1.</span> <span class="toc-text">Concepts</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Difference-between-Object-Storage-Database-and-File-System"><span class="toc-number">1.1.</span> <span class="toc-text">Difference between Object Storage, Database and File System</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Advantages-of-using-Object-Storage-Service"><span class="toc-number">1.2.</span> <span class="toc-text">Advantages of using Object Storage Service</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#My-project-experience"><span class="toc-number">2.</span> <span class="toc-text">My project experience</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Setup-GCS-API"><span class="toc-number">2.1.</span> <span class="toc-text">Setup GCS API</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Connect-Frontend-Server-and-Cloud"><span class="toc-number">3.</span> <span class="toc-text">4. Connect Frontend, Server and Cloud</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Extend-Design-YouTube-Netfix-System"><span class="toc-number">4.</span> <span class="toc-text">Extend - Design YouTube/ Netfix System</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Difference-between-Object-Storage-Database-and-File-System"><span class="toc-number">1.</span> <span class="toc-text">1. Difference between Object Storage, Database and File System</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Advantages-of-using-Object-Storage-Service"><span class="toc-number">2.</span> <span class="toc-text">2. Advantages of using Object Storage Service</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-General-idea-of-how-to-send-images-to-GCS"><span class="toc-number">3.</span> <span class="toc-text">3. General idea of how to send images to GCS.</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Setup-GCS-API"><span class="toc-number">4.</span> <span class="toc-text">4. Setup GCS API.</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Connect-Frontend-Server-and-Cloud"><span class="toc-number">5.</span> <span class="toc-text">5. Connect Frontend, Server and Cloud</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#System-Design-How-to-Design-a-YouTube-Netfix-System"><span class="toc-number">6.</span> <span class="toc-text">System Design - How to Design a YouTube/ Netfix System ???</span></a></li></ol>
         
     </div>
 </aside>
@@ -83,7 +83,7 @@
     <header class="article-header">
         
         <h1 itemprop="name">
-            Storing media files on Object Storage Services
+            Store Media Files On Google Cloud Storage
         </h1>
         
         <div class="article-meta clearfix">
@@ -97,7 +97,7 @@
             
 <div class="article-tag-list">
     <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Cloud/">Cloud</a>, <a class="article-tag-link" href="/tags/GCS/">GCS</a>
+    <a class="article-tag-link" href="/tags/Cloud/">Cloud</a>, <a class="article-tag-link" href="/tags/GCS/">GCS</a>, <a class="article-tag-link" href="/tags/Learning/">Learning</a>, <a class="article-tag-link" href="/tags/Object-Storage/">Object Storage</a>
 </div>
 
 
@@ -106,28 +106,39 @@
     
     <section class="article-body markdown-body">
         
-        <p>Storing media files on Google Cloud Storage</p>
-<h3 id="Concepts"><a href="#Concepts" class="headerlink" title="Concepts"></a>Concepts</h3><h4 id="Difference-between-Object-Storage-Database-and-File-System"><a href="#Difference-between-Object-Storage-Database-and-File-System" class="headerlink" title="Difference between Object Storage, Database and File System"></a>Difference between Object Storage, Database and File System</h4><ul>
-<li>Object Storage: Each piece of data is stored as an object with no tree-shape index. Datas are searched by using unique address/ path, which ensures a higher efficiency. <a id="more"></a></li>
-<li>File System: Data are stored as a piece of information in folder, to help organize it among all other data. </li>
+        <h4 id="1-Difference-between-Object-Storage-Database-and-File-System"><a href="#1-Difference-between-Object-Storage-Database-and-File-System" class="headerlink" title="1. Difference between Object Storage, Database and File System"></a>1. Difference between Object Storage, Database and File System</h4><ul>
+<li><p>Object Storage: Each piece of data is stored as an object with no tree-shape index. Datas are searched by using unique address/ path, which ensures a higher efficiency. </p>
+</li>
+<li><p>File System: Data are stored as a piece of information in folder, to help organize it among all other data. </p>
+</li>
 </ul>
-<h4 id="Advantages-of-using-Object-Storage-Service"><a href="#Advantages-of-using-Object-Storage-Service" class="headerlink" title="Advantages of using Object Storage Service"></a>Advantages of using Object Storage Service</h4><ul>
+<h4 id="2-Advantages-of-using-Object-Storage-Service"><a href="#2-Advantages-of-using-Object-Storage-Service" class="headerlink" title="2. Advantages of using Object Storage Service"></a>2. Advantages of using Object Storage Service</h4><ul>
 <li>a. Highly Durable: Most of the Object Storage Service (e.g. GCS, Amazon S3 + CloudFront) are designed for a very high (~99.99999999%) durability. Datas are redundantly backed up, which ensures a greate data integrity.</li>
 <li>b. Highly Avaliable: All storage class offer high avaliablity around the world.</li>
 <li>c. Highly Scalable: Distributd storage.</li>
 <li>d. Inexpensive: Nearly free. Good choise to store unstructured media files like images, videos ets.</li>
 </ul>
-<h3 id="My-project-experience"><a href="#My-project-experience" class="headerlink" title="My project experience"></a>My project experience</h3><h4 id="Setup-GCS-API"><a href="#Setup-GCS-API" class="headerlink" title="Setup GCS API"></a>Setup GCS API</h4><ul>
+<h4 id="3-General-idea-of-how-to-send-images-to-GCS"><a href="#3-General-idea-of-how-to-send-images-to-GCS" class="headerlink" title="3. General idea of how to send images to GCS."></a>3. General idea of how to send images to GCS.</h4><ul>
+<li>From the backend side, after we got the request from corresponding URL, we need to add a middleware <code>multer</code> to store the object first and then post to GCS. Therefore, the router handler should be somthing like: <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">router.post(<span class="string">'&lt;YOUR_TARGET_URL&gt;'</span>, multer.single(<span class="string">'&lt;INPUT_FIELD_NAME&gt;'</span>), gcsMiddlewares.sendUploadToGCS, image_controller.addImageToGCS)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<a id="more"></a>
+
+<ul>
+<li>First part is the URL where frontend sends requests.</li>
+<li>Second part is the multer middleware. According to our frontend design, we only support uploading one image at a time, so we use <code>multer.single</code> here.</li>
+<li>Third part is another middleware <code>gcsMiddlewares</code>. How to define this middleware function will be discussed later on.</li>
+<li>Finally, the fourth part is the function describes how we handle the success/ error cases. If the image is sent successfully, we will send back a response with <code>{&quot;id&quot;: 101}</code>, otherwide, we will sendback a status with code 500 together with a message <code>Unable to upload to GCS</code>.</li>
+</ul>
+<h4 id="4-Setup-GCS-API"><a href="#4-Setup-GCS-API" class="headerlink" title="4. Setup GCS API."></a>4. Setup GCS API.</h4><ul>
 <li>If you’d like to operate though command line, please first instal gsutil. Gsuril enable you to access Cloud Storage from command line. Installing gsutil as part of Google SDK <code>curl https://sdk.cloud.google.com | bash</code>. Restart shell <code>exec -l $SHELL</code> and initiate gcloud environment <code>gcloud init</code>.</li>
 <li>a. Create a new Bucket. You could ether create a new bucket through command line <code>gsutil mb gs://[YOUR-BUCKET-NAME]</code> or directly create though GCS webpage.</li>
 <li>b. Setup <a href="https://cloud.google.com/storage/docs/reference/libraries" target="_blank" rel="noopener">GCS client library</a> follow the instructions.</li>
 <li>c. Create your new service account and download a Json/P12 file to local.</li>
 <li>d. Set google app credentials locally: <code>export GOOGLE_APPLICATION_CREDENTIALS=&quot;YOUR_JSON_FILE_PATH</code>. Double check your setting with <code>$ echo $GOOGLE_APPLICATION_CREDENTIALS</code> to enable posting.</li>
 </ul>
-<h3 id="4-Connect-Frontend-Server-and-Cloud"><a href="#4-Connect-Frontend-Server-and-Cloud" class="headerlink" title="4. Connect Frontend, Server and Cloud"></a>4. Connect Frontend, Server and Cloud</h3><ul>
-<li>a. Frontend</li>
-</ul>
-<h3 id="Extend-Design-YouTube-Netfix-System"><a href="#Extend-Design-YouTube-Netfix-System" class="headerlink" title="Extend - Design YouTube/ Netfix System"></a>Extend - Design YouTube/ Netfix System</h3><p>…</p>
+<h4 id="5-Connect-Frontend-Server-and-Cloud"><a href="#5-Connect-Frontend-Server-and-Cloud" class="headerlink" title="5. Connect Frontend, Server and Cloud"></a>5. Connect Frontend, Server and Cloud</h4><h4 id="System-Design-How-to-Design-a-YouTube-Netfix-System"><a href="#System-Design-How-to-Design-a-YouTube-Netfix-System" class="headerlink" title="System Design - How to Design a YouTube/ Netfix System ???"></a>System Design - How to Design a YouTube/ Netfix System ???</h4><p>…</p>
 
         
     </section>
@@ -147,9 +158,9 @@
         admin: ["sanonz"],
         id: "2019/08/14/Storing-media-files-in-GCS",
         distractionFreeMode: true,
-        title: "Storing media files on Object Storage Services",
+        title: "Store Media Files On Google Cloud Storage",
         body: "http://yoursite.com/2019/08/14/Storing-media-files-in-GCS/",
-        labels: ["GCS","Cloud"]
+        labels: ["Learning","GCS","Cloud","Object Storage"]
     }).render('comments');
     </script>
 </div>
