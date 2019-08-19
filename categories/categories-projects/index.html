@@ -195,6 +195,58 @@
     <header class="article-header">
         
         <h1 itemprop="name">
+            <a href="/2019/08/18/Java-based-event-ticket-recommendation/">Java-based-event-ticket-recommendation</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/categories/categories-projects/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-19T02:27:42.000Z" itemprop="datePublished">2019-08-18</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Backend/">Backend</a>, <a class="article-tag-link" href="/tags/Java/">Java</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="1-Setup-Tomcat-Server"><a href="#1-Setup-Tomcat-Server" class="headerlink" title="1. Setup Tomcat Server"></a>1. Setup Tomcat Server</h3><h4 id="1-1-Concept-of-Tomcat-RPC-Java-Servlet"><a href="#1-1-Concept-of-Tomcat-RPC-Java-Servlet" class="headerlink" title="1.1 Concept of Tomcat/ RPC/ Java Servlet"></a>1.1 Concept of Tomcat/ RPC/ Java Servlet</h4><ul>
+<li>Tomcat Server is an open-source Java Servlet Container that provides “pure Java” http wep server environment (including low level supports: making TCP connection/ revceiving request from client/ send response back to client…) in which Java code can run.</li>
+<li>RPC (Remode Procedure Call) is a function call to the remote server.</li>
+<li>Java Servlets are Java classes to handle RPC calls on the server side.</li>
+</ul>
+<h4 id="1-2-Setup-Tomcat-Server-within-Eclips"><a href="#1-2-Setup-Tomcat-Server-within-Eclips" class="headerlink" title="1.2 Setup Tomcat Server within Eclips"></a>1.2 Setup Tomcat Server within Eclips</h4><ul>
+<li>Go to <code>Servers</code>, find <code>Apache</code> -&gt; <code>Tomcat v9.0 Server</code> and specify the path where the Tomcat installation package was downloaded. Then the Tomcat v9.0 Server will be at localhost.</li>
+<li>Double Click ‘Tomcat v9.0 Server at localhost’ in Server window. In ‘Server Locations’, click ‘Use Tomcat installation’. Save Config.</li>
+<li>Right click ‘Tomcat v9.0 Server at localhost’, choose ‘Properties’. Click ‘Switch Location’ to change the location to /Servers/Tomcat v9.0 Server at localhost.server.</li>
+<li>Start Tomcat Server, check connection on Port: 8080.</li>
+</ul>
+<h3 id="2-Implement-RPC-Handlers"><a href="#2-Implement-RPC-Handlers" class="headerlink" title="2. Implement RPC Handlers"></a>2. Implement RPC Handlers</h3><h4 id="2-1-Implement-the-SearchItem-servlet-class"><a href="#2-1-Implement-the-SearchItem-servlet-class" class="headerlink" title="2.1 Implement the SearchItem servlet(class)"></a>2.1 Implement the SearchItem servlet(class)</h4><ul>
+<li><p>Create the first servlet/class <code>SearchItem</code>. Eclipse creates the Java class for us automatically. Then we need to change the endpoint to “/search”.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/search"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Within this project, server and client need to communicate by JSON object format. To enable this, we need to download the <a href="http://www.java2s.com/Code/JarDownload/java-json/java-json.jar.zip" target="_blank" rel="noopener">JSON library</a> .jar file and paste it into <code>WEB-INFO</code> -&gt; <code>lib</code> folder.</p>
+<h3 id="3-Fetch-data-from-TicketMaster-API"><a href="#3-Fetch-data-from-TicketMaster-API" class="headerlink" title="3. Fetch data from TicketMaster API"></a>3. Fetch data from TicketMaster API</h3></li>
+</ul>
+<h3 id="4-Setup-MySQL-database"><a href="#4-Setup-MySQL-database" class="headerlink" title="4. Setup MySQL database"></a>4. Setup MySQL database</h3><h3 id="5-Setup-MongoDB-database"><a href="#5-Setup-MongoDB-database" class="headerlink" title="5. Setup MongoDB database"></a>5. Setup MongoDB database</h3><h3 id="6-Implement-Login-Logout"><a href="#6-Implement-Login-Logout" class="headerlink" title="6. Implement Login/ Logout"></a>6. Implement Login/ Logout</h3><h3 id="7-Implement-Recommendation-function"><a href="#7-Implement-Recommendation-function" class="headerlink" title="7. Implement Recommendation function"></a>7. Implement Recommendation function</h3><h3 id="8-Deploy-on-Amazon-EC2"><a href="#8-Deploy-on-Amazon-EC2" class="headerlink" title="8. Deploy on Amazon EC2"></a>8. Deploy on Amazon EC2</h3>
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
             <a href="/2019/08/17/Golang-based-Around-service-backend-handler/">Golang-based-Around-service-backend-handler</a>
         </h1>
         
