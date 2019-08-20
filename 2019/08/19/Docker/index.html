@@ -108,14 +108,16 @@
         
         <h4 id="Issues-we-face-when-developing-softwares"><a href="#Issues-we-face-when-developing-softwares" class="headerlink" title="Issues we face when developing softwares"></a>Issues we face when developing softwares</h4><ul>
 <li>For the development of different softwares, we usually need different environment. Therefore, environment configuration becomes a complex and troublesome issuse, especially when environment have conflicts.</li>
-<li>Virtual Machine has become a solution for this issue by providing a new virtual system on the original system you have. However, this solution is not always ideal as it will takes up a large part of your memory resources, leading to a much slower operation. Besides, because Virtual Machine is a complete system, it contains many redundant operations which we actually don’t need.</li>
+<li>Virtual Machine becomes a solution for this issue by providing a new virtual system on the original system you have. However, this solution is not always ideal as it will takes up a large part of your memory resources, leading to a much slower operation. Besides, because Virtual Machine is a complete system, it contains many redundant operations which we actually don’t need.</li>
 <li>Basing on these drawbacks of Virtual Machine, Linux Containers (LXC) were developed. LXC dose not provide a complete operating system as Virtual Machine, it just isolates applications from the infrastructure can provide an environment container for it. Compared with Virtual Machine, it takes much less resources and ensures a faster start-up.</li>
 </ul>
 <h4 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h4><ul>
 <li><a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker</a> is a popular Linux container solution. It helps to package the application together with its dependencies within a image file. By runing this image file, a virtual container will be created and an isolated runing environment will be created.</li>
 </ul>
-<p><img src="https://i2.wp.com/blog.docker.com/wp-content/uploads/Are-containers-..-vms-image-2-1024x759.png?ssl=1" alt="docker"></p>
+<p><img src="https://i2.wp.com/blog.docker.com/wp-content/uploads/Are-containers-..-vms-image-2-1024x759.png?ssl=1" alt="docker"> </p>
 <a id="more"></a>
+<p>Image ref: <a href="https://i2.wp.com/blog.docker.com/wp-content/uploads/Are-containers-..-vms-image-2-1024x759.png?ssl=1" target="_blank" rel="noopener">https://i2.wp.com/blog.docker.com/wp-content/uploads/Are-containers-..-vms-image-2-1024x759.png?ssl=1</a></p>
+<!-- more -->
 <h4 id="How-to-setup-Docker"><a href="#How-to-setup-Docker" class="headerlink" title="How to setup Docker"></a>How to setup Docker</h4><ul>
 <li><p>Docker is platform-agnostic, so the setting up process will be very similar among Ubuntu/Mac/Windows etc.</p>
 </li>
