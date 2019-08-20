@@ -218,9 +218,7 @@
     
     <section class="article-body markdown-body">
         
-        <ul>
-<li>HTTP is a stateless protocal. Requests are independent each time which ensures a good efficiency. To share data among all pages within a same hostname, we need session and cookie.</li>
-</ul>
+        <p>HTTP is a stateless protocal. Requests are independent each time which ensures a good efficiency. To share data among all pages within a same hostname, we need session and cookie.</p>
 <h4 id="Cookie-and-Session"><a href="#Cookie-and-Session" class="headerlink" title="Cookie and Session"></a>Cookie and Session</h4><ul>
 <li>Client send a http request to server.</li>
 <li>Server receive the http request, create a session and send a http response back to clinet. Within the header of this response, set-cookie header is included, sessionId is included as well.</li>
@@ -236,31 +234,14 @@
 <li>On subsequent requests, this token will be sent within request headers.</li>
 <li>Client get the token sent by client, decode it and validate it.</li>
 </ul>
-<h5 id="Public-Key-encoding"><a href="#Public-Key-encoding" class="headerlink" title="Public Key encoding"></a>Public Key encoding</h5><ul>
-<li>Client send a login request</li>
-<li>Server response a public key to user</li>
-<li>Client use this public key to encode their credentials, and send the encodec credentials to server.</li>
-<li>Server decode the credentials by using its private key, and validate this credentials.</li>
-<li>Server send back the validation result.</li>
-</ul>
-<h4 id="Man-in-middle-Attack"><a href="#Man-in-middle-Attack" class="headerlink" title="Man-in-middle Attack"></a>Man-in-middle Attack</h4><ul>
-<li>Hacker pretends to be the server and send fake public key to users.</li>
-<li>As user trying to encode their credentials by using this fake publica key and send back to server, the hacker will get users request and decode it to get user’s credentials.</li>
-<li>Then login to the server by using usr’s credentials.</li>
-</ul>
-<h4 id="RSA-KEY-fingerprint"><a href="#RSA-KEY-fingerprint" class="headerlink" title="RSA KEY fingerprint"></a>RSA KEY fingerprint</h4><ul>
-<li>Warning users that the server could not garunteed to be the real server, do you still want to continue connecting or not?</li>
-</ul>
-<h4 id="Login-with-public-key-automatically"><a href="#Login-with-public-key-automatically" class="headerlink" title="Login with public key automatically"></a>Login with public key automatically</h4><ul>
-<li>Client manully add their public key to server. On server side, it stores users’ public keys as authorized keys.</li>
-<li>Client send a login request to server. </li>
-<li>Server get user’s request, and generate a random number R. R will be encoded by user’s public key (authorized key) and send back to users.</li>
-<li>User get the response, decode the string by using its cooresponding private key.</li>
-<li>Client uses MD5 algorithm to encript R &amp; Session key, generating Digest 1 and send to server.</li>
-<li>Server will also generate a Digest 2 by using the same algorithm to encript the same session key and random number R.</li>
-<li>If digest 1 is the same as digest 2, server will proccess the request.</li>
-</ul>
-
+        
+        <p class="article-more-link">
+            <a href="/2019/08/19/Sesson-Cookie-Token/#more">
+                <span class="vm">More...</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
         
     </section>
 </article>

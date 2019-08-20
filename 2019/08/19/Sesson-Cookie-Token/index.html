@@ -11,7 +11,7 @@
     <meta name="author" content="Luchen">
     <meta name="version" content="1.0.0">
     <meta name="keywords" content>
-    <meta name="description" content="HTTP is a stateless protocal. Requests are independent each time which ensures a good efficiency. To share data among all pages within a same hostname, we need session and cookie.Cookie and SessionClient send a http request to server.Server r...">
+    <meta name="description" content="HTTP is a stateless protocal. Requests are independent each time which ensures a good efficiency. To share data among all pages within a same hostname, we need session and cookie.Cookie and SessionClient send a http request to server.Server rec...">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 
@@ -71,7 +71,7 @@
         
 
         
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Cookie-and-Session"><span class="toc-number">1.</span> <span class="toc-text">Cookie and Session</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Token"><span class="toc-number">2.</span> <span class="toc-text">Token</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Public-Key-encoding"><span class="toc-number">2.1.</span> <span class="toc-text">Public Key encoding</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Man-in-middle-Attack"><span class="toc-number">3.</span> <span class="toc-text">Man-in-middle Attack</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RSA-KEY-fingerprint"><span class="toc-number">4.</span> <span class="toc-text">RSA KEY fingerprint</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Login-with-public-key-automatically"><span class="toc-number">5.</span> <span class="toc-text">Login with public key automatically</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Cookie-and-Session"><span class="toc-number">1.</span> <span class="toc-text">Cookie and Session</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Token"><span class="toc-number">2.</span> <span class="toc-text">Token</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Public-Key-encoding"><span class="toc-number">2.1.</span> <span class="toc-text">Public Key encoding</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Man-in-the-middle-Attack"><span class="toc-number">3.</span> <span class="toc-text">Man-in-the-middle Attack</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RSA-KEY-fingerprint"><span class="toc-number">4.</span> <span class="toc-text">RSA KEY fingerprint</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Login-with-public-key-automatically"><span class="toc-number">5.</span> <span class="toc-text">Login with public key automatically</span></a></li></ol>
         
     </div>
 </aside>
@@ -106,9 +106,7 @@
     
     <section class="article-body markdown-body">
         
-        <ul>
-<li>HTTP is a stateless protocal. Requests are independent each time which ensures a good efficiency. To share data among all pages within a same hostname, we need session and cookie.</li>
-</ul>
+        <p>HTTP is a stateless protocal. Requests are independent each time which ensures a good efficiency. To share data among all pages within a same hostname, we need session and cookie.</p>
 <h4 id="Cookie-and-Session"><a href="#Cookie-and-Session" class="headerlink" title="Cookie and Session"></a>Cookie and Session</h4><ul>
 <li>Client send a http request to server.</li>
 <li>Server receive the http request, create a session and send a http response back to clinet. Within the header of this response, set-cookie header is included, sessionId is included as well.</li>
@@ -124,6 +122,8 @@
 <li>On subsequent requests, this token will be sent within request headers.</li>
 <li>Client get the token sent by client, decode it and validate it.</li>
 </ul>
+<a id="more"></a>
+
 <h5 id="Public-Key-encoding"><a href="#Public-Key-encoding" class="headerlink" title="Public Key encoding"></a>Public Key encoding</h5><ul>
 <li>Client send a login request</li>
 <li>Server response a public key to user</li>
@@ -131,7 +131,7 @@
 <li>Server decode the credentials by using its private key, and validate this credentials.</li>
 <li>Server send back the validation result.</li>
 </ul>
-<h4 id="Man-in-middle-Attack"><a href="#Man-in-middle-Attack" class="headerlink" title="Man-in-middle Attack"></a>Man-in-middle Attack</h4><ul>
+<h4 id="Man-in-the-middle-Attack"><a href="#Man-in-the-middle-Attack" class="headerlink" title="Man-in-the-middle Attack"></a>Man-in-the-middle Attack</h4><ul>
 <li>Hacker pretends to be the server and send fake public key to users.</li>
 <li>As user trying to encode their credentials by using this fake publica key and send back to server, the hacker will get users request and decode it to get user’s credentials.</li>
 <li>Then login to the server by using usr’s credentials.</li>
