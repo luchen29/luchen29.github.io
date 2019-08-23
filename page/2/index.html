@@ -7,7 +7,7 @@
 
     
 
-    <title>Archives: 2019 | Luchen</title>
+    <title>Luchen</title>
     <meta name="author" content="Luchen">
     <meta name="version" content="1.0.0">
     <meta name="keywords" content>
@@ -37,7 +37,7 @@
 
     <nav id="nav-inner" class="nav-inner">
         
-            <a class="nav-item" href="/">
+            <a class="nav-item active" href="/">
                 <span class="nav-text">Home</span>
             </a>
         
@@ -49,7 +49,7 @@
                 <span class="nav-text">Projects</span>
             </a>
         
-            <a class="nav-item active" href="/archives">
+            <a class="nav-item" href="/archives">
                 <span class="nav-text">Archives</span>
             </a>
         
@@ -190,237 +190,150 @@
 </header>
 
         <div id="content" class="content">
-
-
+    <article class="article" itemscope itemprop="blogPost">
     
-    
-    
-    
-    
-    <section class="archives-wrap">
-    <div class="archive-year-wrap">
-    <a href="/archives/2019" class="page-hd">
-        2019
-    </a>
-    </div>
-    <ol class="archives">
-    
-
-    <li class="archive-section-item">
+    <header class="article-header">
         
-<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/08/22/Java03/">Java03</a>
-            <span class="archive-article-date">
-                (<a class="article-date" href="/archives/2019/08">
-    
-    <time datetime="2019-08-23T05:25:03.000Z" itemprop="datePublished">8/22</time>
-</a>
-)
-            </span>
-        </header>
-    </div>
-</article>
-    </li>
-
-    
-    
-
-    <li class="archive-section-item">
+        <h1 itemprop="name">
+            <a href="/2019/08/14/Storing-media-files-in-GCS/">Store Media Files On Google Cloud Storage</a>
+        </h1>
         
-<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/08/22/Java02/">Java02</a>
-            <span class="archive-article-date">
-                (<a class="article-date" href="/archives/2019/08">
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/page/2/index.html">
     
-    <time datetime="2019-08-23T04:18:21.000Z" itemprop="datePublished">8/22</time>
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-14T16:46:38.000Z" itemprop="datePublished">2019-08-14</time>
 </a>
-)
-            </span>
-        </header>
-    </div>
-</article>
-    </li>
 
-    
-    
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Cloud/">Cloud</a>, <a class="article-tag-link" href="/tags/GCS/">GCS</a>, <a class="article-tag-link" href="/tags/Learning/">Learning</a>, <a class="article-tag-link" href="/tags/Object-Storage/">Object Storage</a>
+</div>
 
-    <li class="archive-section-item">
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
         
-<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/08/22/Java01/">Java01</a>
-            <span class="archive-article-date">
-                (<a class="article-date" href="/archives/2019/08">
-    
-    <time datetime="2019-08-23T03:09:17.000Z" itemprop="datePublished">8/22</time>
-</a>
-)
-            </span>
-        </header>
-    </div>
-</article>
-    </li>
+        <h4 id="1-Difference-between-Object-Storage-Database-and-File-System"><a href="#1-Difference-between-Object-Storage-Database-and-File-System" class="headerlink" title="1. Difference between Object Storage, Database and File System"></a>1. Difference between Object Storage, Database and File System</h4><ul>
+<li><p>Object Storage: Each piece of data is stored as an object with no tree-shape index. Datas are searched by using unique address/ path, which ensures a higher efficiency. </p>
+</li>
+<li><p>File System: Data are stored as a piece of information in folder, to help organize it among all other data. </p>
+</li>
+</ul>
+<h4 id="2-Advantages-of-using-Object-Storage-Service"><a href="#2-Advantages-of-using-Object-Storage-Service" class="headerlink" title="2. Advantages of using Object Storage Service"></a>2. Advantages of using Object Storage Service</h4><ul>
+<li>a. Highly Durable: Most of the Object Storage Service (e.g. GCS, Amazon S3 + CloudFront) are designed for a very high (~99.99999999%) durability. Datas are redundantly backed up, which ensures a greate data integrity.</li>
+<li>b. Highly Avaliable: All storage class offer high avaliablity around the world.</li>
+<li>c. Highly Scalable: Distributd storage.</li>
+<li>d. Inexpensive: Nearly free. Good choise to store unstructured media files like images, videos ets.</li>
+</ul>
+<h4 id="3-General-idea-of-how-to-send-images-to-GCS"><a href="#3-General-idea-of-how-to-send-images-to-GCS" class="headerlink" title="3. General idea of how to send images to GCS."></a>3. General idea of how to send images to GCS.</h4><ul>
+<li>From the backend side, after we got the request from corresponding URL, we need to add a middleware <code>multer</code> to store the object first and then post to GCS. Therefore, the router handler should be somthing like: <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">router.post(<span class="string">'&lt;YOUR_TARGET_URL&gt;'</span>, multer.single(<span class="string">'&lt;INPUT_FIELD_NAME&gt;'</span>), gcsMiddlewares.sendUploadToGCS, image_controller.addImageToGCS)</span><br></pre></td></tr></table></figure>
 
-    
-    
-
-    <li class="archive-section-item">
+</li>
+</ul>
         
-<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/08/19/Sesson-Cookie-Token/">Sesson, Cookie, Token</a>
-            <span class="archive-article-date">
-                (<a class="article-date" href="/archives/2019/08">
-    
-    <time datetime="2019-08-20T00:09:54.000Z" itemprop="datePublished">8/19</time>
-</a>
-)
-            </span>
-        </header>
-    </div>
-</article>
-    </li>
-
-    
-    
-
-    <li class="archive-section-item">
+        <p class="article-more-link">
+            <a href="/2019/08/14/Storing-media-files-in-GCS/#more">
+                <span class="vm">More...</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
         
-<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/08/19/Docker/">Docker</a>
-            <span class="archive-article-date">
-                (<a class="article-date" href="/archives/2019/08">
-    
-    <time datetime="2019-08-19T20:14:05.000Z" itemprop="datePublished">8/19</time>
-</a>
-)
-            </span>
-        </header>
-    </div>
-</article>
-    </li>
-
-    
-    
-
-    <li class="archive-section-item">
         
-<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/08/18/Design-Pattern/">Design Pattern</a>
-            <span class="archive-article-date">
-                (<a class="article-date" href="/archives/2019/08">
-    
-    <time datetime="2019-08-19T05:19:38.000Z" itemprop="datePublished">8/18</time>
-</a>
-)
-            </span>
-        </header>
-    </div>
+    </section>
 </article>
-    </li>
 
-    
-    
 
-    <li class="archive-section-item">
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
         
-<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/08/18/Java-based-event-ticket-recommendation/">Java-based Event Ticket Recommendation</a>
-            <span class="archive-article-date">
-                (<a class="article-date" href="/archives/2019/08">
-    
-    <time datetime="2019-08-19T02:27:42.000Z" itemprop="datePublished">8/18</time>
-</a>
-)
-            </span>
-        </header>
-    </div>
-</article>
-    </li>
-
-    
-    
-
-    <li class="archive-section-item">
+        <h1 itemprop="name">
+            <a href="/2019/08/13/React-Ref/">React Ref</a>
+        </h1>
         
-<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/08/18/Authentication/">Authentication</a>
-            <span class="archive-article-date">
-                (<a class="article-date" href="/archives/2019/08">
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/page/2/index.html">
     
-    <time datetime="2019-08-18T20:07:59.000Z" itemprop="datePublished">8/18</time>
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-13T22:54:40.000Z" itemprop="datePublished">2019-08-13</time>
 </a>
-)
-            </span>
-        </header>
-    </div>
-</article>
-    </li>
 
-    
-    
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/React/">React</a>
+</div>
 
-    <li class="archive-section-item">
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
         
-<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/08/17/Golang-based-Around-service-backend-handler/">Golang-based Around Service Backend Handler</a>
-            <span class="archive-article-date">
-                (<a class="article-date" href="/archives/2019/08">
-    
-    <time datetime="2019-08-18T01:52:13.000Z" itemprop="datePublished">8/17</time>
-</a>
-)
-            </span>
-        </header>
-    </div>
-</article>
-    </li>
-
-    
-    
-
-    <li class="archive-section-item">
+        <h3 id="1-何时使用-Ref"><a href="#1-何时使用-Ref" class="headerlink" title="1. 何时使用 Ref"></a>1. 何时使用 Ref</h3><p>通常我们可以通过props进行父子Component之间的数据传递，而使用Ref可以独立于Dataflow进行父子Component之间的interaction。</p>
         
-<article class="archive-article archive-type-post">
-    <div class="archive-article-inner">
-        <header class="archive-article-header">
-            <a class="archive-article-link" href="/2019/08/15/React-High-Order-Component/">React High Order Component</a>
-            <span class="archive-article-date">
-                (<a class="article-date" href="/archives/2019/08">
-    
-    <time datetime="2019-08-16T03:18:26.000Z" itemprop="datePublished">8/15</time>
-</a>
-)
-            </span>
-        </header>
-    </div>
+        <p class="article-more-link">
+            <a href="/2019/08/13/React-Ref/#more">
+                <span class="vm">More...</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </section>
 </article>
-    </li>
 
 
-</ol></section>
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/08/13/hello-world/">Hello World</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/page/2/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-13T22:36:16.341Z" itemprop="datePublished">2019-08-13</time>
+</a>
+
+            
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2>
+        
+        <p class="article-more-link">
+            <a href="/2019/08/13/hello-world/#more">
+                <span class="vm">More...</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </section>
+</article>
+
 
 
 
 <nav class="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2019/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/page/2/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
 </nav>
+
 
 </div>
         <footer class="footer">

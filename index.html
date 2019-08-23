@@ -195,6 +195,239 @@
     <header class="article-header">
         
         <h1 itemprop="name">
+            <a href="/2019/08/22/Java03/">Java03</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-23T05:25:03.000Z" itemprop="datePublished">2019-08-22</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Java/">Java</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="Class-and-Object"><a href="#Class-and-Object" class="headerlink" title="Class and Object"></a>Class and Object</h3><h4 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h4><ul>
+<li>Object can be anything, it contains:</li>
+</ul>
+<ol>
+<li>states 状态 (attribute, properties, characteristics…)</li>
+<li>behavior 行为</li>
+</ol>
+<h4 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h4><ul>
+<li>Java class describes a the state and behavior requirements of a set of objects of the same kind. </li>
+<li>class 是个描述，描述清楚想要的 requirement是什么.</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// modifier class name-of-class</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123; </span><br><span class="line">    <span class="comment">// declair params -- states</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> vin; <span class="comment">// instance-variable / object-variable 每个obj都有自己独立的一份</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> speed; <span class="comment">// instance-variable / object-variable 每个obj都有自己独立的一份</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// constructor functions </span></span><br><span class="line">    <span class="comment">// 用来进行初始化, 在 object创建的时候调用; 没有返回值 名字必须和class名字相同;</span></span><br><span class="line">    <span class="comment">// 如果没有constructor, java会帮忙把所有 parameters都 init成 default值</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Car</span> <span class="params">(<span class="keyword">int</span> vinNumber)</span> </span>&#123;  </span><br><span class="line">        vin = vinNumber;</span><br><span class="line">        speed = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// overload 重载； 同一个接口 不同解决方案</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Car</span> <span class="params">(<span class="keyword">int</span> vinNumber, <span class="keyword">int</span> initialSpeed)</span> </span>&#123; </span><br><span class="line">        vin = vinNumber;</span><br><span class="line">        <span class="keyword">if</span> (initialSpeed &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            speed = initialSpeed;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            speed = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// functions -- behavior</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accelerate</span><span class="params">(<span class="keyword">int</span> increment)</span> </span>&#123; <span class="comment">// instance-methods</span></span><br><span class="line">        <span class="keyword">if</span> (increment &lt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125; </span><br><span class="line">        speed = speed + increment;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">decelerate</span><span class="params">(<span class="keyword">int</span> increment)</span> </span>&#123; <span class="comment">// instance-methods</span></span><br><span class="line">        <span class="keyword">if</span> (increment &lt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">if</span> (speed - increment &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            speed = <span class="number">0</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            speed = speed - increment;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 先置为 private， 再定义一个public的方法 防止用户修改</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">vin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> vin;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">speed</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> speed;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="comment">// 等号左侧 进行声明: 变量类型/刚刚定义的那个类名 变量名; 类比 int a / Car car</span></span><br><span class="line">        <span class="comment">// 等号右侧 进行instantiation: 创建了一个 Car对象, 传入参数</span></span><br><span class="line">        <span class="comment">// 等号 进行赋值: 这里把右侧新建object的地址, 赋给左侧的 car变量</span></span><br><span class="line">        Car car1 = <span class="keyword">new</span> Car(<span class="number">123</span>); <span class="comment">// 等号左侧是 引用Ref; 等号右侧是 实例Object; </span></span><br><span class="line">        Car car2 = car1; <span class="comment">// car1和 car2是两个引用, 存的都是同一个 Object的地址; </span></span><br><span class="line">        System.out.println(car.vin()); <span class="comment">// 调用刚刚创建的 名字叫做 car的 object中的 vin method</span></span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Java 中所有通过 new创建出来的 Objects都存储在 heap中.</li>
+</ul>
+<h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><ul>
+<li>Creating an array is similar to creating an object.</li>
+<li>数组是线性结构，每个元素在内存中紧密相连，长度不能变化</li>
+<li>想要动态变化数组大小，使用ArrayList</li>
+<li>数组中存储的所有元素，必须都是同一类型！<h4 id="Create-an-array"><a href="#Create-an-array" class="headerlink" title="Create an array"></a>Create an array</h4></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// if know each element</span></span><br><span class="line"><span class="keyword">int</span>[] array = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;; </span><br><span class="line"></span><br><span class="line"><span class="comment">// if not, create an integer array with 4 integers &#123;0,0,0,0&#125;;</span></span><br><span class="line"><span class="keyword">int</span>[] array1 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">4</span>]; </span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; array1.length; i++)&#123;</span><br><span class="line">    array[i] = i + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] insertAtIndex(<span class="keyword">int</span>[] array, <span class="keyword">int</span> target, <span class="keyword">int</span> index) &#123;</span><br><span class="line">    <span class="keyword">int</span>[] arrayNew = <span class="keyword">new</span> <span class="keyword">int</span>[array.length+<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; index; i++) &#123;</span><br><span class="line">        arrayNew[i] = array[i];</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">for</span> (i = index; i &lt; arrayNew.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i == target) &#123;</span><br><span class="line">            arrayNew[i] = target;</span><br><span class="line">        &#125; <span class="keyword">else</span> (</span><br><span class="line">            arrayNew[i] = array[i-<span class="number">1</span>];</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arrayNew</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Multidimensional-array"><a href="#Multidimensional-array" class="headerlink" title="Multidimensional array"></a>Multidimensional array</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// if know each element</span></span><br><span class="line"><span class="keyword">int</span>[][] matrix = &#123;&#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>&#125;,&#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>&#125;,&#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>&#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// if not,</span></span><br><span class="line"><span class="keyword">int</span>[][] matrix = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>][<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>[][] matrix = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>][]; <span class="comment">// create一个 array里面包含三个 reference，每个 ref都先暂时 ref到 null</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.length; i++)&#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">        matrix[i] <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>&#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i == <span class="number">1</span>) &#123;</span><br><span class="line">        matrix[i] <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">2</span>,<span class="number">3</span>&#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i == <span class="number">2</span>) &#123;</span><br><span class="line">        matrix[i] <span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">2</span>&#125;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">GetSum</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; matrix.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; matrix[i].length; j++) &#123;</span><br><span class="line">            sum += matrix[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/08/22/Java02/">Java02</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-23T04:18:21.000Z" itemprop="datePublished">2019-08-22</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Java/">Java</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="Control-Flow-and-Methods"><a href="#Control-Flow-and-Methods" class="headerlink" title="Control Flow and Methods"></a>Control Flow and Methods</h3><h4 id="Conditional"><a href="#Conditional" class="headerlink" title="Conditional"></a>Conditional</h4><ul>
+<li>if…else<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (xxx) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (xxx) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (yyy) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h4><ul>
+<li><p>for </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;<span class="number">10</span>; i++) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>[] arr = &#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i : arr) &#123;   <span class="comment">//for each element in arr</span></span><br><span class="line">    ... </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>while</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (condition) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="Break-and-Continue"><a href="#Break-and-Continue" class="headerlink" title="Break and Continue"></a>Break and Continue</h4><ul>
+<li>break: jumps out of entire loop</li>
+<li>continue: skil current iteration</li>
+</ul>
+<h3 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h3><h4 id="Define-a-function"><a href="#Define-a-function" class="headerlink" title="Define a function"></a>Define a function</h4><ul>
+<li><p>modifier 函数在哪些地方可见/可调用: public(全局可见)/ protected/ private</p>
+</li>
+<li><p>return type: 输出类型</p>
+</li>
+<li><p>method name: 函数名</p>
+</li>
+<li><p>input parameters: 输入变量及类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span> <span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// modifier return-type name (input parameters) &#123;</span></span><br><span class="line"><span class="comment">//    ...</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>function signature: method-name + input-parameter-type (用来判断函数的唯一性)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minFunction</span><span class="params">(<span class="keyword">int</span> n1, <span class="keyword">double</span> n2)</span> </span>&#123; <span class="comment">// minFunction (int, double)</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minFunction</span><span class="params">(<span class="keyword">int</span> n1, <span class="keyword">double</span> n3)</span> </span>&#123;  <span class="comment">// Error: Duplicate method: minFunction (int, double) </span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minFunction</span><span class="params">(<span class="keyword">double</span> n2, <span class="keyword">int</span> n1)</span> </span>&#123;  <span class="comment">// minFunction (double, int) 和第一个不同</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果函数名相同，但是input不同: 叫做 Overloding重载 –&gt; 简化函数</p>
+</li>
+</ul>
+<h4 id="Call-a-funtion"><a href="#Call-a-funtion" class="headerlink" title="Call a funtion"></a>Call a funtion</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> sum = add(<span class="number">5</span>, <span class="number">6</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="Example-Check-Gold"><a href="#Example-Check-Gold" class="headerlink" title="Example Check Gold"></a>Example Check Gold</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    checkGold(<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">checkGold</span><span class="params">(<span class="keyword">int</span> limit)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">4</span>; i &lt;= limit; i += <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (canDivide(i)) &#123;</span><br><span class="line">            System.out.println(i + <span class="string">"can be divided into two primes."</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> (</span><br><span class="line">            System.out.println(<span class="string">"Fields award!"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">canDivide</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n/<span class="number">2</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (ifPrime(i) &amp;&amp; isPrime(n-i)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i * i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n % <span class="number">1</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/08/22/Java01/">Java01</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-23T03:09:17.000Z" itemprop="datePublished">2019-08-22</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Java/">Java</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h4 id="Java仅有8种数据类型-其余均为class"><a href="#Java仅有8种数据类型-其余均为class" class="headerlink" title="Java仅有8种数据类型, 其余均为class"></a>Java仅有8种数据类型, 其余均为class</h4><ul>
+<li>byte: 可以用来表示年龄 Max: 0111,1111 (127)/ Min: 1000,0000 (-128) (对应正数的二进制取反+1, 比最大正数多一个).</li>
+<li>short: 16-bit (最左一位表示正负)</li>
+<li>int: 32-bit/ 4-byte (很多情况下不够用, 可能会溢出)</li>
+<li>long: 64-bit/ 8-byte (一般情况下溢出不了)</li>
+<li>float: 32-bit float (10^38, 最高分辨率10^-46) float是科学计数法, 含有指数位, 所以比int能表示的大得多</li>
+<li>double: 64-bit float (更常用)</li>
+<li>char: 16-bit (能表示2^16个字符, 涵盖主流常见字符集) </li>
+<li>boolean: 1-byte true/ false<br>1-byte 是计算机读写的最小基本单元</li>
+</ul>
+<h4 id="Java的取整"><a href="#Java的取整" class="headerlink" title="Java的取整"></a>Java的取整</h4><ul>
+<li>结果的精度以参与运算中精度较高的那个为准</li>
+</ul>
+<h4 id="Char"><a href="#Char" class="headerlink" title="Char"></a>Char</h4><ul>
+<li>和 Python不同，需要区分单引号和双引号</li>
+<li>Char 只能表示一个字符，必须使用单引号</li>
+<li>String 用来表示任意长度的字符，必须使用双引号</li>
+</ul>
+<h4 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h4><ul>
+<li>默认表示十进制</li>
+<li>在左侧加上‘0b’表示二进制</li>
+<li>在左侧加上‘0’ 表示八进制</li>
+<li>在左侧加上‘0x’表示十六进制</li>
+</ul>
+<h4 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h4><ul>
+<li>“abc” + 1 + 7 –&gt; “abc17”</li>
+<li>1 + 7 + “abc” –&gt; “8abc”</li>
+</ul>
+<h4 id="Operators"><a href="#Operators" class="headerlink" title="Operators"></a>Operators</h4><ul>
+<li><p>Postfix: i++ / i– (变量本身加1, 表达式是增加之前的值)</p>
+</li>
+<li><p>Unary: ++i / –i (变量本身加1, 表达式是增加之后的值) / +i(正)/ -i(负)/ ~i(按位取反)/ !i(逻辑取反)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x1 = <span class="number">7</span>; </span><br><span class="line"><span class="keyword">int</span> x2 = <span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> y1 = x1++; <span class="comment">// 可以拆成两句话： int y1 = x1; x1++;</span></span><br><span class="line"><span class="keyword">int</span> y2 = ++x2; <span class="comment">// 可以拆成两句话： x2++; int y2 = x2;</span></span><br><span class="line">System.out.println(x1); <span class="comment">// 8</span></span><br><span class="line">System.out.println(x2); <span class="comment">// 8</span></span><br><span class="line">System.out.println(y1); <span class="comment">// 7 </span></span><br><span class="line">System.out.println(y2); <span class="comment">// 8</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Multiplicative: * / %</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x = -<span class="number">7</span></span><br><span class="line"><span class="keyword">int</span> y = <span class="number">3</span></span><br><span class="line">System.out.println(x % y) <span class="comment">// -1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>additive : + / -</p>
+</li>
+<li><p>shift &lt;&lt; / &gt;&gt; (算术右移) / &gt;&gt;&gt; (逻辑右移 高位补0)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x = <span class="number">3</span> <span class="comment">// 00000011</span></span><br><span class="line"><span class="keyword">int</span> y = x &lt;&lt; <span class="number">2</span>; <span class="comment">// 左移两位 00001100</span></span><br><span class="line"><span class="keyword">int</span> z = x &gt;&gt; <span class="number">2</span>; <span class="comment">// 右移两位 00000001</span></span><br><span class="line">System.out.println(y) <span class="comment">// 12</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>relational: &lt; / &gt; / &lt;= / &gt;= / instanceof(左边Object 右边类, 表示左边Object是不是类的instance)</p>
+</li>
+<li><p>equality: == / !=</p>
+</li>
+<li><p>bitwise AND:  x &amp; y (x的二进制int 和y的二进制int 按位取与) </p>
+</li>
+<li><p>bitwise exclusive OR: x ^ y (x的二进制int 和y的二进制int 按位取异或 不同为真相同为假)</p>
+</li>
+<li><p>bitwise inclusive OR: x | y (x的二进制int 和y的二进制int 按位取或)</p>
+</li>
+<li><p>logical AND: x &amp;&amp; y (x和y都是boolean 逻辑取与)</p>
+</li>
+<li><p>logical OR: x || y (x和y都是boolean 逻辑取或)</p>
+</li>
+<li><p>ternary (三步运算符): x = 1 &gt; 0 ? 7 : 6 (冒号两侧必须为相同数据类型)</p>
+</li>
+<li><p>assignment: =/ +=/ -=/ …</p>
+</li>
+</ul>
+<h4 id="Type-Conversion"><a href="#Type-Conversion" class="headerlink" title="Type Conversion"></a>Type Conversion</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>　x = <span class="number">7</span>;</span><br><span class="line"><span class="keyword">double</span> y = (<span class="keyword">double</span>)x; <span class="comment">// 显性类型转化 既可以从低精度到高精度，也可以从高精度到低精度</span></span><br><span class="line">System.out.println(y); <span class="comment">// 7.0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> y = <span class="number">7.1</span>;</span><br><span class="line"><span class="keyword">int</span> x = (<span class="keyword">int</span>)y;</span><br><span class="line">System.out.println(y); <span class="comment">// 7</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> x = <span class="number">7</span>;</span><br><span class="line"><span class="keyword">double</span> y = x; <span class="comment">// 隐性类型转化 只能从低精度到高精度</span></span><br><span class="line">System.out.println(y); <span class="comment">// 7.0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> x = <span class="number">7.1</span>;</span><br><span class="line"><span class="keyword">int</span> y = x; <span class="comment">// Error 隐性类型转化 不能从高精度到低精度</span></span><br><span class="line">System.out.println(y);</span><br></pre></td></tr></table></figure>
+
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
             <a href="/2019/08/19/Sesson-Cookie-Token/">Sesson, Cookie, Token</a>
         </h1>
         
@@ -545,145 +778,11 @@
 </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/08/14/Storing-media-files-in-GCS/">Store Media Files On Google Cloud Storage</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-14T16:46:38.000Z" itemprop="datePublished">2019-08-14</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Cloud/">Cloud</a>, <a class="article-tag-link" href="/tags/GCS/">GCS</a>, <a class="article-tag-link" href="/tags/Learning/">Learning</a>, <a class="article-tag-link" href="/tags/Object-Storage/">Object Storage</a>
-</div>
 
 
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h4 id="1-Difference-between-Object-Storage-Database-and-File-System"><a href="#1-Difference-between-Object-Storage-Database-and-File-System" class="headerlink" title="1. Difference between Object Storage, Database and File System"></a>1. Difference between Object Storage, Database and File System</h4><ul>
-<li><p>Object Storage: Each piece of data is stored as an object with no tree-shape index. Datas are searched by using unique address/ path, which ensures a higher efficiency. </p>
-</li>
-<li><p>File System: Data are stored as a piece of information in folder, to help organize it among all other data. </p>
-</li>
-</ul>
-<h4 id="2-Advantages-of-using-Object-Storage-Service"><a href="#2-Advantages-of-using-Object-Storage-Service" class="headerlink" title="2. Advantages of using Object Storage Service"></a>2. Advantages of using Object Storage Service</h4><ul>
-<li>a. Highly Durable: Most of the Object Storage Service (e.g. GCS, Amazon S3 + CloudFront) are designed for a very high (~99.99999999%) durability. Datas are redundantly backed up, which ensures a greate data integrity.</li>
-<li>b. Highly Avaliable: All storage class offer high avaliablity around the world.</li>
-<li>c. Highly Scalable: Distributd storage.</li>
-<li>d. Inexpensive: Nearly free. Good choise to store unstructured media files like images, videos ets.</li>
-</ul>
-<h4 id="3-General-idea-of-how-to-send-images-to-GCS"><a href="#3-General-idea-of-how-to-send-images-to-GCS" class="headerlink" title="3. General idea of how to send images to GCS."></a>3. General idea of how to send images to GCS.</h4><ul>
-<li>From the backend side, after we got the request from corresponding URL, we need to add a middleware <code>multer</code> to store the object first and then post to GCS. Therefore, the router handler should be somthing like: <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">router.post(<span class="string">'&lt;YOUR_TARGET_URL&gt;'</span>, multer.single(<span class="string">'&lt;INPUT_FIELD_NAME&gt;'</span>), gcsMiddlewares.sendUploadToGCS, image_controller.addImageToGCS)</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-        
-        <p class="article-more-link">
-            <a href="/2019/08/14/Storing-media-files-in-GCS/#more">
-                <span class="vm">More...</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/08/13/React-Ref/">React Ref</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-13T22:54:40.000Z" itemprop="datePublished">2019-08-13</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/React/">React</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h3 id="1-何时使用-Ref"><a href="#1-何时使用-Ref" class="headerlink" title="1. 何时使用 Ref"></a>1. 何时使用 Ref</h3><p>通常我们可以通过props进行父子Component之间的数据传递，而使用Ref可以独立于Dataflow进行父子Component之间的interaction。</p>
-        
-        <p class="article-more-link">
-            <a href="/2019/08/13/React-Ref/#more">
-                <span class="vm">More...</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/08/13/hello-world/">Hello World</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-13T22:36:16.341Z" itemprop="datePublished">2019-08-13</time>
-</a>
-
-            
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2>
-        
-        <p class="article-more-link">
-            <a href="/2019/08/13/hello-world/#more">
-                <span class="vm">More...</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </section>
-</article>
-
-
-
+<nav class="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+</nav>
 
 
 </div>
