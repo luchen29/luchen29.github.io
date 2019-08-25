@@ -195,6 +195,76 @@
     <header class="article-header">
         
         <h1 itemprop="name">
+            <a href="/2019/08/25/Leetcode-Practices-in-Python/">Leetcode Practices in Python</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/categories/Learning/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-25T21:54:36.000Z" itemprop="datePublished">2019-08-25</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Java/">Java</a>, <a class="article-tag-link" href="/tags/Leetcode/">Leetcode</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/08/25/Leetcode-Practices-in-Java/">Leetcode Practices in Java</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/categories/Learning/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-25T21:43:01.000Z" itemprop="datePublished">2019-08-25</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Java/">Java</a>, <a class="article-tag-link" href="/tags/Leetcode/">Leetcode</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h4 id="LC-704-Binary-Search-LaiCode-14-Classical-Binary-Search"><a href="#LC-704-Binary-Search-LaiCode-14-Classical-Binary-Search" class="headerlink" title="LC 704-Binary Search/ LaiCode 14-Classical Binary Search"></a>LC 704-Binary Search/ LaiCode 14-Classical Binary Search</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = nums.length - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// here must be &lt;= !!! otherwide handel singal number in array.</span></span><br><span class="line">        <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (target == nums[mid]) &#123;</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target &gt; nums[mid]) &#123;</span><br><span class="line">                left = mid  + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target &lt; nums[mid]) &#123;</span><br><span class="line">                right = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
             <a href="/2019/08/24/Java05/">Java05</a>
         </h1>
         
@@ -647,96 +717,6 @@
         
         
     </li></ul></section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/08/18/Authentication/">Authentication</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/categories/Learning/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-18T20:07:59.000Z" itemprop="datePublished">2019-08-18</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Authentication/">Authentication</a>, <a class="article-tag-link" href="/tags/Learning/">Learning</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h4 id="1-Token-based-authentication"><a href="#1-Token-based-authentication" class="headerlink" title="1. Token-based authentication"></a>1. Token-based authentication</h4><ul>
-<li>Users enter their log credentials (username + password).</li>
-<li>Server varifies the credentials -&gt; if correct -&gt; creates an encrypted and signed token, with a private key.</li>
-<li>On client side, stores the token returned from server.</li>
-<li>On subsequent requests, the token is decoded with the same private key -&gt; if valid, the request processed.</li>
-<li>Once the user logout the app, the token is destroyed on client-side, no interaction with server is necessary.</li>
-</ul>
-<h4 id="2-Session-based-authentication"><a href="#2-Session-based-authentication" class="headerlink" title="2. Session-based authentication"></a>2. Session-based authentication</h4><ul>
-<li>Users enter their log credentials (username + password).</li>
-<li>Server varifies the credentials -&gt; if correct -&gt; creates a session -&gt; return sessionID to user -&gt; store the session to database.</li>
-<li>On client side, stores the sessionID returned from server.</li>
-<li>On subsequent requests, the sessionID will be varified against the one stored in database -&gt; if match, request processed.</li>
-<li>Once the user logout the app, the session is destroyed on the server side.</li>
-</ul>
-<p><img src="https://cdn.auth0.com/blog/cookies-vs-tokens/cookie-token-auth.png" alt="token"></p>
-        
-        <p class="article-more-link">
-            <a href="/2019/08/18/Authentication/#more">
-                <span class="vm">More...</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/08/15/React-High-Order-Component/">React High Order Component</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/categories/Learning/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-16T03:18:26.000Z" itemprop="datePublished">2019-08-15</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/React/">React</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        
-        
-    </section>
 </article>
 
 
