@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+
+    
+
+    
+
+    <title>Java04 | Luchen</title>
+    <meta name="author" content="Luchen">
+    <meta name="version" content="1.0.0">
+    <meta name="keywords" content>
+    <meta name="description" content="123456789101112131415161718192021222324252627public class Student &amp;#123;    public int age;    private final String name;    private static String school;    private static final String GREETINGS = &#34;Hello&#34;;&amp;#125;// 函数名和类名一致 没有返回值public Student(Str...">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+    
+    <link rel="alternate" href="/atom.xml" title="Luchen" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/images/luchen.ico">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Luchen</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">Home</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/learning">
+                <span class="nav-text">Learning</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/projects">
+                <span class="nav-text">Projects</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">Archives</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">About</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Obj-amp-Ref"><span class="toc-number">1.</span> <span class="toc-text">Obj &amp; Ref</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Methods-amp-Fields"><span class="toc-number">2.</span> <span class="toc-text">Methods &amp; Fields</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Class-amp-Obj"><span class="toc-number">3.</span> <span class="toc-text">Class &amp; Obj</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Primitive-types-and-Class-types"><span class="toc-number">4.</span> <span class="toc-text">Primitive types and Class types:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#存在Stack-还是Heap？"><span class="toc-number">5.</span> <span class="toc-text">存在Stack 还是Heap？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Constructor"><span class="toc-number">6.</span> <span class="toc-text">Constructor:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#this"><span class="toc-number">7.</span> <span class="toc-text">this</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Null"><span class="toc-number">8.</span> <span class="toc-text">Null</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Static"><span class="toc-number">9.</span> <span class="toc-text">Static</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Access-modifier"><span class="toc-number">10.</span> <span class="toc-text">Access modifier</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Stacks-和-Heaps"><span class="toc-number">11.</span> <span class="toc-text">Stacks 和 Heaps</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            Java04
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/2019/08/23/Java04/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-24T00:09:27.000Z" itemprop="datePublished">2019-08-23</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Java/">Java</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String school;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String GREETINGS = <span class="string">"Hello"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 函数名和类名一致 没有返回值</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Getter</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Setter</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    System.out.println(GREETINGS + <span class="string">"! I'm "</span> + name + <span class="string">". I'm"</span> + age);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">welcome</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    System.out,println(<span class="string">"welcome to school!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Student student = <span class="keyword">new</span> Student(<span class="string">"Tom"</span>);</span><br><span class="line">        Student student2 = <span class="keyword">new</span> Student(<span class="string">"Jerry"</span>);</span><br><span class="line"></span><br><span class="line">        student1 = student2;</span><br><span class="line">        Student student3 = <span class="keyword">null</span>;</span><br><span class="line">        student1.setAge(<span class="number">18</span>);</span><br><span class="line">        student2.setAge(<span class="number">10</span>);</span><br><span class="line">        student1.sayHello();</span><br><span class="line">        student2.sayHello();</span><br><span class="line">        Student student3 = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            student3.sayHello();</span><br><span class="line">        &#125; <span class="keyword">catch</span>(NullPointerExceptions e) &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Obj-amp-Ref"><a href="#Obj-amp-Ref" class="headerlink" title="Obj &amp; Ref"></a>Obj &amp; Ref</h4><h4 id="Methods-amp-Fields"><a href="#Methods-amp-Fields" class="headerlink" title="Methods &amp; Fields"></a>Methods &amp; Fields</h4><h4 id="Class-amp-Obj"><a href="#Class-amp-Obj" class="headerlink" title="Class &amp; Obj"></a>Class &amp; Obj</h4><h4 id="Primitive-types-and-Class-types"><a href="#Primitive-types-and-Class-types" class="headerlink" title="Primitive types and Class types:"></a>Primitive types and Class types:</h4><ul>
+<li>Primitive 只有八种，其他所有都是 Class types</li>
+</ul>
+<h4 id="存在Stack-还是Heap？"><a href="#存在Stack-还是Heap？" class="headerlink" title="存在Stack 还是Heap？"></a>存在Stack 还是Heap？</h4><ul>
+<li>局部变量 - 存在 stack上</li>
+<li>成员变量(instance variable) - 存在 Heap上</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x1 = <span class="number">7</span>;</span><br><span class="line">        A a1 = <span class="keyword">new</span> A();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> x2 = <span class="number">8</span>;</span><br><span class="line">    A a2 = <span class="keyword">new</span> A();</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">7</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Constructor"><a href="#Constructor" class="headerlink" title="Constructor:"></a>Constructor:</h4><ul>
+<li>函数名与类名相同，大写字母开头</li>
+<li>没有return type</li>
+</ul>
+<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><ul>
+<li>指当前object</li>
+<li>如果instance variable 和 local variable 名字重名 就必须写<code>this.</code></li>
+</ul>
+<h4 id="Null"><a href="#Null" class="headerlink" title="Null"></a>Null</h4><ul>
+<li>An empty reference, point to no ref.</li>
+</ul>
+<h4 id="Static"><a href="#Static" class="headerlink" title="Static"></a>Static</h4><ul>
+<li>可以修饰 field 或 method， 说明这个field/ method是属于整个类的 而不单单是具体这个对象的。</li>
+<li>Static函数 只能访问 Static变量； </li>
+<li>非 Static函数 既可以访问 Static变量，也可以访问 非Static变量；<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        g(); <span class="comment">// g()可以直接调用</span></span><br><span class="line">        Test test = <span class="keyword">new</span> Test(); </span><br><span class="line">        test.f(); <span class="comment">// 想调用非静态f() 需要提前new一个Test的object-instance才能调用</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"aaa"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">g</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"bbb"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="Access-modifier"><a href="#Access-modifier" class="headerlink" title="Access modifier"></a>Access modifier</h4><ul>
+<li>public – 全局可见</li>
+<li>protected – 只有子类和同个package可见</li>
+<li>default – 只有同个package可见</li>
+<li>private – 只在同一个类里可见</li>
+</ul>
+<h4 id="Stacks-和-Heaps"><a href="#Stacks-和-Heaps" class="headerlink" title="Stacks 和 Heaps"></a>Stacks 和 Heaps</h4><ul>
+<li>Stack 存局部变量</li>
+<li>Heap 存new出来的成员变量 </li>
+<li>从Stack 到Heap 就是一个寻址的过程</li>
+</ul>
+
+        
+    </section>
+</article>
+
+
+
+<div class="comments">
+    <div id="comments"></div>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+    new Gitalk({
+        clientID: "7fbe80427f54741e289f",
+        clientSecret: "f34ed5fd92e54c9000bd37ba951948cb939deff5",
+        repo: "sanonz.github.io",
+        owner: "sanonz",
+        admin: ["sanonz"],
+        id: "2019/08/23/Java04",
+        distractionFreeMode: true,
+        title: "Java04",
+        body: "http://yoursite.com/2019/08/23/Java04/",
+        labels: ["Java"]
+    }).render('comments');
+    </script>
+</div>
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e4027971a230b210f4671f485b33846a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+            
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+        </script>
+    
+
+</body>
+</html>

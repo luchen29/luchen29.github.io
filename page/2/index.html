@@ -195,6 +195,94 @@
     <header class="article-header">
         
         <h1 itemprop="name">
+            <a href="/2019/08/17/Golang-based-Around-service-backend-handler/">Golang-based Around Service Backend Handler</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/page/2/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-18T01:52:13.000Z" itemprop="datePublished">2019-08-17</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Backend/">Backend</a>, <a class="article-tag-link" href="/tags/Golang/">Golang</a>, <a class="article-tag-link" href="/tags/Projects/">Projects</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="1-Project-will-be-implemented-on-GCP-Setting-up-our-instance-first"><a href="#1-Project-will-be-implemented-on-GCP-Setting-up-our-instance-first" class="headerlink" title="1. Project will be implemented on GCP. Setting up our instance first."></a>1. Project will be implemented on GCP. Setting up our instance first.</h3><ul>
+<li>Create a new project.</li>
+<li>Setup a new Firewall rule, enable request from all address. Set source IP as <code>&#39;0.0.0.0/0&#39;</code>; protocols and ports are set to be <code>tcp:9200,8080</code>.</li>
+<li>Create a new GCE instance, selet Ubuntu 18.04 system as image. Allow HTTP and HTTPS traffic. And don’r forget to set the Networking rule and add the new Firewall-rule-tag we’ve just created.</li>
+<li>Start the Compute Engine instance. Use <code>SSH</code> and open in browser window.</li>
+<li>Update the system and do all necessary configurations… (Installing all necessary packages: install software-properties-common, install golang, install vim, install git…)</li>
+</ul>
+<h3 id="2-Implement-the-initial-Golang-backend-handler"><a href="#2-Implement-the-initial-Golang-backend-handler" class="headerlink" title="2. Implement the initial Golang backend handler."></a>2. Implement the initial Golang backend handler.</h3><h4 id="2-1-Create-a-main-go-file-and-define-the-structure-for-Post-and-Location"><a href="#2-1-Create-a-main-go-file-and-define-the-structure-for-Post-and-Location" class="headerlink" title="2.1 Create a main.go file and define the structure for Post and Location."></a>2.1 Create a main.go file and define the structure for Post and Location.</h4><ul>
+<li>Import necessary packages: <code>&quot;encoding/json&quot;</code> for now.</li>
+<li>This backend handler need to handle the 1) Post request form the React frontend and 2) Location-based search request from frontend. Therefore, here we could set the Structure of both. Location:<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Location <span class="keyword">struct</span> &#123;</span><br><span class="line">    Lat <span class="keyword">float64</span> <span class="string">`json:"lat"`</span></span><br><span class="line">    Lon <span class="keyword">float64</span> <span class="string">`json:"lon"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+        
+        <p class="article-more-link">
+            <a href="/2019/08/17/Golang-based-Around-service-backend-handler/#more">
+                <span class="vm">More...</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/08/15/React-High-Order-Component/">React High Order Component</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/page/2/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-16T03:18:26.000Z" itemprop="datePublished">2019-08-15</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/React/">React</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
             <a href="/2019/08/14/Storing-media-files-in-GCS/">Store Media Files On Google Cloud Storage</a>
         </h1>
         

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+
+    
+
+    
+
+    <title>Java05 | Luchen</title>
+    <meta name="author" content="Luchen">
+    <meta name="version" content="1.0.0">
+    <meta name="keywords" content>
+    <meta name="description" content="Variables and scopesLocal variablesLocal variables are variables defined within a function.Local variables mush be initialized before use, no Java default value。Life time of local variables are within this method.Instance variables/ member va...">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+    
+    <link rel="alternate" href="/atom.xml" title="Luchen" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/images/luchen.ico">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Luchen</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">Home</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/learning">
+                <span class="nav-text">Learning</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/projects">
+                <span class="nav-text">Projects</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">Archives</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">About</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Variables-and-scopes"><span class="toc-number">1.</span> <span class="toc-text">Variables and scopes</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Local-variables"><span class="toc-number">1.1.</span> <span class="toc-text">Local variables</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Instance-variables-member-variables"><span class="toc-number">1.2.</span> <span class="toc-text">Instance variables/ member variables</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Class-variables"><span class="toc-number">1.3.</span> <span class="toc-text">Class variables</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-Reference-and-Null"><span class="toc-number">2.</span> <span class="toc-text">Object, Reference and Null</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Reference-就像名片-并不是真正的那个人"><span class="toc-number">2.1.</span> <span class="toc-text">Reference 就像名片 并不是真正的那个人</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Object-是那个人的实例"><span class="toc-number">2.2.</span> <span class="toc-text">Object 是那个人的实例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Static"><span class="toc-number">3.</span> <span class="toc-text">Static</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ArrayList"><span class="toc-number">4.</span> <span class="toc-text">ArrayList</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            Java05
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/2019/08/24/Java05/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-25T02:15:44.000Z" itemprop="datePublished">2019-08-24</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Java/">Java</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="Variables-and-scopes"><a href="#Variables-and-scopes" class="headerlink" title="Variables and scopes"></a>Variables and scopes</h3><h4 id="Local-variables"><a href="#Local-variables" class="headerlink" title="Local variables"></a>Local variables</h4><ul>
+<li>Local variables are variables defined within a function.</li>
+<li>Local variables mush be initialized before use, no Java default value。</li>
+<li>Life time of local variables are within this method.</li>
+</ul>
+<h4 id="Instance-variables-member-variables"><a href="#Instance-variables-member-variables" class="headerlink" title="Instance variables/ member variables"></a>Instance variables/ member variables</h4><ul>
+<li>Instance variables can be ether initialized by constructor or by Java default value.</li>
+<li>Life time of instance variables are within the instance.</li>
+<li>Visibility is defined by their access modifiers.</li>
+</ul>
+<h4 id="Class-variables"><a href="#Class-variables" class="headerlink" title="Class variables"></a>Class variables</h4><ul>
+<li>Class variables belongs to a class not a instance.</li>
+</ul>
+<h3 id="Object-Reference-and-Null"><a href="#Object-Reference-and-Null" class="headerlink" title="Object, Reference and Null"></a>Object, Reference and Null</h3><h4 id="Reference-就像名片-并不是真正的那个人"><a href="#Reference-就像名片-并不是真正的那个人" class="headerlink" title="Reference 就像名片 并不是真正的那个人"></a>Reference 就像名片 并不是真正的那个人</h4><ul>
+<li>Reference 就像名片 并不是真正的那个人</li>
+<li>Reference 存在 Stack上，具体存的是 实际内容在 Heap中的地址<h4 id="Object-是那个人的实例"><a href="#Object-是那个人的实例" class="headerlink" title="Object 是那个人的实例"></a>Object 是那个人的实例</h4></li>
+<li>Object 是那个人的实例</li>
+<li>Object 存在 Heap中</li>
+</ul>
+<h3 id="Static"><a href="#Static" class="headerlink" title="Static"></a>Static</h3><ul>
+<li>if a variable/ method/ class is static, it belongs to Class not this instance.</li>
+</ul>
+<h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><ul>
+<li><p>ArrayList is a resizable array 一种长度可变的 array。</p>
+</li>
+<li><p>如果当前 array长度不够用的时候，会把array中的内容 重新放入一个新的、更长一些的array中去。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span>() </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer[] array;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ArrayList 的一些基本用法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayListExamples</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// create an arraylist</span></span><br><span class="line">        List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// add integers into list</span></span><br><span class="line">        list.add(<span class="number">1</span>);</span><br><span class="line">        list.add(<span class="number">2</span>);</span><br><span class="line">        list.add(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// set/ update number in list</span></span><br><span class="line">        list.set(<span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line">        list.set(<span class="number">2</span>, <span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// iterate the list, method 1:</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i : list) &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// iterate the list, method 2:</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); ++i) &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// isEmpty &amp; isConatin:</span></span><br><span class="line">        <span class="keyword">boolean</span> isEmpty = list.isEmpty();</span><br><span class="line">        <span class="keyword">boolean</span> isConain = list.contains(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// get size of the list:</span></span><br><span class="line">        <span class="keyword">int</span> size = list.size();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// conver list to array:</span></span><br><span class="line">        String[] array = list.toArray(<span class="keyword">new</span> String[]&#123;&#125;)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// delete element from list:</span></span><br><span class="line">        list.remove(<span class="number">0</span>);</span><br><span class="line">        list.clear(); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+        
+    </section>
+</article>
+
+
+
+<div class="comments">
+    <div id="comments"></div>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+    new Gitalk({
+        clientID: "7fbe80427f54741e289f",
+        clientSecret: "f34ed5fd92e54c9000bd37ba951948cb939deff5",
+        repo: "sanonz.github.io",
+        owner: "sanonz",
+        admin: ["sanonz"],
+        id: "2019/08/24/Java05",
+        distractionFreeMode: true,
+        title: "Java05",
+        body: "http://yoursite.com/2019/08/24/Java05/",
+        labels: ["Java"]
+    }).render('comments');
+    </script>
+</div>
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e4027971a230b210f4671f485b33846a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+            
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+        </script>
+    
+
+</body>
+</html>

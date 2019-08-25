@@ -218,11 +218,15 @@
     
     <section class="article-body markdown-body">
         
-        <h3 id="1-Setup-Tomcat-Server"><a href="#1-Setup-Tomcat-Server" class="headerlink" title="1. Setup Tomcat Server"></a>1. Setup Tomcat Server</h3><h4 id="1-1-Concept-of-RESTful-API"><a href="#1-1-Concept-of-RESTful-API" class="headerlink" title="1.1 Concept of RESTful API"></a>1.1 Concept of RESTful API</h4><ul>
+        <h3 id="1-Setup-Tomcat-Server"><a href="#1-Setup-Tomcat-Server" class="headerlink" title="1. Setup Tomcat Server"></a>1. Setup Tomcat Server</h3><h4 id="1-0-Why-we-need-HTTP-protocal"><a href="#1-0-Why-we-need-HTTP-protocal" class="headerlink" title="1.0 Why we need HTTP protocal?"></a>1.0 Why we need HTTP protocal?</h4><ul>
+<li>Set the same format patten for both local and server end to help communication.</li>
+<li>(req/ res) Header &amp; a blank line to seperate &amp; (req/ res) message body.</li>
+</ul>
+<h4 id="1-1-Concept-of-RESTful-API"><a href="#1-1-Concept-of-RESTful-API" class="headerlink" title="1.1 Concept of RESTful API"></a>1.1 Concept of RESTful API</h4><ul>
 <li>In this project: 1) We plan to use the HTTP methods to indicate what kind of operation we want to take. The reason is that if the operation are directly based on HTTP methods, then the server could get it directly without parsing extra things. 2) Use HTTP URL to indicate which service we want to use/ what data we want to request. That will be easy for client/users to understand. 3) Each request will be independent, which ensures the server is running in the stateless mode and improve the scalability.</li>
 </ul>
 <h4 id="1-2-Concept-of-Tomcat-RPC-Java-Servlet"><a href="#1-2-Concept-of-Tomcat-RPC-Java-Servlet" class="headerlink" title="1.2 Concept of Tomcat/ RPC/ Java Servlet"></a>1.2 Concept of Tomcat/ RPC/ Java Servlet</h4><ul>
-<li>Tomcat Server is an open-source Java Servlet Container that provides “pure Java” http wep server environment (including low level supports: making TCP connection/ revceiving request from client/ send response back to client…) in which Java code can run.</li>
+<li>Tomcat Server is an open-source Java Servlet Container that provides “pure Java” http wep server environment (including low level supports: making TCP connection/ revceiving request from client/ send response back to client…) in which Java code can run. 帮忙做http 请求的分发。</li>
 <li>RPC (Remode Procedure Call) is a function call to the remote server.</li>
 <li>Java Servlets are Java classes to handle RPC calls on the server side.</li>
 </ul>

@@ -195,6 +195,147 @@
     <header class="article-header">
         
         <h1 itemprop="name">
+            <a href="/2019/08/24/Java05/">Java05</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-25T02:15:44.000Z" itemprop="datePublished">2019-08-24</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Java/">Java</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="Variables-and-scopes"><a href="#Variables-and-scopes" class="headerlink" title="Variables and scopes"></a>Variables and scopes</h3><h4 id="Local-variables"><a href="#Local-variables" class="headerlink" title="Local variables"></a>Local variables</h4><ul>
+<li>Local variables are variables defined within a function.</li>
+<li>Local variables mush be initialized before use, no Java default value。</li>
+<li>Life time of local variables are within this method.</li>
+</ul>
+<h4 id="Instance-variables-member-variables"><a href="#Instance-variables-member-variables" class="headerlink" title="Instance variables/ member variables"></a>Instance variables/ member variables</h4><ul>
+<li>Instance variables can be ether initialized by constructor or by Java default value.</li>
+<li>Life time of instance variables are within the instance.</li>
+<li>Visibility is defined by their access modifiers.</li>
+</ul>
+<h4 id="Class-variables"><a href="#Class-variables" class="headerlink" title="Class variables"></a>Class variables</h4><ul>
+<li>Class variables belongs to a class not a instance.</li>
+</ul>
+<h3 id="Object-Reference-and-Null"><a href="#Object-Reference-and-Null" class="headerlink" title="Object, Reference and Null"></a>Object, Reference and Null</h3><h4 id="Reference-就像名片-并不是真正的那个人"><a href="#Reference-就像名片-并不是真正的那个人" class="headerlink" title="Reference 就像名片 并不是真正的那个人"></a>Reference 就像名片 并不是真正的那个人</h4><ul>
+<li>Reference 就像名片 并不是真正的那个人</li>
+<li>Reference 存在 Stack上，具体存的是 实际内容在 Heap中的地址<h4 id="Object-是那个人的实例"><a href="#Object-是那个人的实例" class="headerlink" title="Object 是那个人的实例"></a>Object 是那个人的实例</h4></li>
+<li>Object 是那个人的实例</li>
+<li>Object 存在 Heap中</li>
+</ul>
+<h3 id="Static"><a href="#Static" class="headerlink" title="Static"></a>Static</h3><ul>
+<li>if a variable/ method/ class is static, it belongs to Class not this instance.</li>
+</ul>
+<h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><ul>
+<li><p>ArrayList is a resizable array 一种长度可变的 array。</p>
+</li>
+<li><p>如果当前 array长度不够用的时候，会把array中的内容 重新放入一个新的、更长一些的array中去。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span>() </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer[] array;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ArrayList 的一些基本用法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayListExamples</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// create an arraylist</span></span><br><span class="line">        List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// add integers into list</span></span><br><span class="line">        list.add(<span class="number">1</span>);</span><br><span class="line">        list.add(<span class="number">2</span>);</span><br><span class="line">        list.add(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// set/ update number in list</span></span><br><span class="line">        list.set(<span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line">        list.set(<span class="number">2</span>, <span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// iterate the list, method 1:</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i : list) &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// iterate the list, method 2:</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.size(); ++i) &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// isEmpty &amp; isConatin:</span></span><br><span class="line">        <span class="keyword">boolean</span> isEmpty = list.isEmpty();</span><br><span class="line">        <span class="keyword">boolean</span> isConain = list.contains(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// get size of the list:</span></span><br><span class="line">        <span class="keyword">int</span> size = list.size();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// conver list to array:</span></span><br><span class="line">        String[] array = list.toArray(<span class="keyword">new</span> String[]&#123;&#125;)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// delete element from list:</span></span><br><span class="line">        list.remove(<span class="number">0</span>);</span><br><span class="line">        list.clear(); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/08/23/Java04/">Java04</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-24T00:09:27.000Z" itemprop="datePublished">2019-08-23</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Java/">Java</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String school;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String GREETINGS = <span class="string">"Hello"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 函数名和类名一致 没有返回值</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Getter</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Setter</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    System.out.println(GREETINGS + <span class="string">"! I'm "</span> + name + <span class="string">". I'm"</span> + age);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">welcome</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    System.out,println(<span class="string">"welcome to school!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Student student = <span class="keyword">new</span> Student(<span class="string">"Tom"</span>);</span><br><span class="line">        Student student2 = <span class="keyword">new</span> Student(<span class="string">"Jerry"</span>);</span><br><span class="line"></span><br><span class="line">        student1 = student2;</span><br><span class="line">        Student student3 = <span class="keyword">null</span>;</span><br><span class="line">        student1.setAge(<span class="number">18</span>);</span><br><span class="line">        student2.setAge(<span class="number">10</span>);</span><br><span class="line">        student1.sayHello();</span><br><span class="line">        student2.sayHello();</span><br><span class="line">        Student student3 = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            student3.sayHello();</span><br><span class="line">        &#125; <span class="keyword">catch</span>(NullPointerExceptions e) &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Obj-amp-Ref"><a href="#Obj-amp-Ref" class="headerlink" title="Obj &amp; Ref"></a>Obj &amp; Ref</h4><h4 id="Methods-amp-Fields"><a href="#Methods-amp-Fields" class="headerlink" title="Methods &amp; Fields"></a>Methods &amp; Fields</h4><h4 id="Class-amp-Obj"><a href="#Class-amp-Obj" class="headerlink" title="Class &amp; Obj"></a>Class &amp; Obj</h4><h4 id="Primitive-types-and-Class-types"><a href="#Primitive-types-and-Class-types" class="headerlink" title="Primitive types and Class types:"></a>Primitive types and Class types:</h4><ul>
+<li>Primitive 只有八种，其他所有都是 Class types</li>
+</ul>
+<h4 id="存在Stack-还是Heap？"><a href="#存在Stack-还是Heap？" class="headerlink" title="存在Stack 还是Heap？"></a>存在Stack 还是Heap？</h4><ul>
+<li>局部变量 - 存在 stack上</li>
+<li>成员变量(instance variable) - 存在 Heap上</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x1 = <span class="number">7</span>;</span><br><span class="line">        A a1 = <span class="keyword">new</span> A();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> x2 = <span class="number">8</span>;</span><br><span class="line">    A a2 = <span class="keyword">new</span> A();</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">7</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Constructor"><a href="#Constructor" class="headerlink" title="Constructor:"></a>Constructor:</h4><ul>
+<li>函数名与类名相同，大写字母开头</li>
+<li>没有return type</li>
+</ul>
+<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><ul>
+<li>指当前object</li>
+<li>如果instance variable 和 local variable 名字重名 就必须写<code>this.</code></li>
+</ul>
+<h4 id="Null"><a href="#Null" class="headerlink" title="Null"></a>Null</h4><ul>
+<li>An empty reference, point to no ref.</li>
+</ul>
+<h4 id="Static"><a href="#Static" class="headerlink" title="Static"></a>Static</h4><ul>
+<li>可以修饰 field 或 method， 说明这个field/ method是属于整个类的 而不单单是具体这个对象的。</li>
+<li>Static函数 只能访问 Static变量； </li>
+<li>非 Static函数 既可以访问 Static变量，也可以访问 非Static变量；<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        g(); <span class="comment">// g()可以直接调用</span></span><br><span class="line">        Test test = <span class="keyword">new</span> Test(); </span><br><span class="line">        test.f(); <span class="comment">// 想调用非静态f() 需要提前new一个Test的object-instance才能调用</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"aaa"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">g</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"bbb"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="Access-modifier"><a href="#Access-modifier" class="headerlink" title="Access modifier"></a>Access modifier</h4><ul>
+<li>public – 全局可见</li>
+<li>protected – 只有子类和同个package可见</li>
+<li>default – 只有同个package可见</li>
+<li>private – 只在同一个类里可见</li>
+</ul>
+<h4 id="Stacks-和-Heaps"><a href="#Stacks-和-Heaps" class="headerlink" title="Stacks 和 Heaps"></a>Stacks 和 Heaps</h4><ul>
+<li>Stack 存局部变量</li>
+<li>Heap 存new出来的成员变量 </li>
+<li>从Stack 到Heap 就是一个寻址的过程</li>
+</ul>
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
             <a href="/2019/08/22/Java03/">Java03</a>
         </h1>
         
@@ -276,7 +417,14 @@
 <li>Feeling python is not enough for a software developer, start all over again for Java.</li>
 </ul>
 <h3 id="Control-Flow-and-Methods"><a href="#Control-Flow-and-Methods" class="headerlink" title="Control Flow and Methods"></a>Control Flow and Methods</h3><h4 id="Conditional"><a href="#Conditional" class="headerlink" title="Conditional"></a>Conditional</h4><ul>
-<li>if…else<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (xxx) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (xxx) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (yyy) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>if…else</li>
+</ul>
+<h4 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h4><ul>
+<li><p>for </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;<span class="number">10</span>; i++) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>[] arr = &#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i : arr) &#123;   <span class="comment">//for each element in arr</span></span><br><span class="line">    ... </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>while</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (condition) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
@@ -324,7 +472,7 @@
         <ul>
 <li>Feeling python is not enough for a software developer, start all over again for Java.</li>
 </ul>
-<h4 id="Java仅有8种数据类型-其余均为class"><a href="#Java仅有8种数据类型-其余均为class" class="headerlink" title="Java仅有8种数据类型, 其余均为class"></a>Java仅有8种数据类型, 其余均为class</h4><ul>
+<h4 id="1-Java仅有8种数据类型-其余均为class"><a href="#1-Java仅有8种数据类型-其余均为class" class="headerlink" title="1. Java仅有8种数据类型, 其余均为class"></a>1. Java仅有8种数据类型, 其余均为class</h4><ul>
 <li>byte: 可以用来表示年龄 Max: 0111,1111 (127)/ Min: 1000,0000 (-128) (对应正数的二进制取反+1, 比最大正数多一个).</li>
 <li>short: 16-bit (最左一位表示正负)</li>
 <li>int: 32-bit/ 4-byte (很多情况下不够用, 可能会溢出)</li>
@@ -530,11 +678,15 @@
     
     <section class="article-body markdown-body">
         
-        <h3 id="1-Setup-Tomcat-Server"><a href="#1-Setup-Tomcat-Server" class="headerlink" title="1. Setup Tomcat Server"></a>1. Setup Tomcat Server</h3><h4 id="1-1-Concept-of-RESTful-API"><a href="#1-1-Concept-of-RESTful-API" class="headerlink" title="1.1 Concept of RESTful API"></a>1.1 Concept of RESTful API</h4><ul>
+        <h3 id="1-Setup-Tomcat-Server"><a href="#1-Setup-Tomcat-Server" class="headerlink" title="1. Setup Tomcat Server"></a>1. Setup Tomcat Server</h3><h4 id="1-0-Why-we-need-HTTP-protocal"><a href="#1-0-Why-we-need-HTTP-protocal" class="headerlink" title="1.0 Why we need HTTP protocal?"></a>1.0 Why we need HTTP protocal?</h4><ul>
+<li>Set the same format patten for both local and server end to help communication.</li>
+<li>(req/ res) Header &amp; a blank line to seperate &amp; (req/ res) message body.</li>
+</ul>
+<h4 id="1-1-Concept-of-RESTful-API"><a href="#1-1-Concept-of-RESTful-API" class="headerlink" title="1.1 Concept of RESTful API"></a>1.1 Concept of RESTful API</h4><ul>
 <li>In this project: 1) We plan to use the HTTP methods to indicate what kind of operation we want to take. The reason is that if the operation are directly based on HTTP methods, then the server could get it directly without parsing extra things. 2) Use HTTP URL to indicate which service we want to use/ what data we want to request. That will be easy for client/users to understand. 3) Each request will be independent, which ensures the server is running in the stateless mode and improve the scalability.</li>
 </ul>
 <h4 id="1-2-Concept-of-Tomcat-RPC-Java-Servlet"><a href="#1-2-Concept-of-Tomcat-RPC-Java-Servlet" class="headerlink" title="1.2 Concept of Tomcat/ RPC/ Java Servlet"></a>1.2 Concept of Tomcat/ RPC/ Java Servlet</h4><ul>
-<li>Tomcat Server is an open-source Java Servlet Container that provides “pure Java” http wep server environment (including low level supports: making TCP connection/ revceiving request from client/ send response back to client…) in which Java code can run.</li>
+<li>Tomcat Server is an open-source Java Servlet Container that provides “pure Java” http wep server environment (including low level supports: making TCP connection/ revceiving request from client/ send response back to client…) in which Java code can run. 帮忙做http 请求的分发。</li>
 <li>RPC (Remode Procedure Call) is a function call to the remote server.</li>
 <li>Java Servlets are Java classes to handle RPC calls on the server side.</li>
 </ul>
@@ -607,94 +759,6 @@
                 <i class="icon-arrow-double-right vm"></i>    
             </a>
         </p>
-        
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/08/17/Golang-based-Around-service-backend-handler/">Golang-based Around Service Backend Handler</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-18T01:52:13.000Z" itemprop="datePublished">2019-08-17</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Backend/">Backend</a>, <a class="article-tag-link" href="/tags/Golang/">Golang</a>, <a class="article-tag-link" href="/tags/Projects/">Projects</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h3 id="1-Project-will-be-implemented-on-GCP-Setting-up-our-instance-first"><a href="#1-Project-will-be-implemented-on-GCP-Setting-up-our-instance-first" class="headerlink" title="1. Project will be implemented on GCP. Setting up our instance first."></a>1. Project will be implemented on GCP. Setting up our instance first.</h3><ul>
-<li>Create a new project.</li>
-<li>Setup a new Firewall rule, enable request from all address. Set source IP as <code>&#39;0.0.0.0/0&#39;</code>; protocols and ports are set to be <code>tcp:9200,8080</code>.</li>
-<li>Create a new GCE instance, selet Ubuntu 18.04 system as image. Allow HTTP and HTTPS traffic. And don’r forget to set the Networking rule and add the new Firewall-rule-tag we’ve just created.</li>
-<li>Start the Compute Engine instance. Use <code>SSH</code> and open in browser window.</li>
-<li>Update the system and do all necessary configurations… (Installing all necessary packages: install software-properties-common, install golang, install vim, install git…)</li>
-</ul>
-<h3 id="2-Implement-the-initial-Golang-backend-handler"><a href="#2-Implement-the-initial-Golang-backend-handler" class="headerlink" title="2. Implement the initial Golang backend handler."></a>2. Implement the initial Golang backend handler.</h3><h4 id="2-1-Create-a-main-go-file-and-define-the-structure-for-Post-and-Location"><a href="#2-1-Create-a-main-go-file-and-define-the-structure-for-Post-and-Location" class="headerlink" title="2.1 Create a main.go file and define the structure for Post and Location."></a>2.1 Create a main.go file and define the structure for Post and Location.</h4><ul>
-<li>Import necessary packages: <code>&quot;encoding/json&quot;</code> for now.</li>
-<li>This backend handler need to handle the 1) Post request form the React frontend and 2) Location-based search request from frontend. Therefore, here we could set the Structure of both. Location:<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Location <span class="keyword">struct</span> &#123;</span><br><span class="line">    Lat <span class="keyword">float64</span> <span class="string">`json:"lat"`</span></span><br><span class="line">    Lon <span class="keyword">float64</span> <span class="string">`json:"lon"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-        
-        <p class="article-more-link">
-            <a href="/2019/08/17/Golang-based-Around-service-backend-handler/#more">
-                <span class="vm">More...</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/08/15/React-High-Order-Component/">React High Order Component</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-16T03:18:26.000Z" itemprop="datePublished">2019-08-15</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/React/">React</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
         
         
     </section>
