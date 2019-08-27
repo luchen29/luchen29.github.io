@@ -115,6 +115,8 @@
 <li>一列中的全部值： <code>SELECT name FROM websites</code></li>
 <li>一列中的uniqe值： <code>SELECT DISTINCT country FROM websites</code></li>
 </ul>
+<a id="more"></a>
+
 <h4 id="SELECT-FROM-1"><a href="#SELECT-FROM-1" class="headerlink" title="SELECT * FROM "></a>SELECT * FROM <table></table></h4><ul>
 <li>有条件的筛选某些行： <code>SELECT * FROM website WHERE country = &#39;CN&#39;</code> <code>SELECT * FROM website WHERE id = 1</code></li>
 <li>多个筛选条件： <code>SELECT * FROM website WHERE country = &quot;CN&quot; AND alexa &gt; 50</code> <code>SELECT * FTOM website WHERE country = &quot;CN&quot; OR country = &quot;USA&quot;</code> <code>SELECT * FROM website WHERE alexa &gt; 50 AND (country = &quot;CN&quot; OR country = &quot;USA&quot;)</code></li>

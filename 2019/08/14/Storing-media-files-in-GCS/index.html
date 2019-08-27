@@ -71,7 +71,7 @@
         
 
         
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Difference-between-Object-Storage-Database-and-File-System"><span class="toc-number">1.</span> <span class="toc-text">1. Difference between Object Storage, Database and File System</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Advantages-of-using-Object-Storage-Service"><span class="toc-number">2.</span> <span class="toc-text">2. Advantages of using Object Storage Service</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-General-idea-of-how-to-send-images-to-GCS"><span class="toc-number">3.</span> <span class="toc-text">3. General idea of how to send images to GCS.</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Setup-GCS-API"><span class="toc-number">4.</span> <span class="toc-text">4. Setup GCS API.</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Connect-Frontend-Server-and-Cloud"><span class="toc-number">5.</span> <span class="toc-text">5. Connect Frontend, Server and Cloud</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#System-Design-How-to-Design-a-YouTube-Netfix-System"><span class="toc-number">6.</span> <span class="toc-text">System Design - How to Design a YouTube/ Netfix System ???</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Difference-between-Object-Storage-Database-and-File-System"><span class="toc-number">1.</span> <span class="toc-text">1. Difference between Object Storage, Database and File System</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Advantages-of-using-Object-Storage-Service"><span class="toc-number">2.</span> <span class="toc-text">2. Advantages of using Object Storage Service</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-General-idea-of-how-to-send-images-to-GCS"><span class="toc-number">3.</span> <span class="toc-text">3. General idea of how to send images to GCS.</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Setup-GCS-API"><span class="toc-number">4.</span> <span class="toc-text">4. Setup GCS API.</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Connect-Frontend-Server-and-Cloud"><span class="toc-number">5.</span> <span class="toc-text">5. Connect Frontend, Server and Cloud</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Issues-occured-in-process"><span class="toc-number">6.</span> <span class="toc-text">Issues occured in process</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#System-Design-How-to-Design-a-YouTube-Netfix-System"><span class="toc-number">7.</span> <span class="toc-text">System Design - How to Design a YouTube/ Netfix System ???</span></a></li></ol>
         
     </div>
 </aside>
@@ -138,7 +138,20 @@
 <li>c. Create your new service account and download a Json/P12 file to local.</li>
 <li>d. Set google app credentials locally: <code>export GOOGLE_APPLICATION_CREDENTIALS=&quot;YOUR_JSON_FILE_PATH</code>. Double check your setting with <code>$ echo $GOOGLE_APPLICATION_CREDENTIALS</code> to enable posting.</li>
 </ul>
-<h4 id="5-Connect-Frontend-Server-and-Cloud"><a href="#5-Connect-Frontend-Server-and-Cloud" class="headerlink" title="5. Connect Frontend, Server and Cloud"></a>5. Connect Frontend, Server and Cloud</h4><h4 id="System-Design-How-to-Design-a-YouTube-Netfix-System"><a href="#System-Design-How-to-Design-a-YouTube-Netfix-System" class="headerlink" title="System Design - How to Design a YouTube/ Netfix System ???"></a>System Design - How to Design a YouTube/ Netfix System ???</h4><p>…</p>
+<h4 id="5-Connect-Frontend-Server-and-Cloud"><a href="#5-Connect-Frontend-Server-and-Cloud" class="headerlink" title="5. Connect Frontend, Server and Cloud"></a>5. Connect Frontend, Server and Cloud</h4><h4 id="Issues-occured-in-process"><a href="#Issues-occured-in-process" class="headerlink" title="Issues occured in process"></a>Issues occured in process</h4><ol>
+<li>Uploading successfully to GCS, but get fileSize = 0 on cloud.</li>
+</ol>
+<ul>
+<li>Reason: when uploading media files to cloud, the process is: frontend send request -&gt; backend get request and check the corresponding input field -&gt; get the media file uploaded in that input field -&gt; use multer to temporarily stored on memory -&gt; then the file will be sent to corresponding bucket we created befor.</li>
+<li>When setting multer, we must set the storage as <code>storage: Multer.MemoryStorage</code>. If we store the file to other destination by setting it manually: <code>dest: &#39;tmp/uploads&#39;</code> it will result in a <code>size: 0</code> on the cloud-side.</li>
+</ul>
+<ol start="2">
+<li>How to do name-based filtering and download multiple images at the same time from GCS.</li>
+</ol>
+<ul>
+<li><h4 id="System-Design-How-to-Design-a-YouTube-Netfix-System"><a href="#System-Design-How-to-Design-a-YouTube-Netfix-System" class="headerlink" title="System Design - How to Design a YouTube/ Netfix System ???"></a>System Design - How to Design a YouTube/ Netfix System ???</h4><p>…</p>
+</li>
+</ul>
 
         
     </section>
