@@ -195,6 +195,91 @@
     <header class="article-header">
         
         <h1 itemprop="name">
+            <a href="/2019/09/10/Leetcode-Practices-in-Java/">Leetcode Practices in Java</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-09-10T07:43:01.000Z" itemprop="datePublished">2019-09-10</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Java/">Java</a>, <a class="article-tag-link" href="/tags/Leetcode/">Leetcode</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="Binart-Search-Related-Problems"><a href="#Binart-Search-Related-Problems" class="headerlink" title="Binart Search Related Problems"></a>Binart Search Related Problems</h3><ul>
+<li><p>Classic Binary Search. Find any target number in array.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = nums.length - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// here must be &lt;= !!! otherwide handel singal number in array.</span></span><br><span class="line">        <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (target == nums[mid]) &#123;</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target &gt; nums[mid]) &#123;</span><br><span class="line">                left = mid  + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target &lt; nums[mid]) &#123;</span><br><span class="line">                right = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Find the first occurance of the target number in sorted array</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">firstOccurance</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>, right = nums.length - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 这里的判断条件是 ( left &lt; right - 1) 与classic 的那道题不同, 否则stackoverflow</span></span><br><span class="line">        <span class="keyword">while</span> (left &lt; right - <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (target &lt;= nums[mid]) &#123;</span><br><span class="line">                right = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                left = mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (mid[left] == target) &#123;</span><br><span class="line">            <span class="keyword">return</span> left;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (mid[right] == target) &#123;</span><br><span class="line">            <span class="keyword">return</span> right;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Find the last occurace of the target number in sorted array. </p>
+        
+        <p class="article-more-link">
+            <a href="/2019/09/10/Leetcode-Practices-in-Java/#more">
+                <span class="vm">More...</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </li></ul></section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/08/31/Java07/">Java07</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-31T00:25:33.000Z" itemprop="datePublished">2019-08-31</time>
+</a>
+
+            
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <ul>
+<li><p>Selection Sort</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] array = &#123;<span class="number">6</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">7</span>&#125;;</span><br><span class="line">        selectionSort(array);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span>[] array)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (array == <span class="keyword">null</span> || array.length &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n-<span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> minIndex = i;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; array.length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> array[i] &lt; array[minIndex] &#123;</span><br><span class="line">                    minIndex  = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(array, i, minIndex);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(array, i, minIndex)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = array[i];</span><br><span class="line">        array[i] = array[minIndex];</span><br><span class="line">        array[mimIndex] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>TC: bottle neck 是两层for循环。内层for循环每个循环结是o(1); 两层for loop总共执行了 o(n^2)</p>
+</li>
+</ul>
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
             <a href="/2019/08/25/SQL-Recover/">SQL Recover</a>
         </h1>
         
@@ -203,7 +288,7 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2019-08-26T03:28:48.000Z" itemprop="datePublished">2019-08-25</time>
+    <time datetime="2019-08-25T13:28:48.000Z" itemprop="datePublished">2019-08-25</time>
 </a>
 
             
@@ -253,7 +338,7 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2019-08-25T21:54:36.000Z" itemprop="datePublished">2019-08-25</time>
+    <time datetime="2019-08-25T07:54:36.000Z" itemprop="datePublished">2019-08-25</time>
 </a>
 
             
@@ -269,42 +354,6 @@
     <section class="article-body markdown-body">
         
         
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/08/25/Leetcode-Practices-in-Java/">Leetcode Practices in Java</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-25T21:43:01.000Z" itemprop="datePublished">2019-08-25</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Java/">Java</a>, <a class="article-tag-link" href="/tags/Leetcode/">Leetcode</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h4 id="LC-704-Binary-Search-LaiCode-14-Classical-Binary-Search"><a href="#LC-704-Binary-Search-LaiCode-14-Classical-Binary-Search" class="headerlink" title="LC 704-Binary Search/ LaiCode 14-Classical Binary Search"></a>LC 704-Binary Search/ LaiCode 14-Classical Binary Search</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = nums.length - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// here must be &lt;= !!! otherwide handel singal number in array.</span></span><br><span class="line">        <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (target == nums[mid]) &#123;</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target &gt; nums[mid]) &#123;</span><br><span class="line">                left = mid  + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target &lt; nums[mid]) &#123;</span><br><span class="line">                right = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
         
     </section>
 </article>
@@ -323,7 +372,7 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2019-08-25T02:15:44.000Z" itemprop="datePublished">2019-08-24</time>
+    <time datetime="2019-08-24T12:15:44.000Z" itemprop="datePublished">2019-08-24</time>
 </a>
 
             
@@ -379,7 +428,7 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2019-08-24T00:09:27.000Z" itemprop="datePublished">2019-08-23</time>
+    <time datetime="2019-08-23T10:09:27.000Z" itemprop="datePublished">2019-08-23</time>
 </a>
 
             
@@ -421,7 +470,7 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2019-08-23T05:25:03.000Z" itemprop="datePublished">2019-08-22</time>
+    <time datetime="2019-08-22T15:25:03.000Z" itemprop="datePublished">2019-08-22</time>
 </a>
 
             
@@ -475,7 +524,7 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2019-08-23T04:18:21.000Z" itemprop="datePublished">2019-08-22</time>
+    <time datetime="2019-08-22T14:18:21.000Z" itemprop="datePublished">2019-08-22</time>
 </a>
 
             
@@ -531,7 +580,7 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2019-08-23T03:09:17.000Z" itemprop="datePublished">2019-08-22</time>
+    <time datetime="2019-08-22T13:09:17.000Z" itemprop="datePublished">2019-08-22</time>
 </a>
 
             
@@ -584,7 +633,7 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2019-08-20T00:09:54.000Z" itemprop="datePublished">2019-08-19</time>
+    <time datetime="2019-08-19T10:09:54.000Z" itemprop="datePublished">2019-08-19</time>
 </a>
 
             
@@ -618,56 +667,6 @@
         
         <p class="article-more-link">
             <a href="/2019/08/19/Sesson-Cookie-Token/#more">
-                <span class="vm">More...</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/08/19/Docker/">Docker</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-19T20:14:05.000Z" itemprop="datePublished">2019-08-19</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Docker/">Docker</a>, <a class="article-tag-link" href="/tags/Learning/">Learning</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h4 id="Issues-we-face-when-developing-softwares"><a href="#Issues-we-face-when-developing-softwares" class="headerlink" title="Issues we face when developing softwares"></a>Issues we face when developing softwares</h4><ul>
-<li>For the development of different softwares, we usually need different environment. Therefore, environment configuration becomes a complex and troublesome issuse, especially when environment have conflicts.</li>
-<li>Virtual Machine becomes a solution for this issue by providing a new virtual system on the original system you have. However, this solution is not always ideal as it will takes up a large part of your memory resources, leading to a much slower operation. Besides, because Virtual Machine is a complete system, it contains many redundant operations which we actually don’t need.</li>
-<li>Basing on these drawbacks of Virtual Machine, Linux Containers (LXC) were developed. LXC dose not provide a complete operating system as Virtual Machine, it just isolates applications from the infrastructure can provide an environment container for it. Compared with Virtual Machine, it takes much less resources and ensures a faster start-up.</li>
-</ul>
-<h4 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h4><ul>
-<li><a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker</a> is a popular Linux container solution. It helps to package the application together with its dependencies within a image file. By runing this image file, a virtual container will be created and an isolated runing environment will be created.</li>
-</ul>
-<p><img src="https://i2.wp.com/blog.docker.com/wp-content/uploads/Are-containers-..-vms-image-2-1024x759.png?ssl=1" alt="docker"> </p>
-        
-        <p class="article-more-link">
-            <a href="/2019/08/19/Docker/#more">
                 <span class="vm">More...</span>
                 <i class="icon-arrow-double-right vm"></i>    
             </a>

@@ -7,11 +7,11 @@
 
     
 
-    <title>Leetcode Summary in Python | Luchen</title>
+    <title>Java07 | Luchen</title>
     <meta name="author" content="Luchen">
     <meta name="version" content="1.0.0">
     <meta name="keywords" content>
-    <meta name="description" content>
+    <meta name="description" content="Selection Sort12345678910111213141516171819202122232425public class Test &amp;#123;    public static void main(String[] args) &amp;#123;        int[] array = &amp;#123;6, 3, 1, 5, 4, 7&amp;#125;;        selectionSort(array);    &amp;#125;    public static void sele...">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 
@@ -196,30 +196,32 @@
     <header class="article-header">
         
         <h1 itemprop="name">
-            Leetcode Summary in Python
+            Java07
         </h1>
         
         <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/2019/08/25/Leetcode-Practices-in-Python/index.html">
+            <a class="article-date" href="http://yoursite.com/2019/08/31/Java07/index.html">
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2019-08-25T07:54:36.000Z" itemprop="datePublished">2019-08-25</time>
+    <time datetime="2019-08-31T00:25:33.000Z" itemprop="datePublished">2019-08-31</time>
 </a>
 
             
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Java/">Java</a>, <a class="article-tag-link" href="/tags/Leetcode/">Leetcode</a>
-</div>
-
 
         </div>
     </header>
     
     <section class="article-body markdown-body">
         
-        
+        <ul>
+<li><p>Selection Sort</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] array = &#123;<span class="number">6</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">7</span>&#125;;</span><br><span class="line">        selectionSort(array);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span>[] array)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (array == <span class="keyword">null</span> || array.length &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n-<span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> minIndex = i;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; array.length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> array[i] &lt; array[minIndex] &#123;</span><br><span class="line">                    minIndex  = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(array, i, minIndex);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(array, i, minIndex)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = array[i];</span><br><span class="line">        array[i] = array[minIndex];</span><br><span class="line">        array[mimIndex] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>TC: bottle neck 是两层for循环。内层for循环每个循环结是o(1); 两层for loop总共执行了 o(n^2)</p>
+</li>
+</ul>
+
         
     </section>
 </article>
@@ -236,11 +238,11 @@
         repo: "sanonz.github.io",
         owner: "sanonz",
         admin: ["sanonz"],
-        id: "2019/08/25/Leetcode-Practices-in-Python",
+        id: "2019/08/31/Java07",
         distractionFreeMode: true,
-        title: "Leetcode Summary in Python",
-        body: "http://yoursite.com/2019/08/25/Leetcode-Practices-in-Python/",
-        labels: ["Java","Leetcode"]
+        title: "Java07",
+        body: "http://yoursite.com/2019/08/31/Java07/",
+        labels: []
     }).render('comments');
     </script>
 </div>
