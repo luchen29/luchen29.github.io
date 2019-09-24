@@ -195,6 +195,63 @@
     <header class="article-header">
         
         <h1 itemprop="name">
+            <a href="/2019/08/19/Sesson-Cookie-Token/">Sesson, Cookie, Token</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/page/2/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-20T00:09:54.000Z" itemprop="datePublished">2019-08-19</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Cookie/">Cookie</a>, <a class="article-tag-link" href="/tags/Sesson/">Sesson</a>, <a class="article-tag-link" href="/tags/Token/">Token</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <p>HTTP is a stateless protocal. Requests are independent each time which ensures a good efficiency. To share data among all pages within a same hostname, we need session and cookie.</p>
+<h4 id="Cookie-and-Session"><a href="#Cookie-and-Session" class="headerlink" title="Cookie and Session"></a>Cookie and Session</h4><ul>
+<li>Client send a http request to server.</li>
+<li>Server receive the http request, create a session and send a http response back to clinet. Within the header of this response, set-cookie header is included, sessionId is included as well.</li>
+<li>On client side, stores the sessionID returned from server. As the client send following requests, client browser will automatically add a cookie into the request. </li>
+<li>Server receive a http request again. Server will analyze this cookie, check and varify session ID. If match, processed, server will return response to the client.</li>
+</ul>
+<h4 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h4><ul>
+<li>Token based authentication is stateless authentication (server does not store any token), suitable for RESTful API.</li>
+<li>Usually token will be stored in localStorage. </li>
+<li>Client send a http request to server.</li>
+<li>Server receive the http request, generate a token and send it back to the client.</li>
+<li>this token will be stored in client’s localStorage.</li>
+<li>On subsequent requests, this token will be sent within request headers.</li>
+<li>Client get the token sent by client, decode it and validate it.</li>
+</ul>
+        
+        <p class="article-more-link">
+            <a href="/2019/08/19/Sesson-Cookie-Token/#more">
+                <span class="vm">More...</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
             <a href="/2019/08/19/Docker/">Docker</a>
         </h1>
         
@@ -203,7 +260,7 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2019-08-19T06:14:05.000Z" itemprop="datePublished">2019-08-19</time>
+    <time datetime="2019-08-19T20:14:05.000Z" itemprop="datePublished">2019-08-19</time>
 </a>
 
             
@@ -253,7 +310,7 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2019-08-18T15:19:38.000Z" itemprop="datePublished">2019-08-18</time>
+    <time datetime="2019-08-19T05:19:38.000Z" itemprop="datePublished">2019-08-18</time>
 </a>
 
             
@@ -302,7 +359,7 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2019-08-18T12:27:42.000Z" itemprop="datePublished">2019-08-18</time>
+    <time datetime="2019-08-19T02:27:42.000Z" itemprop="datePublished">2019-08-18</time>
 </a>
 
             
@@ -362,7 +419,7 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2019-08-18T06:07:59.000Z" itemprop="datePublished">2019-08-18</time>
+    <time datetime="2019-08-18T20:07:59.000Z" itemprop="datePublished">2019-08-18</time>
 </a>
 
             
@@ -418,7 +475,7 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2019-08-17T11:52:13.000Z" itemprop="datePublished">2019-08-17</time>
+    <time datetime="2019-08-18T01:52:13.000Z" itemprop="datePublished">2019-08-17</time>
 </a>
 
             
@@ -472,7 +529,7 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2019-08-15T13:18:26.000Z" itemprop="datePublished">2019-08-15</time>
+    <time datetime="2019-08-16T03:18:26.000Z" itemprop="datePublished">2019-08-15</time>
 </a>
 
             
@@ -506,7 +563,7 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2019-08-14T02:46:38.000Z" itemprop="datePublished">2019-08-14</time>
+    <time datetime="2019-08-14T16:46:38.000Z" itemprop="datePublished">2019-08-14</time>
 </a>
 
             
@@ -556,44 +613,6 @@
     <header class="article-header">
         
         <h1 itemprop="name">
-            <a href="/2019/08/14/hello-world/">Hello World</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/page/2/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-13T22:36:16.341Z" itemprop="datePublished">2019-08-14</time>
-</a>
-
-            
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2>
-        
-        <p class="article-more-link">
-            <a href="/2019/08/14/hello-world/#more">
-                <span class="vm">More...</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
             <a href="/2019/08/13/React-Ref/">React Ref</a>
         </h1>
         
@@ -602,7 +621,7 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2019-08-13T08:54:40.000Z" itemprop="datePublished">2019-08-13</time>
+    <time datetime="2019-08-13T22:54:40.000Z" itemprop="datePublished">2019-08-13</time>
 </a>
 
             
@@ -621,6 +640,44 @@
         
         <p class="article-more-link">
             <a href="/2019/08/13/React-Ref/#more">
+                <span class="vm">More...</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/08/13/hello-world/">Hello World</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/page/2/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-13T22:36:16.341Z" itemprop="datePublished">2019-08-13</time>
+</a>
+
+            
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2>
+        
+        <p class="article-more-link">
+            <a href="/2019/08/13/hello-world/#more">
                 <span class="vm">More...</span>
                 <i class="icon-arrow-double-right vm"></i>    
             </a>
