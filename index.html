@@ -195,6 +195,73 @@
     <header class="article-header">
         
         <h1 itemprop="name">
+            <a href="/2019/10/05/Hibernate/">Hibernate</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-10-05T18:29:54.000Z" itemprop="datePublished">2019-10-05</time>
+</a>
+
+            
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="What-is-ORM"><a href="#What-is-ORM" class="headerlink" title="What is ORM?"></a>What is ORM?</h3><ul>
+<li>ORM: Object Relational Mapping.</li>
+<li>ORM helps Mapping any OO language code to SQL command, no need to write SQL command by ourselves. Just wirte OO language to manipulate database data.</li>
+</ul>
+<h4 id="What-is-Hibernate"><a href="#What-is-Hibernate" class="headerlink" title="What is Hibernate?"></a>What is Hibernate?</h4><ul>
+<li>Hibernate is a ORM tool for Java programming language (a popluar Java ORM library). It helps mapping an <strong>OO domain model</strong> to <strong>relational database</strong> (MySQL, SQL) table. </li>
+<li>Hiberbate is included in Spring framework.</li>
+</ul>
+<h4 id="What-is-JPA-Java-Persistence-API"><a href="#What-is-JPA-Java-Persistence-API" class="headerlink" title="What is JPA (Java Persistence API)?"></a>What is JPA (Java Persistence API)?</h4><ul>
+<li>JPA is one step above ORM. It is a high-level API and specification that can describes the management of relational data in applications using Java, like MAMP.</li>
+<li>Different ORM tools are included in JPA, it provdes flexibility for developers to switch between different ORM tools.</li>
+</ul>
+<h3 id="Hibernate-Pros-and-Cons"><a href="#Hibernate-Pros-and-Cons" class="headerlink" title="Hibernate Pros and Cons"></a>Hibernate Pros and Cons</h3><h4 id="Pros"><a href="#Pros" class="headerlink" title="Pros:"></a>Pros:</h4><ul>
+<li>No need for SQL knowledge. </li>
+<li>Model code reusable for different DBMS.<h4 id="Cons"><a href="#Cons" class="headerlink" title="Cons:"></a>Cons:</h4></li>
+<li>Set up can be cumbersome.</li>
+<li>Performance may not match better tweaked raw SQL. </li>
+</ul>
+<h4 id="Hibernate-interfaces-Structure"><a href="#Hibernate-interfaces-Structure" class="headerlink" title="Hibernate interfaces Structure"></a>Hibernate interfaces Structure</h4><ul>
+<li>Session Factory: SessionFactory is an immutable thread-safe cache of compiled mappings for a single database. 是不可改变的 线程安全的 单一数据库的 mapping cache， 使用SessionFactory 实例来获得数据库操作的 Session objects.</li>
+<li>SessionFactory 只有一个，用来 maintain session, 而 Session可以有很多个。</li>
+<li>Session: Session object is the interface between Java code and Hibernate. It provides methods for CRUD operations. 是真正的interface， 是处在 java和 hibernate 中间，用于提供对数据库的 CRUD操作。</li>
+<li>Transaction: Transaction is a single-threaded, short-lived object used by the application to specify atomic units of work.  是单线程的 短周期的 工作的最小单元，比如一个具体的insert等等这种最基本的操作。</li>
+<li>Session performs transactions.<br><img src="https://www.javatpoint.com/images/hibernate/architecture.jpg" alt="Hibernate Framework"></li>
+</ul>
+<h4 id="Hibernate-Annotations"><a href="#Hibernate-Annotations" class="headerlink" title="Hibernate Annotations"></a>Hibernate Annotations</h4><ul>
+<li><strong>Entity</strong> –&gt; Table</li>
+<li><strong>Table</strong> –&gt; Table name</li>
+<li><strong>Id</strong> –&gt; primary key</li>
+<li><strong>Column</strong> –&gt; column name</li>
+<li><strong>EmbeddedId</strong> –&gt; composite primary key in the Entity bean. When a primary key consists of 2+ columns, we define them in another POJO and use that POJO as embeddedId. 当primary key中的列数大于一个之后，我们把这些列单独定义在一个新的POJO里面，并且把这个POJO当作embeddedId. POJO is just a special java object (pain old java object). 所有 bean都属于POJO.</li>
+<li><strong>GenerateValue</strong> –&gt; the strategy that used for auto generating the primary key.</li>
+<li><strong>OneToOne</strong> –&gt; One to one mapping between two entity beans.</li>
+<li><strong>ManyToOne</strong> –&gt; Foreign key. References property from another entity bean. 从另一个entity中reference过来的</li>
+<li><strong>OneToMany</strong> –&gt; The other direction of foreign key. 反向的reference 作为foreign key.</li>
+<li><strong>ManyToMany</strong></li>
+<li><strong>Cascade 级联</strong> –&gt; The cascading between two entity beans, used with mappings. When using mapping, the operation within one entity bean will <strong>auto-propagate</strong> to the other entities.</li>
+</ul>
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
             <a href="/2019/09/23/Spring/">Spring</a>
         </h1>
         
@@ -611,63 +678,10 @@
 </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/08/22/Java01/">Java01</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-23T03:09:17.000Z" itemprop="datePublished">2019-08-22</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Java/">Java</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <ul>
-<li>Feeling python is not enough for a software developer, start all over again for Java.</li>
-</ul>
-<h4 id="1-Java仅有8种数据类型-其余均为class"><a href="#1-Java仅有8种数据类型-其余均为class" class="headerlink" title="1. Java仅有8种数据类型, 其余均为class"></a>1. Java仅有8种数据类型, 其余均为class</h4><ul>
-<li>byte: 可以用来表示年龄 Max: 0111,1111 (127)/ Min: 1000,0000 (-128) (对应正数的二进制取反+1, 比最大正数多一个).</li>
-<li>short: 16-bit (最左一位表示正负)</li>
-<li>int: 32-bit/ 4-byte (很多情况下不够用, 可能会溢出)</li>
-<li>long: 64-bit/ 8-byte (一般情况下溢出不了)</li>
-<li>float: 32-bit float (10^38, 最高分辨率10^-46) float是科学计数法, 含有指数位, 所以比int能表示的大得多</li>
-<li>double: 64-bit float (更常用)</li>
-<li>char: 16-bit (能表示2^16个字符, 涵盖主流常见字符集) </li>
-<li>boolean: 1-byte true/ false<br>1-byte 是计算机读写的最小基本单元
-        
-        <p class="article-more-link">
-            <a href="/2019/08/22/Java01/#more">
-                <span class="vm">More...</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </li></ul></section>
-</article>
-
-
 
 
 <nav class="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
 </nav>
 
 
