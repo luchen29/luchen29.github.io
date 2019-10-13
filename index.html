@@ -195,6 +195,123 @@
     <header class="article-header">
         
         <h1 itemprop="name">
+            <a href="/2019/10/12/Data-structure-and-algorithms/">Data_structure_and_algorithms</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-10-12T20:03:26.000Z" itemprop="datePublished">2019-10-12</time>
+</a>
+
+            
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="General-Heap-amp-Graph-Searhch-Algorithms"><a href="#General-Heap-amp-Graph-Searhch-Algorithms" class="headerlink" title="(General) Heap &amp; Graph Searhch Algorithms"></a>(General) Heap &amp; Graph Searhch Algorithms</h3><h4 id="Heap-Basic-Concepts"><a href="#Heap-Basic-Concepts" class="headerlink" title="Heap Basic Concepts"></a>Heap Basic Concepts</h4><ul>
+<li>Heap (Priority Queue) is used to maintain the <strong>min/ max</strong> value within a <strong>dynamically changing data collection.</strong> 使用Heap来维护一个<strong>不断变化数据集</strong>中的<strong>最优值</strong>。</li>
+<li>性质 -&gt; 堆序性: 任意一个节点 小于 它的所有后续节点 descendent</li>
+<li>逻辑 Logical 角度来讲：Theoretically, 在脑子里 Heap 是用 Complete Tree 来表示的。<ul>
+<li>为什么必须用 Complete Tree 来表示 Heap? </li>
+<li>According to 数学公式: <code>index of leftChild = myIndex * 2 + 1</code> <code>index of rightChild = myIndex * 2 + 2</code> <code>index of parent = (myIndex - 1) / 2</code></li>
+<li>为什么这个数学公式成立？ 因为 Complete Tree 中间没有气泡</li>
+</ul>
+</li>
+<li>物理 physical 角度来讲： 在电脑里 Heap/ Binary Heap 是用 Array来进行存储的。<ul>
+<li>为什么可以使用 Array 来进行存储？</li>
+<li>Because it is a Complete Tree &amp;&amp; We could easily get the parent &amp; children index.</li>
+</ul>
+</li>
+</ul>
+<h4 id="Heap-Operations"><a href="#Heap-Operations" class="headerlink" title="Heap Operations"></a>Heap Operations</h4><ul>
+<li><p>insert a new element: </p>
+<ul>
+<li>对 Java 来讲是 offer();</li>
+<li>Insert to tail (the first ‘null’ position).</li>
+<li>Why? -&gt; Need to ensure the tree is complete.</li>
+<li>Swap with parent, if smaller than parent.</li>
+<li>What is TC? -&gt; Because it’s a complete tree, is must be a balanced tree, so O(logn).</li>
+</ul>
+</li>
+<li><p>delete heap-top element:</p>
+<ul>
+<li>对 Java 来讲是 pop();</li>
+<li>Swap the <strong>last not-null element</strong> with heap-top empty.</li>
+<li>Swap current element with min value among all its childrens.</li>
+<li>这是唯一可以避免产生气泡的方式。要么补到 null 的位置，要么把前面的 null 换出来到结尾。</li>
+<li><strong>避免气泡是第一要素！！！</strong></li>
+<li>What is TC? -&gt; Because it’s a complete tree, is must be a balanced tree, so O(logn).</li>
+</ul>
+</li>
+<li><p>update any heap element:</p>
+<ul>
+<li>if update to smaller: 往上 percolate/ swap</li>
+<li>if update to larger: 往下 percolate/ swap</li>
+</ul>
+</li>
+<li><p>get/ top: O(1)</p>
+</li>
+<li><p>Heapify: O(n)</p>
+</li>
+</ul>
+<h4 id="Question-Examples"><a href="#Question-Examples" class="headerlink" title="Question Examples"></a>Question Examples</h4><ol>
+<li>Find smallest k elements from an unsorted array of size n.</li>
+</ol>
+<ul>
+<li><p>Method 1:</p>
+<ul>
+<li>Heapify the whole array to be a MIN_HEAP. -&gt; O(n)</li>
+<li>Keep popping k times. -&gt; O(k*logn)</li>
+<li><strong>Total TC: O(n) + O(k*logn)</strong></li>
+</ul>
+</li>
+<li><p>Method 2:</p>
+<ul>
+<li>Heapify the first k elements to be a MAX_HEAP. -&gt; O(k)</li>
+<li>Why heapify in this way? To keep a solution so far.</li>
+<li>Compare following elements with the Top-element, if smaller than the Top-element, pop the Top-element (踢出当前结果集) and insert the new element into Heap (收入当前结果集) -&gt; O(logk) // otherwise ignore it. </li>
+<li><strong>Total TC: O(k) + O((n-k)*log(k))</strong></li>
+</ul>
+</li>
+<li><p>Method1 &amp; Method2, which one is better?</p>
+<ul>
+<li>k &lt;&lt;&lt;&lt; n:    <strong>O(c*n)</strong> 这里有个系数c 由于Heapify产生的  VS   <strong>O(nlog(k))</strong>  –&gt; Hard to say.</li>
+<li>k <del>~</del> n:    <strong>O(n*logn)</strong>  VS <strong>O(nlogn)</strong></li>
+</ul>
+</li>
+<li><p>Method 3: 时间复杂度更优</p>
+<ul>
+<li>Use Quick Selection</li>
+<li>Average Time Complexity: O(n)</li>
+<li>Worse case: </li>
+<li>iteration 1 -&gt; O(n)</li>
+<li>iteration 2 -&gt; O(n/2) </li>
+<li>iteration 3 -&gt; O(n/4) …</li>
+<li><strong>Total Average Time -&gt; O(n + n/2 + n/4 + … ) = O(2n) = O(n)</strong></li>
+</ul>
+</li>
+<li><p>Method1 &amp; Method2 &amp; Method3 which one is most suitable for industry streaming data?</p>
+<ul>
+<li>Method2 is an <strong>online</strong> algorithm, is does not depend on every data. No need to heapify every time, because we always keep the <strong>solution so far</strong>.</li>
+</ul>
+</li>
+</ul>
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
             <a href="/2019/10/05/Hibernate/">Hibernate</a>
         </h1>
         
@@ -619,62 +736,6 @@
         
         
     </li></ul></section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/08/22/Java02/">Java02</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-23T04:18:21.000Z" itemprop="datePublished">2019-08-22</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Java/">Java</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <ul>
-<li>Feeling python is not enough for a software developer, start all over again for Java.</li>
-</ul>
-<h3 id="Control-Flow-and-Methods"><a href="#Control-Flow-and-Methods" class="headerlink" title="Control Flow and Methods"></a>Control Flow and Methods</h3><h4 id="Conditional"><a href="#Conditional" class="headerlink" title="Conditional"></a>Conditional</h4><ul>
-<li>if…else</li>
-</ul>
-<h4 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h4><ul>
-<li><p>for </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;<span class="number">10</span>; i++) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>[] arr = &#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i : arr) &#123;   <span class="comment">//for each element in arr</span></span><br><span class="line">    ... </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>while</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (condition) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-        
-        <p class="article-more-link">
-            <a href="/2019/08/22/Java02/#more">
-                <span class="vm">More...</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </section>
 </article>
 
 

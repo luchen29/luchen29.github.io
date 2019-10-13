@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+
+    
+
+    
+
+    <title>Data_structure_and_algorithms | Luchen</title>
+    <meta name="author" content="Luchen">
+    <meta name="version" content="1.0.0">
+    <meta name="keywords" content>
+    <meta name="description" content="(General) Heap &amp;amp; Graph Searhch AlgorithmsHeap Basic ConceptsHeap (Priority Queue) is used to maintain the min/ max value within a dynamically changing data collection. 使用Heap来维护一个不断变化数据集中的最优值。性质 -&amp;gt; 堆序性: 任意一个节点 小于 它的所有后续节点 descendent逻辑 Lo...">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+    
+    <link rel="alternate" href="/atom.xml" title="Luchen" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/images/luchen.ico">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Luchen</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">Home</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/learning">
+                <span class="nav-text">Learning</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/projects">
+                <span class="nav-text">Projects</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">Archives</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">About</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#General-Heap-amp-Graph-Searhch-Algorithms"><span class="toc-number">1.</span> <span class="toc-text">(General) Heap &amp; Graph Searhch Algorithms</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Heap-Basic-Concepts"><span class="toc-number">1.1.</span> <span class="toc-text">Heap Basic Concepts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Heap-Operations"><span class="toc-number">1.2.</span> <span class="toc-text">Heap Operations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Question-Examples"><span class="toc-number">1.3.</span> <span class="toc-text">Question Examples</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            Data_structure_and_algorithms
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/2019/10/12/Data-structure-and-algorithms/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-10-12T20:03:26.000Z" itemprop="datePublished">2019-10-12</time>
+</a>
+
+            
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="General-Heap-amp-Graph-Searhch-Algorithms"><a href="#General-Heap-amp-Graph-Searhch-Algorithms" class="headerlink" title="(General) Heap &amp; Graph Searhch Algorithms"></a>(General) Heap &amp; Graph Searhch Algorithms</h3><h4 id="Heap-Basic-Concepts"><a href="#Heap-Basic-Concepts" class="headerlink" title="Heap Basic Concepts"></a>Heap Basic Concepts</h4><ul>
+<li>Heap (Priority Queue) is used to maintain the <strong>min/ max</strong> value within a <strong>dynamically changing data collection.</strong> 使用Heap来维护一个<strong>不断变化数据集</strong>中的<strong>最优值</strong>。</li>
+<li>性质 -&gt; 堆序性: 任意一个节点 小于 它的所有后续节点 descendent</li>
+<li>逻辑 Logical 角度来讲：Theoretically, 在脑子里 Heap 是用 Complete Tree 来表示的。<ul>
+<li>为什么必须用 Complete Tree 来表示 Heap? </li>
+<li>According to 数学公式: <code>index of leftChild = myIndex * 2 + 1</code> <code>index of rightChild = myIndex * 2 + 2</code> <code>index of parent = (myIndex - 1) / 2</code></li>
+<li>为什么这个数学公式成立？ 因为 Complete Tree 中间没有气泡</li>
+</ul>
+</li>
+<li>物理 physical 角度来讲： 在电脑里 Heap/ Binary Heap 是用 Array来进行存储的。<ul>
+<li>为什么可以使用 Array 来进行存储？</li>
+<li>Because it is a Complete Tree &amp;&amp; We could easily get the parent &amp; children index.</li>
+</ul>
+</li>
+</ul>
+<h4 id="Heap-Operations"><a href="#Heap-Operations" class="headerlink" title="Heap Operations"></a>Heap Operations</h4><ul>
+<li><p>insert a new element: </p>
+<ul>
+<li>对 Java 来讲是 offer();</li>
+<li>Insert to tail (the first ‘null’ position).</li>
+<li>Why? -&gt; Need to ensure the tree is complete.</li>
+<li>Swap with parent, if smaller than parent.</li>
+<li>What is TC? -&gt; Because it’s a complete tree, is must be a balanced tree, so O(logn).</li>
+</ul>
+</li>
+<li><p>delete heap-top element:</p>
+<ul>
+<li>对 Java 来讲是 pop();</li>
+<li>Swap the <strong>last not-null element</strong> with heap-top empty.</li>
+<li>Swap current element with min value among all its childrens.</li>
+<li>这是唯一可以避免产生气泡的方式。要么补到 null 的位置，要么把前面的 null 换出来到结尾。</li>
+<li><strong>避免气泡是第一要素！！！</strong></li>
+<li>What is TC? -&gt; Because it’s a complete tree, is must be a balanced tree, so O(logn).</li>
+</ul>
+</li>
+<li><p>update any heap element:</p>
+<ul>
+<li>if update to smaller: 往上 percolate/ swap</li>
+<li>if update to larger: 往下 percolate/ swap</li>
+</ul>
+</li>
+<li><p>get/ top: O(1)</p>
+</li>
+<li><p>Heapify: O(n)</p>
+</li>
+</ul>
+<h4 id="Question-Examples"><a href="#Question-Examples" class="headerlink" title="Question Examples"></a>Question Examples</h4><ol>
+<li>Find smallest k elements from an unsorted array of size n.</li>
+</ol>
+<ul>
+<li><p>Method 1:</p>
+<ul>
+<li>Heapify the whole array to be a MIN_HEAP. -&gt; O(n)</li>
+<li>Keep popping k times. -&gt; O(k*logn)</li>
+<li><strong>Total TC: O(n) + O(k*logn)</strong></li>
+</ul>
+</li>
+<li><p>Method 2:</p>
+<ul>
+<li>Heapify the first k elements to be a MAX_HEAP. -&gt; O(k)</li>
+<li>Why heapify in this way? To keep a solution so far.</li>
+<li>Compare following elements with the Top-element, if smaller than the Top-element, pop the Top-element (踢出当前结果集) and insert the new element into Heap (收入当前结果集) -&gt; O(logk) // otherwise ignore it. </li>
+<li><strong>Total TC: O(k) + O((n-k)*log(k))</strong></li>
+</ul>
+</li>
+<li><p>Method1 &amp; Method2, which one is better?</p>
+<ul>
+<li>k &lt;&lt;&lt;&lt; n:    <strong>O(c*n)</strong> 这里有个系数c 由于Heapify产生的  VS   <strong>O(nlog(k))</strong>  –&gt; Hard to say.</li>
+<li>k <del>~</del> n:    <strong>O(n*logn)</strong>  VS <strong>O(nlogn)</strong></li>
+</ul>
+</li>
+<li><p>Method 3: 时间复杂度更优</p>
+<ul>
+<li>Use Quick Selection</li>
+<li>Average Time Complexity: O(n)</li>
+<li>Worse case: </li>
+<li>iteration 1 -&gt; O(n)</li>
+<li>iteration 2 -&gt; O(n/2) </li>
+<li>iteration 3 -&gt; O(n/4) …</li>
+<li><strong>Total Average Time -&gt; O(n + n/2 + n/4 + … ) = O(2n) = O(n)</strong></li>
+</ul>
+</li>
+<li><p>Method1 &amp; Method2 &amp; Method3 which one is most suitable for industry streaming data?</p>
+<ul>
+<li>Method2 is an <strong>online</strong> algorithm, is does not depend on every data. No need to heapify every time, because we always keep the <strong>solution so far</strong>.</li>
+</ul>
+</li>
+</ul>
+
+        
+    </section>
+</article>
+
+
+
+<div class="comments">
+    <div id="comments"></div>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+    new Gitalk({
+        clientID: "7fbe80427f54741e289f",
+        clientSecret: "f34ed5fd92e54c9000bd37ba951948cb939deff5",
+        repo: "sanonz.github.io",
+        owner: "sanonz",
+        admin: ["sanonz"],
+        id: "2019/10/12/Data-structure-and-algorithms",
+        distractionFreeMode: true,
+        title: "Data_structure_and_algorithms",
+        body: "http://yoursite.com/2019/10/12/Data-structure-and-algorithms/",
+        labels: []
+    }).render('comments');
+    </script>
+</div>
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e4027971a230b210f4671f485b33846a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+            
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+        </script>
+    
+
+</body>
+</html>
