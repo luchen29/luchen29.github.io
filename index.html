@@ -195,97 +195,6 @@
     <header class="article-header">
         
         <h1 itemprop="name">
-            <a href="/2019/10/15/Data-structures-summary/">Data_structures_summary</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-10-16T05:10:46.000Z" itemprop="datePublished">2019-10-15</time>
-</a>
-
-            
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h3 id="Linear-data-structures-in-Java"><a href="#Linear-data-structures-in-Java" class="headerlink" title="Linear data structures in Java"></a>Linear data structures in Java</h3><ul>
-<li><p>Interfaces:</p>
-<ul>
-<li>[List]</li>
-<li>[Queue] -&gt; [Deque]</li>
-<li>[Deque] extends [Queue]</li>
-</ul>
-</li>
-<li><p>Class Implementation:</p>
-<ul>
-<li><p><strong>ArrayList</strong> implements [List]</p>
-</li>
-<li><p>LinkedList implements [List]</p>
-</li>
-<li><p>LinkedList implements [Queue]</p>
-</li>
-<li><p><strong>ArrayDeque</strong> implements [Queue]</p>
-</li>
-<li><p><strong>PriorityQueue</strong> implements [Queue]</p>
-</li>
-<li><p>LinkedList implements [Deque] - [Queue]</p>
-</li>
-<li><p><strong>ArrayDeque</strong> implements [Deque] - [Queue]</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="Instantiate-linear-data-structures-in-Java"><a href="#Instantiate-linear-data-structures-in-Java" class="headerlink" title="Instantiate linear data structures in Java"></a>Instantiate linear data structures in Java</h3><ul>
-<li><p>如果想使用一个可变长的 Array</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;&gt; array = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果想使用一个 queue:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Queue&lt;&gt; queue = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果想使用一个 stack</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Deque&lt;&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果想使用一个双端队列</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Deque&lt;&gt; deque = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果想使用一个 PriorityQueue</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// recommanded</span></span><br><span class="line">PriorityQueue&lt;&gt; priorityQueue = <span class="keyword">new</span> PriorityQueue&lt;&gt;();</span><br><span class="line"><span class="comment">// or a more general way</span></span><br><span class="line">Queue&lt;&gt; priorityQueue = <span class="keyword">new</span> PriorityQueue&lt;&gt;();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>LinkedList 很少使用 主要原因：</p>
-<ul>
-<li>实现List时：在可以使用 LinkedList的场景下, 使用 ArrayList 会有相似或更少的 TC.</li>
-<li>实现List时：使用 LinkedList 和 ArrayList 相比有 overhead.</li>
-<li>实现Queue时：使用 ArrayDeque 全面吊打 LinkedList</li>
-</ul>
-</li>
-</ul>
-<h3 id="Operation-Methods-for-interfaces"><a href="#Operation-Methods-for-interfaces" class="headerlink" title="Operation Methods for interfaces"></a>Operation Methods for interfaces</h3><ol>
-<li>[List]<ul>
-<li>add(element)</li>
-<li>add(index, element)</li>
-<li>get(index)</li>
-<li>remove(index)</li>
-<li>remove(element)</li>
-<li>set(index, element)</li>
-</ul>
-</li>
-</ol>
-
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
             <a href="/2019/10/12/Data-structure-and-algorithms/">Data_structure_and_algorithms</a>
         </h1>
         
@@ -448,202 +357,6 @@
     <header class="article-header">
         
         <h1 itemprop="name">
-            <a href="/2019/10/05/Hibernate/">Hibernate</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-10-05T18:29:54.000Z" itemprop="datePublished">2019-10-05</time>
-</a>
-
-            
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h3 id="What-is-ORM"><a href="#What-is-ORM" class="headerlink" title="What is ORM?"></a>What is ORM?</h3><ul>
-<li>ORM: Object Relational Mapping.</li>
-<li>ORM helps Mapping any OO language code to SQL command, no need to write SQL command by ourselves. Just wirte OO language to manipulate database data.</li>
-</ul>
-<h4 id="What-is-Hibernate"><a href="#What-is-Hibernate" class="headerlink" title="What is Hibernate?"></a>What is Hibernate?</h4><ul>
-<li>Hibernate is a ORM tool for Java programming language (a popluar Java ORM library). It helps mapping an <strong>OO domain model</strong> to <strong>relational database</strong> (MySQL, SQL) table. </li>
-<li>Hiberbate is included in Spring framework.</li>
-</ul>
-<h4 id="What-is-JPA-Java-Persistence-API"><a href="#What-is-JPA-Java-Persistence-API" class="headerlink" title="What is JPA (Java Persistence API)?"></a>What is JPA (Java Persistence API)?</h4><ul>
-<li>JPA is one step above ORM. It is a high-level API and specification that can describes the management of relational data in applications using Java, like MAMP.</li>
-<li>Different ORM tools are included in JPA, it provdes flexibility for developers to switch between different ORM tools.</li>
-</ul>
-<h3 id="Hibernate-Pros-and-Cons"><a href="#Hibernate-Pros-and-Cons" class="headerlink" title="Hibernate Pros and Cons"></a>Hibernate Pros and Cons</h3><h4 id="Pros"><a href="#Pros" class="headerlink" title="Pros:"></a>Pros:</h4><ul>
-<li>No need for SQL knowledge. </li>
-<li>Model code reusable for different DBMS.<h4 id="Cons"><a href="#Cons" class="headerlink" title="Cons:"></a>Cons:</h4></li>
-<li>Set up can be cumbersome.</li>
-<li>Performance may not match better tweaked raw SQL. </li>
-</ul>
-<h4 id="Hibernate-interfaces-Structure"><a href="#Hibernate-interfaces-Structure" class="headerlink" title="Hibernate interfaces Structure"></a>Hibernate interfaces Structure</h4><ul>
-<li>Session Factory: SessionFactory is an immutable thread-safe cache of compiled mappings for a single database. 是不可改变的 线程安全的 单一数据库的 mapping cache， 使用SessionFactory 实例来获得数据库操作的 Session objects.</li>
-<li>SessionFactory 只有一个，用来 maintain session, 而 Session可以有很多个。</li>
-<li>Session: Session object is the interface between Java code and Hibernate. It provides methods for CRUD operations. 是真正的interface， 是处在 java和 hibernate 中间，用于提供对数据库的 CRUD操作。</li>
-<li>Transaction: Transaction is a single-threaded, short-lived object used by the application to specify atomic units of work.  是单线程的 短周期的 工作的最小单元，比如一个具体的insert等等这种最基本的操作。</li>
-<li>Session performs transactions.<br><img src="https://www.javatpoint.com/images/hibernate/architecture.jpg" alt="Hibernate Framework"></li>
-</ul>
-<h4 id="Hibernate-Annotations"><a href="#Hibernate-Annotations" class="headerlink" title="Hibernate Annotations"></a>Hibernate Annotations</h4><ul>
-<li><strong>Entity</strong> –&gt; Table</li>
-<li><strong>Table</strong> –&gt; Table name</li>
-<li><strong>Id</strong> –&gt; primary key</li>
-<li><strong>Column</strong> –&gt; column name</li>
-<li><strong>EmbeddedId</strong> –&gt; composite primary key in the Entity bean. When a primary key consists of 2+ columns, we define them in another POJO and use that POJO as embeddedId. 当primary key中的列数大于一个之后，我们把这些列单独定义在一个新的POJO里面，并且把这个POJO当作embeddedId. POJO is just a special java object (pain old java object). 所有 bean都属于POJO.</li>
-<li><strong>GenerateValue</strong> –&gt; the strategy that used for auto generating the primary key.</li>
-<li><strong>OneToOne</strong> –&gt; One to one mapping between two entity beans.</li>
-<li><strong>ManyToOne</strong> –&gt; Foreign key. References property from another entity bean. 从另一个entity中reference过来的</li>
-<li><strong>OneToMany</strong> –&gt; The other direction of foreign key. 反向的reference 作为foreign key.</li>
-<li><strong>ManyToMany</strong></li>
-<li><strong>Cascade 级联</strong> –&gt; The cascading between two entity beans, used with mappings. When using mapping, the operation within one entity bean will <strong>auto-propagate</strong> to the other entities.</li>
-</ul>
-
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/09/23/Spring/">Spring</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-09-24T04:38:06.000Z" itemprop="datePublished">2019-09-23</time>
-</a>
-
-            
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <ul>
-<li>Spring is 容器 framwork</li>
-<li>Struts is Web framwork</li>
-<li>hibernate is ORM famework</li>
-<li>Bean: Bean could be any object in Java (Java bean/ service bean/ action bean)</li>
-<li>IOC (Inverse of Control)</li>
-<li>DI (Dependenct Injection)</li>
-<li>Spring is uesed to config and maintain relationships between beans. Spring 框架可以纵跨四个层(web层/ 业务层/ DAO层/ Hibernate层) 进行管理。 该框架可以配置各个层的组件，并且维护各个Bean之间的关系。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserSeervice</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHallo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello "</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/// Test1</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">/// Without spring</span></span><br><span class="line">        UserService userService = <span class="keyword">new</span> UserService();</span><br><span class="line">        userService.setName(<span class="string">"John"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>spring 核心文件 applicationContract.xml</li>
-<li>Hibernate cfg.</li>
-</ul>
-
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/09/10/Leetcode-Practices-in-Java/">Leetcode Practices in Java</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-09-10T21:43:01.000Z" itemprop="datePublished">2019-09-10</time>
-</a>
-
-            
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Java/">Java</a>, <a class="article-tag-link" href="/tags/Leetcode/">Leetcode</a>
-</div>
-
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <h3 id="Binart-Search-Related-Problems"><a href="#Binart-Search-Related-Problems" class="headerlink" title="Binart Search Related Problems"></a>Binart Search Related Problems</h3><ul>
-<li><p>Classic Binary Search. Find any target number in array.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = nums.length - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// here must be &lt;= !!! otherwide handel singal number in array.</span></span><br><span class="line">        <span class="keyword">while</span> (left &lt;= right) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (target == nums[mid]) &#123;</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target &gt; nums[mid]) &#123;</span><br><span class="line">                left = mid  + <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target &lt; nums[mid]) &#123;</span><br><span class="line">                right = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Find the first occurance of the target number in sorted array</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">firstOccurance</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>, right = nums.length - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 这里的判断条件是 ( left &lt; right - 1) 与classic 的那道题不同, 否则stackoverflow</span></span><br><span class="line">        <span class="keyword">while</span> (left &lt; right - <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (target &lt;= nums[mid]) &#123;</span><br><span class="line">                right = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                left = mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (mid[left] == target) &#123;</span><br><span class="line">            <span class="keyword">return</span> left;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (mid[right] == target) &#123;</span><br><span class="line">            <span class="keyword">return</span> right;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Find the last occurace of the target number in sorted array. </p>
-        
-        <p class="article-more-link">
-            <a href="/2019/09/10/Leetcode-Practices-in-Java/#more">
-                <span class="vm">More...</span>
-                <i class="icon-arrow-double-right vm"></i>    
-            </a>
-        </p>
-        
-        
-    </li></ul></section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/08/31/Java07/">Java07</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-31T14:25:33.000Z" itemprop="datePublished">2019-08-31</time>
-</a>
-
-            
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        <ul>
-<li><p>Selection Sort</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] array = &#123;<span class="number">6</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">7</span>&#125;;</span><br><span class="line">        selectionSort(array);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span>[] array)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (array == <span class="keyword">null</span> || array.length &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n-<span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> minIndex = i;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; array.length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> array[i] &lt; array[minIndex] &#123;</span><br><span class="line">                    minIndex  = j;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(array, i, minIndex);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(array, i, minIndex)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = array[i];</span><br><span class="line">        array[i] = array[minIndex];</span><br><span class="line">        array[mimIndex] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>TC: bottle neck 是两层for循环。内层for循环每个循环结是o(1); 两层for loop总共执行了 o(n^2)</p>
-</li>
-</ul>
-
-        
-    </section>
-</article>
-
-
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
             <a href="/2019/08/25/SQL-Recover/">SQL Recover</a>
         </h1>
         
@@ -694,7 +407,7 @@
     <header class="article-header">
         
         <h1 itemprop="name">
-            <a href="/2019/08/25/Leetcode-Practices-in-Python/">Leetcode Summary in Python</a>
+            <a href="/2019/08/19/Sesson-Cookie-Token/">Sesson, Cookie, Token</a>
         </h1>
         
         <div class="article-meta clearfix">
@@ -702,13 +415,13 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2019-08-25T21:54:36.000Z" itemprop="datePublished">2019-08-25</time>
+    <time datetime="2019-08-20T00:09:54.000Z" itemprop="datePublished">2019-08-19</time>
 </a>
 
             
 <div class="article-tag-list">
     <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Java/">Java</a>, <a class="article-tag-link" href="/tags/Leetcode/">Leetcode</a>
+    <a class="article-tag-link" href="/tags/Cookie/">Cookie</a>, <a class="article-tag-link" href="/tags/Sesson/">Sesson</a>, <a class="article-tag-link" href="/tags/Token/">Token</a>
 </div>
 
 
@@ -717,6 +430,29 @@
     
     <section class="article-body markdown-body">
         
+        <p>HTTP is a stateless protocal. Requests are independent each time which ensures a good efficiency. To share data among all pages within a same hostname, we need session and cookie.</p>
+<h4 id="Cookie-and-Session"><a href="#Cookie-and-Session" class="headerlink" title="Cookie and Session"></a>Cookie and Session</h4><ul>
+<li>Client send a http request to server.</li>
+<li>Server receive the http request, create a session and send a http response back to clinet. Within the header of this response, set-cookie header is included, sessionId is included as well.</li>
+<li>On client side, stores the sessionID returned from server. As the client send following requests, client browser will automatically add a cookie into the request. </li>
+<li>Server receive a http request again. Server will analyze this cookie, check and varify session ID. If match, processed, server will return response to the client.</li>
+</ul>
+<h4 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h4><ul>
+<li>Token based authentication is stateless authentication (server does not store any token), suitable for RESTful API.</li>
+<li>Usually token will be stored in localStorage. </li>
+<li>Client send a http request to server.</li>
+<li>Server receive the http request, generate a token and send it back to the client.</li>
+<li>this token will be stored in client’s localStorage.</li>
+<li>On subsequent requests, this token will be sent within request headers.</li>
+<li>Client get the token sent by client, decode it and validate it.</li>
+</ul>
+        
+        <p class="article-more-link">
+            <a href="/2019/08/19/Sesson-Cookie-Token/#more">
+                <span class="vm">More...</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
         
         
     </section>
@@ -728,7 +464,7 @@
     <header class="article-header">
         
         <h1 itemprop="name">
-            <a href="/2019/08/24/Java05/">Java05</a>
+            <a href="/2019/08/19/Docker/">Docker</a>
         </h1>
         
         <div class="article-meta clearfix">
@@ -736,13 +472,13 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2019-08-25T02:15:44.000Z" itemprop="datePublished">2019-08-24</time>
+    <time datetime="2019-08-19T20:14:05.000Z" itemprop="datePublished">2019-08-19</time>
 </a>
 
             
 <div class="article-tag-list">
     <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Java/">Java</a>
+    <a class="article-tag-link" href="/tags/Docker/">Docker</a>, <a class="article-tag-link" href="/tags/Learning/">Learning</a>
 </div>
 
 
@@ -751,24 +487,67 @@
     
     <section class="article-body markdown-body">
         
-        <ul>
-<li>Feeling python is not enough for a software developer, start all over again for Java.</li>
+        <h4 id="Issues-we-face-when-developing-softwares"><a href="#Issues-we-face-when-developing-softwares" class="headerlink" title="Issues we face when developing softwares"></a>Issues we face when developing softwares</h4><ul>
+<li>For the development of different softwares, we usually need different environment. Therefore, environment configuration becomes a complex and troublesome issuse, especially when environment have conflicts.</li>
+<li>Virtual Machine becomes a solution for this issue by providing a new virtual system on the original system you have. However, this solution is not always ideal as it will takes up a large part of your memory resources, leading to a much slower operation. Besides, because Virtual Machine is a complete system, it contains many redundant operations which we actually don’t need.</li>
+<li>Basing on these drawbacks of Virtual Machine, Linux Containers (LXC) were developed. LXC dose not provide a complete operating system as Virtual Machine, it just isolates applications from the infrastructure can provide an environment container for it. Compared with Virtual Machine, it takes much less resources and ensures a faster start-up.</li>
 </ul>
-<h3 id="Variables-and-scopes"><a href="#Variables-and-scopes" class="headerlink" title="Variables and scopes"></a>Variables and scopes</h3><h4 id="Local-variables"><a href="#Local-variables" class="headerlink" title="Local variables"></a>Local variables</h4><ul>
-<li>Local variables are variables defined within a function.</li>
-<li>Local variables mush be initialized before use, no Java default value。</li>
-<li>Life time of local variables are within this method.</li>
+<h4 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h4><ul>
+<li><a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker</a> is a popular Linux container solution. It helps to package the application together with its dependencies within a image file. By runing this image file, a virtual container will be created and an isolated runing environment will be created.</li>
 </ul>
-<h4 id="Instance-variables-member-variables"><a href="#Instance-variables-member-variables" class="headerlink" title="Instance variables/ member variables"></a>Instance variables/ member variables</h4><ul>
-<li>Instance variables can be ether initialized by constructor or by Java default value.</li>
-<li>Life time of instance variables are within the instance.</li>
-<li>Visibility is defined by their access modifiers.</li>
-</ul>
-<h4 id="Class-variables"><a href="#Class-variables" class="headerlink" title="Class variables"></a>Class variables</h4><ul>
-<li>Class variables belongs to a class not a instance.
+<p><img src="https://i2.wp.com/blog.docker.com/wp-content/uploads/Are-containers-..-vms-image-2-1024x759.png?ssl=1" alt="docker"> </p>
         
         <p class="article-more-link">
-            <a href="/2019/08/24/Java05/#more">
+            <a href="/2019/08/19/Docker/#more">
+                <span class="vm">More...</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/08/18/Design-Pattern/">Design Pattern</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-19T05:19:38.000Z" itemprop="datePublished">2019-08-18</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Design-Pattern/">Design Pattern</a>, <a class="article-tag-link" href="/tags/Learning/">Learning</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="1-Design-Pattern"><a href="#1-Design-Pattern" class="headerlink" title="1. Design Pattern"></a>1. Design Pattern</h3><ul>
+<li>Design Pattern is a repeatable-solution/ template for a commanly recurring problem in software design. </li>
+<li>The developement paradigms have been tested and proven, so by using it we could: 1) Speed up the development process. 2) Prevent subtle issues and improve coding readability.</li>
+</ul>
+<h3 id="2-Creational-Patterns"><a href="#2-Creational-Patterns" class="headerlink" title="2. Creational Patterns"></a>2. Creational Patterns</h3><ul>
+<li>Creational Patterns are desin patterns that deal with object creation mechanisms, trying to create objects in a suitable manner under specific situation.<h4 id="2-1-Sigleton-Pattern"><a href="#2-1-Sigleton-Pattern" class="headerlink" title="2.1 Sigleton Pattern"></a>2.1 Sigleton Pattern</h4></li>
+<li>Singleton pattern ensures, one class only has one instance, and provides a global point of access to it.</li>
+<li>Examples
+        
+        <p class="article-more-link">
+            <a href="/2019/08/18/Design-Pattern/#more">
                 <span class="vm">More...</span>
                 <i class="icon-arrow-double-right vm"></i>    
             </a>
@@ -784,7 +563,7 @@
     <header class="article-header">
         
         <h1 itemprop="name">
-            <a href="/2019/08/23/Java04/">Java04</a>
+            <a href="/2019/08/18/Java-based-event-ticket-recommendation/">Java-based Event Ticket Recommendation</a>
         </h1>
         
         <div class="article-meta clearfix">
@@ -792,13 +571,13 @@
     
     <i class="icon-calendar"></i>
     
-    <time datetime="2019-08-24T00:09:27.000Z" itemprop="datePublished">2019-08-23</time>
+    <time datetime="2019-08-19T02:27:42.000Z" itemprop="datePublished">2019-08-18</time>
 </a>
 
             
 <div class="article-tag-list">
     <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Java/">Java</a>
+    <a class="article-tag-link" href="/tags/Backend/">Backend</a>, <a class="article-tag-link" href="/tags/Java/">Java</a>, <a class="article-tag-link" href="/tags/Projects/">Projects</a>
 </div>
 
 
@@ -807,10 +586,230 @@
     
     <section class="article-body markdown-body">
         
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String school;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String GREETINGS = <span class="string">"Hello"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 函数名和类名一致 没有返回值</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Getter</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Setter</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    System.out.println(GREETINGS + <span class="string">"! I'm "</span> + name + <span class="string">". I'm"</span> + age);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">welcome</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    System.out,println(<span class="string">"welcome to school!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="1-Setup-Tomcat-Server"><a href="#1-Setup-Tomcat-Server" class="headerlink" title="1. Setup Tomcat Server"></a>1. Setup Tomcat Server</h3><h4 id="1-0-Why-we-need-HTTP-protocal"><a href="#1-0-Why-we-need-HTTP-protocal" class="headerlink" title="1.0 Why we need HTTP protocal?"></a>1.0 Why we need HTTP protocal?</h4><ul>
+<li>Set the same format patten for both local and server end to help communication.</li>
+<li>(req/ res) Header &amp; a blank line to seperate &amp; (req/ res) message body.</li>
+<li>Http methods support all CRUD operations. 为了区分idempotent(幂等操作) operations: 幂等 用put/ get； 非幂等 用post/delete;</li>
+</ul>
+<h4 id="1-1-Concept-of-RESTful-API"><a href="#1-1-Concept-of-RESTful-API" class="headerlink" title="1.1 Concept of RESTful API"></a>1.1 Concept of RESTful API</h4><ul>
+<li>In this project: 1) We plan to use the HTTP methods to indicate what kind of operation we want to take. The reason is that if the operation are directly based on HTTP methods, then the server could get it directly without parsing extra things. 2) Use HTTP URL to indicate which service we want to use/ what data we want to request. That will be easy for client/users to understand. 3) Each request will be independent, which ensures the server is running in the stateless mode and improve the scalability.</li>
+</ul>
+<h4 id="1-2-Concept-of-Tomcat-RPC-Java-Servlet"><a href="#1-2-Concept-of-Tomcat-RPC-Java-Servlet" class="headerlink" title="1.2 Concept of Tomcat/ RPC/ Java Servlet"></a>1.2 Concept of Tomcat/ RPC/ Java Servlet</h4><ul>
+<li>Tomcat Server is an open-source Java Servlet Container that provides “pure Java” http wep server environment (including low level supports: making TCP connection/ revceiving request from client/ send response back to client…) in which Java code can run. 帮忙做http 请求的分发。</li>
+<li>RPC (Remode Procedure Call) is a function call to the remote server.</li>
+<li>Java Servlets are Java classes to handle RPC calls on the server side.</li>
+</ul>
+<h4 id="1-3-Setup-Tomcat-Server-within-Eclips"><a href="#1-3-Setup-Tomcat-Server-within-Eclips" class="headerlink" title="1.3 Setup Tomcat Server within Eclips"></a>1.3 Setup Tomcat Server within Eclips</h4><ul>
+<li>Go to <code>Servers</code>, find <code>Apache</code> -&gt; <code>Tomcat v9.0 Server</code> and specify the path where the Tomcat installation package was downloaded. Then the Tomcat v9.0 Server will be at localhost.</li>
+<li>Double Click ‘Tomcat v9.0 Server at localhost’ in Server window. In ‘Server Locations’, click ‘Use Tomcat installation’. Save Config.</li>
+<li>Right click ‘Tomcat v9.0 Server at localhost’, choose ‘Properties’. Click ‘Switch Location’ to change the location to /Servers/Tomcat v9.0 Server at localhost.server.</li>
+<li>Start Tomcat Server, check connection on Port: 8080.</li>
+</ul>
         
         <p class="article-more-link">
-            <a href="/2019/08/23/Java04/#more">
+            <a href="/2019/08/18/Java-based-event-ticket-recommendation/#more">
+                <span class="vm">More...</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/08/18/Authentication/">Authentication</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-18T20:07:59.000Z" itemprop="datePublished">2019-08-18</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Authentication/">Authentication</a>, <a class="article-tag-link" href="/tags/Learning/">Learning</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h4 id="1-Token-based-authentication"><a href="#1-Token-based-authentication" class="headerlink" title="1. Token-based authentication"></a>1. Token-based authentication</h4><ul>
+<li>Users enter their log credentials (username + password).</li>
+<li>Server varifies the credentials -&gt; if correct -&gt; creates an encrypted and signed token, with a private key.</li>
+<li>On client side, stores the token returned from server.</li>
+<li>On subsequent requests, the token is decoded with the same private key -&gt; if valid, the request processed.</li>
+<li>Once the user logout the app, the token is destroyed on client-side, no interaction with server is necessary.</li>
+</ul>
+<h4 id="2-Session-based-authentication"><a href="#2-Session-based-authentication" class="headerlink" title="2. Session-based authentication"></a>2. Session-based authentication</h4><ul>
+<li>Users enter their log credentials (username + password).</li>
+<li>Server varifies the credentials -&gt; if correct -&gt; creates a session -&gt; return sessionID to user -&gt; store the session to database.</li>
+<li>On client side, stores the sessionID returned from server.</li>
+<li>On subsequent requests, the sessionID will be varified against the one stored in database -&gt; if match, request processed.</li>
+<li>Once the user logout the app, the session is destroyed on the server side.</li>
+</ul>
+<p><img src="https://cdn.auth0.com/blog/cookies-vs-tokens/cookie-token-auth.png" alt="token"></p>
+        
+        <p class="article-more-link">
+            <a href="/2019/08/18/Authentication/#more">
+                <span class="vm">More...</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/08/17/Golang-based-Around-service-backend-handler/">Golang-based Around Service Backend Handler</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-18T01:52:13.000Z" itemprop="datePublished">2019-08-17</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Backend/">Backend</a>, <a class="article-tag-link" href="/tags/Golang/">Golang</a>, <a class="article-tag-link" href="/tags/Projects/">Projects</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h3 id="1-Project-will-be-implemented-on-GCP-Setting-up-our-instance-first"><a href="#1-Project-will-be-implemented-on-GCP-Setting-up-our-instance-first" class="headerlink" title="1. Project will be implemented on GCP. Setting up our instance first."></a>1. Project will be implemented on GCP. Setting up our instance first.</h3><ul>
+<li>Create a new project.</li>
+<li>Setup a new Firewall rule, enable request from all address. Set source IP as <code>&#39;0.0.0.0/0&#39;</code>; protocols and ports are set to be <code>tcp:9200,8080</code>.</li>
+<li>Create a new GCE instance, selet Ubuntu 18.04 system as image. Allow HTTP and HTTPS traffic. And don’r forget to set the Networking rule and add the new Firewall-rule-tag we’ve just created.</li>
+<li>Start the Compute Engine instance. Use <code>SSH</code> and open in browser window.</li>
+<li>Update the system and do all necessary configurations… (Installing all necessary packages: install software-properties-common, install golang, install vim, install git…)</li>
+</ul>
+<h3 id="2-Implement-the-initial-Golang-backend-handler"><a href="#2-Implement-the-initial-Golang-backend-handler" class="headerlink" title="2. Implement the initial Golang backend handler."></a>2. Implement the initial Golang backend handler.</h3><h4 id="2-1-Create-a-main-go-file-and-define-the-structure-for-Post-and-Location"><a href="#2-1-Create-a-main-go-file-and-define-the-structure-for-Post-and-Location" class="headerlink" title="2.1 Create a main.go file and define the structure for Post and Location."></a>2.1 Create a main.go file and define the structure for Post and Location.</h4><ul>
+<li>Import necessary packages: <code>&quot;encoding/json&quot;</code> for now.</li>
+<li>This backend handler need to handle the 1) Post request form the React frontend and 2) Location-based search request from frontend. Therefore, here we could set the Structure of both. Location:<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Location <span class="keyword">struct</span> &#123;</span><br><span class="line">    Lat <span class="keyword">float64</span> <span class="string">`json:"lat"`</span></span><br><span class="line">    Lon <span class="keyword">float64</span> <span class="string">`json:"lon"`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+        
+        <p class="article-more-link">
+            <a href="/2019/08/17/Golang-based-Around-service-backend-handler/#more">
+                <span class="vm">More...</span>
+                <i class="icon-arrow-double-right vm"></i>    
+            </a>
+        </p>
+        
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/08/15/React-High-Order-Component/">React High Order Component</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-16T03:18:26.000Z" itemprop="datePublished">2019-08-15</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/React/">React</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            <a href="/2019/08/14/Storing-media-files-in-GCS/">Store Media Files On Google Cloud Storage</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-14T16:46:38.000Z" itemprop="datePublished">2019-08-14</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Cloud/">Cloud</a>, <a class="article-tag-link" href="/tags/GCS/">GCS</a>, <a class="article-tag-link" href="/tags/Learning/">Learning</a>, <a class="article-tag-link" href="/tags/Object-Storage/">Object Storage</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h4 id="1-Difference-between-Object-Storage-Database-and-File-System"><a href="#1-Difference-between-Object-Storage-Database-and-File-System" class="headerlink" title="1. Difference between Object Storage, Database and File System"></a>1. Difference between Object Storage, Database and File System</h4><ul>
+<li><p>Object Storage: Each piece of data is stored as an object with no tree-shape index. Datas are searched by using unique address/ path, which ensures a higher efficiency. </p>
+</li>
+<li><p>File System: Data are stored as a piece of information in folder, to help organize it among all other data. </p>
+</li>
+</ul>
+<h4 id="2-Advantages-of-using-Object-Storage-Service"><a href="#2-Advantages-of-using-Object-Storage-Service" class="headerlink" title="2. Advantages of using Object Storage Service"></a>2. Advantages of using Object Storage Service</h4><ul>
+<li>a. Highly Durable: Most of the Object Storage Service (e.g. GCS, Amazon S3 + CloudFront) are designed for a very high (~99.99999999%) durability. Datas are redundantly backed up, which ensures a greate data integrity.</li>
+<li>b. Highly Avaliable: All storage class offer high avaliablity around the world.</li>
+<li>c. Highly Scalable: Distributd storage.</li>
+<li>d. Inexpensive: Nearly free. Good choise to store unstructured media files like images, videos ets.</li>
+</ul>
+<h4 id="3-General-idea-of-how-to-send-images-to-GCS"><a href="#3-General-idea-of-how-to-send-images-to-GCS" class="headerlink" title="3. General idea of how to send images to GCS."></a>3. General idea of how to send images to GCS.</h4><ul>
+<li>From the backend side, after we got the request from corresponding URL, we need to add a middleware <code>multer</code> to store the object first and then post to GCS. Therefore, the router handler should be somthing like: <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">router.post(<span class="string">'&lt;YOUR_TARGET_URL&gt;'</span>, multer.single(<span class="string">'&lt;INPUT_FIELD_NAME&gt;'</span>), gcsMiddlewares.sendUploadToGCS, image_controller.addImageToGCS)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+        
+        <p class="article-more-link">
+            <a href="/2019/08/14/Storing-media-files-in-GCS/#more">
                 <span class="vm">More...</span>
                 <i class="icon-arrow-double-right vm"></i>    
             </a>
@@ -824,7 +823,7 @@
 
 
 <nav class="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
 </nav>
 
 
