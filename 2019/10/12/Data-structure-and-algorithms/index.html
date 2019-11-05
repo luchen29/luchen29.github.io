@@ -71,7 +71,7 @@
         
 
         
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#General-Heap-amp-Graph-Searhch-Algorithms"><span class="toc-number">1.</span> <span class="toc-text">(General) Heap &amp; Graph Searhch Algorithms</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Heap-Basic-Concepts"><span class="toc-number">1.1.</span> <span class="toc-text">Heap Basic Concepts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Heap-Operations"><span class="toc-number">1.2.</span> <span class="toc-text">Heap Operations</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Question-Examples"><span class="toc-number">1.3.</span> <span class="toc-text">Question Examples</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Graph"><span class="toc-number">2.</span> <span class="toc-text">Graph</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#General-Heap-amp-Graph-Searhch-Algorithms"><span class="toc-number">1.</span> <span class="toc-text">(General) Heap &amp; Graph Searhch Algorithms</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Heap-Basic-Concepts"><span class="toc-number">1.1.</span> <span class="toc-text">Heap Basic Concepts</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Heap-Operations"><span class="toc-number">1.2.</span> <span class="toc-text">Heap Operations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question-Examples"><span class="toc-number">1.3.</span> <span class="toc-text">Question Examples</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Graph"><span class="toc-number">2.</span> <span class="toc-text">Graph</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#图的基本概念"><span class="toc-number">2.1.</span> <span class="toc-text">图的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#宽度优先搜索-BFS-1"><span class="toc-number">2.2.</span> <span class="toc-text">宽度优先搜索 BFS-1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bipartite"><span class="toc-number">2.3.</span> <span class="toc-text">Bipartite</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BFS-2"><span class="toc-number">2.4.</span> <span class="toc-text">BFS-2</span></a></li></ol></li></ol>
         
     </div>
 </aside>
@@ -101,7 +101,7 @@
     
     <section class="article-body markdown-body">
         
-        <h3 id="General-Heap-amp-Graph-Searhch-Algorithms"><a href="#General-Heap-amp-Graph-Searhch-Algorithms" class="headerlink" title="(General) Heap &amp; Graph Searhch Algorithms"></a>(General) Heap &amp; Graph Searhch Algorithms</h3><h4 id="Heap-Basic-Concepts"><a href="#Heap-Basic-Concepts" class="headerlink" title="Heap Basic Concepts"></a>Heap Basic Concepts</h4><ul>
+        <h2 id="General-Heap-amp-Graph-Searhch-Algorithms"><a href="#General-Heap-amp-Graph-Searhch-Algorithms" class="headerlink" title="(General) Heap &amp; Graph Searhch Algorithms"></a>(General) Heap &amp; Graph Searhch Algorithms</h2><h3 id="Heap-Basic-Concepts"><a href="#Heap-Basic-Concepts" class="headerlink" title="Heap Basic Concepts"></a>Heap Basic Concepts</h3><ul>
 <li>Heap (Priority Queue) is used to maintain the <strong>min/ max</strong> value within a <strong>dynamically changing data collection.</strong> 使用Heap来维护一个<strong>不断变化数据集</strong>中的<strong>最优值</strong>。</li>
 <li>性质 -&gt; 堆序性: 任意一个节点 小于 它的所有后续节点 descendent</li>
 <li>逻辑 Logical 角度来讲：Theoretically, 在脑子里 Heap 是用 Complete Tree 来表示的。<ul>
@@ -116,7 +116,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="Heap-Operations"><a href="#Heap-Operations" class="headerlink" title="Heap Operations"></a>Heap Operations</h4><ul>
+<h3 id="Heap-Operations"><a href="#Heap-Operations" class="headerlink" title="Heap Operations"></a>Heap Operations</h3><ul>
 <li><p>insert a new element: </p>
 <ul>
 <li>对 Java 来讲是 offer();</li>
@@ -147,7 +147,7 @@
 <li><p>Heapify: O(n)</p>
 </li>
 </ul>
-<h4 id="Question-Examples"><a href="#Question-Examples" class="headerlink" title="Question Examples"></a>Question Examples</h4><ol>
+<h3 id="Question-Examples"><a href="#Question-Examples" class="headerlink" title="Question Examples"></a>Question Examples</h3><ol>
 <li>Find smallest k elements from an unsorted array of size n.</li>
 </ol>
 <ul>
@@ -189,7 +189,52 @@
 </ul>
 </li>
 </ul>
-<h3 id="Graph"><a href="#Graph" class="headerlink" title="Graph"></a>Graph</h3>
+<h2 id="Graph"><a href="#Graph" class="headerlink" title="Graph"></a>Graph</h2><h3 id="图的基本概念"><a href="#图的基本概念" class="headerlink" title="图的基本概念"></a>图的基本概念</h3><ul>
+<li><p>图的表示方法</p>
+<ul>
+<li>Adjacency Matrix</li>
+<li>Adjacency List –可以优化成–&gt; Hash Map</li>
+</ul>
+</li>
+<li><p>图中常考的 search algorithms</p>
+<ul>
+<li>图的遍历和搜索 (BFS-1)</li>
+<li>图中的最短路径问题 (BFS-2)</li>
+</ul>
+</li>
+</ul>
+<h3 id="宽度优先搜索-BFS-1"><a href="#宽度优先搜索-BFS-1" class="headerlink" title="宽度优先搜索 BFS-1"></a>宽度优先搜索 BFS-1</h3><ul>
+<li>什么是Search Algorithm? <ul>
+<li>以某种顺序, 把图中所有的 Nodes <strong>expand()</strong> 开, 并且 <strong>generate()</strong> 到它的所有 neighbors.</li>
+</ul>
+</li>
+<li>什么是 Breadth First Searcg Algorithm?<ul>
+<li>以宽度优先的顺序，把树(简易图)中所有的 Nodes <strong>expand()</strong> 开, 并且 <strong>generate()</strong> 到它的所有 neighbors.</li>
+</ul>
+</li>
+<li>面试中 如何去描述一个算法？<ol>
+<li>首先这个 algorithm 是干什么的？<ul>
+<li>It is an searching algorithm which could expand every single Node and generate all its neighbors in a breadth first order.</li>
+</ul>
+</li>
+<li>其次 这个算法用的是什么数据结构？<ul>
+<li>This algorithm uses the FIFO Queue.</li>
+</ul>
+</li>
+<li>这个算法是怎么 work 的？<ul>
+<li>其实状态是怎样？ Initially, the Queue only contains the root node. </li>
+<li>每一轮做了什么？ We keep polling the head node from the queue, and expand it to generate its’ two child nodes.</li>
+<li>终止的条件是什么？ We terminate polling from the queue when it’s empty.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="Bipartite"><a href="#Bipartite" class="headerlink" title="Bipartite"></a>Bipartite</h3><ul>
+<li>Whether a graph’s node can be divided into 2 groups, such that the node in each group do not have direct edges between the nodes that belongs to the same group. </li>
+<li>能都找到这样的一个分类方式，保证每个 group 中的 nodes 之间不能够有边相连。</li>
+</ul>
+<h3 id="BFS-2"><a href="#BFS-2" class="headerlink" title="BFS-2"></a>BFS-2</h3>
         
     </section>
 </article>
@@ -282,5 +327,5 @@
         </script>
     
 
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","superSample":2,"width":150,"height":300,"hOffset":135,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacity":0.9},"log":false});</script></body>
 </html>
