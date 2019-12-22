@@ -195,6 +195,87 @@
     <header class="article-header">
         
         <h1 itemprop="name">
+            <a href="/2019/12/21/Heap-And-PriorityQueue/">Heap-And-PriorityQueue</a>
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/categories/Learning/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-12-21T21:00:21.000Z" itemprop="datePublished">2019-12-21</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/DataStructure/">DataStructure</a>, <a class="article-tag-link" href="/tags/Learning/">Learning</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h4 id="Heap-amp-PriorityQueue-是什么"><a href="#Heap-amp-PriorityQueue-是什么" class="headerlink" title="Heap &amp; PriorityQueue 是什么"></a>Heap &amp; PriorityQueue 是什么</h4><ul>
+<li>Heap 是一种数据结构，在内存中是以 array 进行存储的； 但在逻辑上是一个 Complete Tree 的结构，并且 Tree 的中间没有气泡。</li>
+<li>PriorityQueue 实际上是 Java 中具有 Queue 接口的 heap 实现。毕竟是 Heap 的实现，所以它不真像 Queue 那样是 FIFO 的，每次做 poll()/ peek() 这些操作时候返回的是 min/ max 值。</li>
+</ul>
+<h4 id="Heap-amp-PriorityQueue-支持的-operations"><a href="#Heap-amp-PriorityQueue-支持的-operations" class="headerlink" title="Heap &amp; PriorityQueue 支持的 operations"></a>Heap &amp; PriorityQueue 支持的 operations</h4><h5 id="Heap-operations"><a href="#Heap-operations" class="headerlink" title="Heap operations:"></a>Heap operations:</h5><ul>
+<li>insert: 把新元素放入队尾之后通过堆序性比较不断往上swap，即 percolate up 的过程。 O(logn)</li>
+<li>update: 更新某个元素的值，之后或往上swap 或往下swap。 O(logn)</li>
+<li>top/get: 获得堆顶元素的值，类似peek。 O(1)</li>
+<li>pop: 删除堆顶元素，队尾的元素用 o(1) 时间补到堆顶去之后把它再不断往下swap，即 percolate down 的过程。O(logn)</li>
+<li>heapify: 把一个无序的 array 变为 heap 的过程。 O(n)<h5 id="PriorityQueue-operations"><a href="#PriorityQueue-operations" class="headerlink" title="PriorityQueue operations:"></a>PriorityQueue operations:</h5></li>
+<li>offer(E e): 把一个新元素 insert 到 heap 的过程。 O(logn)</li>
+<li>因为 PriorityQueue 这个 class 实现的是 Queue 的接口， 所以它没有 update 的功能。想要更新某个元素的值只能先拿走这个 ele，修改，再 insert 进来。</li>
+<li>peek(): 看一下堆顶元素的值。 O(1)</li>
+<li>poll(): 删除堆顶元素，队尾的元素用 o(1) 时间补到堆顶去之后把它再不断往下swap，即 percolate down 的过程。O(logn)</li>
+<li>remove(): 这个也是移除堆顶元素，不过 remove() 更易抛出异常。 O(logn)</li>
+<li>remove(E e): 移除指定元素。这是个很贵的操作，需要先 search 一遍找到这个元素再删掉。 O(n) + O(logn) </li>
+<li>size(): 返回一个 heap 的 size。 O(1)</li>
+<li>isEmpty(): O(1)</li>
+</ul>
+<h4 id="Array-实现的-Heap-amp-BST"><a href="#Array-实现的-Heap-amp-BST" class="headerlink" title="Array 实现的 Heap &amp; BST"></a>Array 实现的 Heap &amp; BST</h4><h5 id="Array-实现的-Heap-的-operations"><a href="#Array-实现的-Heap-的-operations" class="headerlink" title="Array 实现的 Heap 的 operations"></a>Array 实现的 Heap 的 operations</h5><ul>
+<li>Search: O(n)</li>
+<li>remove: O(logn)</li>
+<li>remove(E e): o(n + logn) -&gt; O(n)<h5 id="BST-的-operations"><a href="#BST-的-operations" class="headerlink" title="BST 的 operations"></a>BST 的 operations</h5></li>
+<li>Search: O(logn)</li>
+<li>remove: O(logn) </li>
+<li>remove(E e): O(logn)<h5 id="似乎BST的时间效率更高，那为什么我们选择用-array-结构来实现-Heap-而不用-BST-来实现-Heap-呢？-或使用Array来实现-Heap-的好处在哪儿呢？"><a href="#似乎BST的时间效率更高，那为什么我们选择用-array-结构来实现-Heap-而不用-BST-来实现-Heap-呢？-或使用Array来实现-Heap-的好处在哪儿呢？" class="headerlink" title="似乎BST的时间效率更高，那为什么我们选择用 array 结构来实现 Heap 而不用 BST 来实现 Heap 呢？ / 或使用Array来实现 Heap 的好处在哪儿呢？"></a>似乎BST的时间效率更高，那为什么我们选择用 array 结构来实现 Heap 而不用 BST 来实现 Heap 呢？ / 或使用Array来实现 Heap 的好处在哪儿呢？</h5></li>
+</ul>
+<ol>
+<li>Array 数据结构的空间利用率比BST更高, 没有overhead。举例来讲: 每个ele只用存它自己就够了，不用再存个left和right。</li>
+<li>Array 数据结构的物理地址连续，可以很容易的表示出来父子节点之间的 idx 关系，进而结合 3 实现风骚走位。<br> a. 左孩子idx = 自己的idx * 2 + 1；<br> b. 右孩子idx = 自己的idx * 2 + 2；<br> c. 父节点idx = (自己的idx - 1) / 2；</li>
+<li>Array 可以进行不同元素之间的 random access， Tree 结构只能 access 到它的左右孩子节点。</li>
+<li>在工业界真实情况中，往往拿到的是很多Array状的数据。对array状的数据进行heapify较简单（？）</li>
+</ol>
+<h4 id="Heap-amp-Sort"><a href="#Heap-amp-Sort" class="headerlink" title="Heap &amp; Sort"></a>Heap &amp; Sort</h4><ul>
+<li>想把一个无序的 array 变成具有堆序的 有两种方式： </li>
+</ul>
+<ol>
+<li>建立一个大堆/ 小堆，一个一个的把元素 offer 进 heap 里，再从堆顶一个一个打印出来 –&gt; TC: O(n * logn) SC: O(n)</li>
+<li>对 array 进行 Heapify 操作， 再一个一个打印出来/ 反序打印出来 –&gt; TC: O(n); SC: O(1)<h5 id="Heapify-操作是一种可以用-O-n-时间将一个无序-array-inplace-变成大堆序的操作。"><a href="#Heapify-操作是一种可以用-O-n-时间将一个无序-array-inplace-变成大堆序的操作。" class="headerlink" title="Heapify 操作是一种可以用 O(n) 时间将一个无序 array inplace 变成大堆序的操作。"></a>Heapify 操作是一种可以用 O(n) 时间将一个无序 array inplace 变成大堆序的操作。</h5></li>
+</ol>
+<ul>
+<li>Heapify 操作的实质是： 让这个数组自行调整成一个大堆，即使之“堆有序”，且无需借助 𝑂(𝑛) 额外空间就完成了大堆的构建。</li>
+<li>heapify 的具体实现方法：<ol>
+<li><h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4>link [<a href="https://www.liwei.party/2019/01/11/algorithms-and-data-structures/heapify-and-heap-sort/]" target="_blank" rel="noopener">https://www.liwei.party/2019/01/11/algorithms-and-data-structures/heapify-and-heap-sort/]</a></li>
+</ol>
+</li>
+</ul>
+
+        
+    </section>
+</article>
+
+
+    <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
             <a href="/2019/08/25/SQL-Recover/">SQL Recover</a>
         </h1>
         
